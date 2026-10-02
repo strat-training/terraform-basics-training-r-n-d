@@ -53,31 +53,35 @@ Your Terraform code lives outside this repository, in your own GitLab repository
 
 Work the stages in order. Later stages build on earlier ones, and M07's bucket is reused by M08 to M11 and kept until the capstone ends. M09 comes before modules so that module interfaces can rely on it, and modules come before refactoring so that extracting code into a module is something M11 can then refactor. Folder names are descriptive; the briefs refer to each other by stage ID (M01–M12).
 
-## The capstone — Terraform Shop
+## The capstone — a zero-downtime online shop
 
-The capstone follows M12. It is a standalone project that assumes everything the stages teach and does not change them. You build a **Terraform Shop**, a three-tier online shop on AWS (`ap-southeast-1`): three app versions released to live traffic with zero failed checkouts, a bad release rolled back with one change, an off-site copy of the item inventory in GCP, and the shop's theme and images served from Azure — with no stored key anywhere and inside a cost ceiling. What the shop sells, what each tier runs on, how many resources there are, how zero downtime is achieved and how the release is demonstrated are your own decisions, all listed in one section of the brief. The GCP and Azure use cases are fixed.
+The capstone follows M12. It is a standalone project that assumes everything the stages teach and does not change them. You design and build a three-tier online shop on AWS (`ap-southeast-1`), release three versions of it to live traffic with zero failed checkouts, roll a bad release back with one change, keep an off-site copy of its inventory in GCP and serve its theme and images from Azure — with no stored key anywhere and inside a cost challenge.
+
+**What is fixed:** the three tiers (web, app and a private database), the blue/green release, the GCP backup and the Azure theme and images, the release stages 0 to 6 and what each must show, and two stacks called `foundation` and `release`. **What is yours:** what the shop sells, what each tier runs on (servers, Fargate or something else), how many resources you use, your network and access, how you achieve zero downtime, how a bad release is detected and rolled back, and how you demonstrate the release. The brief lists all of these in one section, "Your design decisions".
 
 | | |
 | --- | --- |
 | Brief | [modules/capstone/brief.md](modules/capstone/brief.md) |
 | Checklist | [modules/capstone/tasks.md](modules/capstone/tasks.md) |
 | Write-up template | [modules/capstone/write-up-template.md](modules/capstone/write-up-template.md) |
-| Presentation | 15 minutes of presenting and 15 minutes of questions |
-| Shape | Two stacks (`foundation` and `release`) built from local modules; blue and green app colours with traffic moved between them; release stages 0 to 6; a Demo Challenge of five day-2 tasks; failure, identity and backup proofs; a cost challenge; a supplied `check.sh` |
-| Your design | The shop and its theme; what each tier runs on (servers, Fargate or other); resource counts; network and access; the zero-downtime mechanism; how a bad release is detected and rolled back; how the release is demonstrated. See "Your design decisions" in the brief |
-| You hand in | A GitLab repository, an `evidence/` folder and `write-up.md` |
-| Assessed by | A 100-point rubric with a pass mark of 70, confirmed in a presentation |
+| Constraints | Releases are Terraform only: one change per stage, saved as a plan, no `-target`. No stored keys and no SSH. Two stacks with separate `dev` and `prod` state, and the naming and tags the brief sets |
+| Cost challenge | At most $0.30 an hour while running and under $5 in total, with limits on compute and database size, one NAT gateway and two load balancers. Your own estimate is the evidence |
+| Proofs | Failure proofs, identity and backup proofs, stock checks, a Demo Challenge of five day-2 tasks, and a supplied `check.sh` |
+| AI tools | Any AI tool is fine. You keep a log, never paste credentials, and must be able to explain and change your work without it |
+| Presentation | 15 minutes of presenting and 15 minutes of questions. The panel picks places in your code or evidence at random and asks you to explain them and make a small change live, without AI |
+| You hand in | Your GitLab repository (two stacks, modules, environments and stage inputs), an `evidence/` folder and `write-up.md` |
+| Assessed by | A 100-point rubric. The pass mark is 70, and the definition of done must also be met |
 
-| Rubric criterion | Points |
-| --- | --- |
-| Provision | 15 |
-| Release proofs | 25 |
-| Structure and quality | 20 |
-| Demo Challenge (the day-2 round) | 15 |
-| AI review log and design note | 15 |
-| Security, cost, teardown | 10 |
+| Rubric criterion | Points | What it covers |
+| --- | --- | --- |
+| Provision | 15 | Both stacks apply from a clean checkout, and the plan after each apply is clean |
+| Release proofs | 25 | Stages 0 to 6 evidenced: zero failed requests where the release is meant to be safe, the bad release confined to v3 and detected, and a one-change rollback |
+| Structure and quality | 20 | Two stacks and local modules, validated inputs, pinned versions, separate state per environment, and `check.sh` passing |
+| Demo Challenge (the day-2 round) | 15 | Five day-2 tasks, each with a saved plan and its proof |
+| AI review log and design note | 15 | Your design decisions with the alternatives you rejected, your cost estimate, and an honest AI log |
+| Security, cost, teardown | 10 | A private database, the identity and backup proofs, your cost estimate inside the cost challenge, and a clean teardown in all three clouds |
 
-The presentation carries no separate points. It is where the panel confirms the evidence behind each criterion; the brief lists what is checked for each one. Your trainer gives you a `data/` folder (the application in three versions, a starter catalogue, a starter theme and images, an optional `probe.sh` and `check.sh`); you may replace the catalogue and theme with your own.
+Each criterion is scored from 0 to its points: Excellent is 80% or more of them, Satisfactory 50% to 79%, and Needs work under 50%. The presentation carries no separate points. It is where the panel confirms the evidence behind each criterion, and a claim you cannot explain can lose the points it supports. Your trainer gives you a `data/` folder (the application in three versions, a starter catalogue, a starter theme and images, an optional `probe.sh` and `check.sh`); you may replace the catalogue and theme with your own.
 
 ## Rules for every stage
 

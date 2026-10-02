@@ -1,6 +1,6 @@
 # Capstone Tasks
 
-**Objective:** Build and release a small online shop — the **Terraform Shop** — on AWS, GCP and Azure end to end, on your own, with Terraform, and be able to defend every decision in it, regardless of how the code got typed.
+**Objective:** Design, build and release a three-tier online shop of your own choosing on AWS, with a blue/green release you can prove, an off-site copy of its inventory in GCP and its theme and images served from Azure — inside a cost ceiling and with no stored key — on your own, and be able to defend every decision in it, regardless of how the code got typed.
 
 > There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints, the AI-assisted development policy, the rubric, the presentation checks and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
