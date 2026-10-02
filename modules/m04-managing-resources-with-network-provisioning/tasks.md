@@ -1,61 +1,50 @@
-# M04 — Managing Resources with Network Provisioning — tasks
+# M04 — Managing Resources with Network Provisioning — Tasks
 
-Generated from [brief.md](brief.md) by `/trainee-task-planner`. Work top to bottom and tick each box when it is true. This list contains no answers, no code and no steps: how to do each item is yours to work out, and recording how is the point of the write-up. Do not edit `brief.md`.
+**Objective:** Provision a small AWS network and use it to understand how Terraform works out what depends on what, and how to create several similar resources without writing each one out by hand, and to read information that already exists instead of hard-coding it.
 
-Sections 1–4 are the work. Section 5 runs alongside them: update `write-up.md` as you finish each piece, not at the end, and tick each box only when that section is complete and accurate.
+> There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
-## 0. Set up
+## Setup
 
-- [ ] **S1** Read `brief.md` from top to bottom, including its stack constraints and out-of-scope list, and the rules for every stage in the [README](../README.md#rules-for-every-stage). Ask the trainer about anything unclear before you build. *(set up)*
-- [ ] **S2** Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched. *(set up)*
-- [ ] **S3** Confirm that each stage named under "Builds on" in the brief (M03) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build. *(set up)*
+- [ ] Read `brief.md` from top to bottom, including its cost, stack constraints and out-of-scope list, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Ask the trainer about anything unclear before you build.
+- [ ] Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched.
+- [ ] Confirm that each stage named under "Builds on" in the brief (M03) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
 
-## 1. Build — in the brief's scope order
+## Build
 
-Each task is a topic from the brief's scope. How to approach it is yours to work out.
+- [ ] Work on: Resource references and the dependency graph Terraform builds from them
+- [ ] Work on: Implicit versus explicit dependencies
+- [ ] Work on: Repeating a resource — the two mechanisms Terraform offers
+- [ ] Work on: Data sources — reading information that already exists, and how it differs from a resource
+- [ ] Work on: A VPC, subnets in more than one availability zone, and the routing a public tier needs
+- [ ] Work on: Public versus private subnets — what makes a subnet public
+- [ ] Work on: Cost awareness — why some networking resources bill by the hour
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Where in your configuration did you rely on Terraform to infer ordering, and was there anywhere you felt you had to state it explicitly? Why?
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What are the trade-offs between the two ways of repeating a resource, and why does the course want one preferred?
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What happens to your existing subnets if you later add or remove one from the set you are repeating over?
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What distinguishes a public subnet from a private one in AWS, and how would you prove which is which?
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What is the difference between a resource and a data source in what Terraform manages, and what happens to each when you destroy?
+- [ ] Have ready: A small AWS network configuration — one VPC with public and private subnets across more than one availability zone and the routing the public tier needs — with no NAT gateway
 
-- [ ] **B1** Work on: Resource references and the dependency graph Terraform builds from them *(scope 1)*
-- [ ] **B2** Work on: Implicit versus explicit dependencies *(scope 2)*
-- [ ] **B3** Work on: Repeating a resource — the two mechanisms Terraform offers and the course's preference *(scope 3)*
-- [ ] **B4** Work on: Data sources — reading information that already exists, and how it differs from a resource *(scope 4)*
-- [ ] **B5** Work on: A VPC, subnets in more than one availability zone, and the routing a public tier needs *(scope 5)*
-- [ ] **B6** Work on: Public versus private subnets — what makes a subnet public *(scope 6)*
-- [ ] **B7** Work on: Cost awareness — why some networking resources bill by the hour *(scope 7)*
+## Verify
 
-## 2. Decide — the brief's open design questions
+- [ ] Confirm DoD-1: Formatting and validation checks pass with no errors. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: The plan contains the VPC, subnets in at least two availability zones, and the routing for the public tier (resource addresses shown from the plan output or its JSON form). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Subnets in more than one availability zone are created by repeating one resource block rather than writing each one out (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: At least one value the configuration needs about the account or region is read with a data source rather than hard-coded (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: No NAT gateway appears in the plan or in state. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Your note names the implicit dependencies in your configuration and where each one comes from. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: Everything is destroyed, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
 
-- [ ] **D1** Answer, with reasons, in write-up section 2 (Q1): Where in your configuration did you rely on Terraform to infer ordering, and was there anywhere you felt you had to state it explicitly? Why? *(question 1)*
-- [ ] **D2** Answer, with reasons, in write-up section 2 (Q2): What are the trade-offs between the two ways of repeating a resource, and why does the course want one preferred? *(question 2)*
-- [ ] **D3** Answer, with reasons, in write-up section 2 (Q3): What happens to your existing subnets if you later add or remove one from the set you are repeating over? *(question 3)*
-- [ ] **D4** Answer, with reasons, in write-up section 2 (Q4): What distinguishes a public subnet from a private one in AWS, and how would you prove which is which? *(question 4)*
-- [ ] **D5** Answer, with reasons, in write-up section 2 (Q5): What is the difference between a resource and a data source in what Terraform manages, and what happens to each when you destroy? *(question 5)*
+## Write-up
 
-## 3. Deliver — the named deliverable
-
-- [ ] **C1** Have ready: A small AWS network configuration — one VPC with public and private subnets across more than one availability zone and the routing the public tier needs — with no NAT gateway *(deliverable)*
-
-## 4. Verify — the definition of done
-
-- [ ] **V1** Capture evidence in write-up section 6 for DoD-1: Formatting and validation checks pass with no errors. *(DoD-1)*
-- [ ] **V2** Capture evidence in write-up section 6 for DoD-2: The plan contains the VPC, subnets in at least two availability zones, and the routing for the public tier (resource addresses shown from the plan output or its JSON form). *(DoD-2)*
-- [ ] **V3** Capture evidence in write-up section 6 for DoD-3: Subnets are created from a keyed collection; the `count` meta-argument is not used to repeat any resource (a reviewer reads the configuration to confirm). *(DoD-3)*
-- [ ] **V4** Capture evidence in write-up section 6 for DoD-4: At least one value the configuration needs about the account or region is read with a data source rather than hard-coded (a reviewer reads the configuration). *(DoD-4)*
-- [ ] **V5** Capture evidence in write-up section 6 for DoD-5: No NAT gateway appears in the plan or in state. *(DoD-5)*
-- [ ] **V6** Capture evidence in write-up section 6 for DoD-6: Your note names the implicit dependencies in your configuration and where each one comes from. *(DoD-6)*
-- [ ] **V7** Capture evidence in write-up section 6 for DoD-7: Everything is destroyed, confirmed from the cloud side. *(DoD-7)*
-
-## 5. Write up — one task per write-up section
-
-- [ ] **W1** Complete write-up section 1, “What I built”: Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome. *(write-up section 1)*
-- [ ] **W2** Complete write-up section 2, “Key decisions and tradeoffs”: One entry per open design question from the brief, then any further decision of your own worth recording. Say what you considered, what you chose, why, and what you gave up. *(write-up section 2)*
-- [ ] **W3** Complete write-up section 3, “How to build it”: This section becomes the teaching content, so write it for a learner who has finished the previous stage and has not seen this one. They will follow it alone, with no trainer to ask. *(write-up section 3)*
-- [ ] **W4** Complete write-up section 4, “Concepts in my own words”: For each concept: explain it as you would to a colleague, in your own words — no pasted definitions. Give one example from your build and one thing it is commonly confused with. *(write-up section 4)*
-- [ ] **W5** Complete write-up section 5, “What tripped me up”: Add a row whenever you lose more than about ten minutes. These become the course's common-errors entries, so keep the exact error text. *(write-up section 5)*
-- [ ] **W6** Complete write-up section 6, “Checkpoint evidence”: One row per definition-of-done item in the brief. Paste real output, trimmed to the relevant lines, or link a screenshot. *(write-up section 6)*
-- [ ] **W7** Complete write-up section 7, “Versions and sources”. *(write-up section 7)*
-- [ ] **W8** Complete write-up section 8, “Before I submit”. *(write-up section 8)*
-
-## 6. Close out
-
-- [ ] **F1** Self-review: go back through this list and the brief's definition of done. Every item is ticked, or you have written down why not and told the trainer. *(close out)*
-- [ ] **F2** Set Status in `write-up.md` to “In review” and tell the trainer the stage is ready for review. *(close out)*
+- [ ] Under “What I built”: Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome.
+- [ ] Under “Why it's built this way (key decisions)”: One entry per open design question in the brief, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
+- [ ] Under “AI collaboration log”: If you used AI tools, be specific, not a vague "I used AI to help write some code". If you used none, say so in one line.
+- [ ] Under “How to build it (teach it to the next engineer)”: Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
+- [ ] Under “Concepts worth explaining”: Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
+- [ ] Under “What tripped me up”: The real obstacles — errors, wrong assumptions, anything that cost you real time. Keep the exact error text; these become the course's common-errors list.
+- [ ] Under “Checkpoint evidence”: Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
+- [ ] Under “Definition-of-done self-assessment”: Score yourself honestly against every item in the definition of done in `brief.md` before your trainer reviews it: met, partly met or not met, and why. Then rate yourself against each criterion of the stage rubric in the README.
+- [ ] Under “What I'd do differently”: If you started this stage over today, what would you change?
+- [ ] Final self-review: go back through this list, the brief's definition of done and your write-up. Every item is ticked, or you have written down why not and told the trainer. Then set Status in `write-up.md` to “In review” and tell the trainer the stage is ready for review.

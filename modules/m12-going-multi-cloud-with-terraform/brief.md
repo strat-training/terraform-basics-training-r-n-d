@@ -3,10 +3,9 @@
 | | |
 | --- | --- |
 | Stage | 12 of 12 |
-| Course reference | Solution-design Module 10 / Activity 10 "GCP/Azure setup" (§6.2); stage 12 here because M09 and M10 are new |
 | Cloud | GCP and Azure |
 | Builds on | M01, M02 |
-| Time box | Week 4; the activity is 45–60 minutes plus reading and checkpoint (solution-design A7) |
+| Cost | None. Read-only checks create no resources. |
 | Leaves behind | Nothing. No resources are created. |
 
 ## Objective
@@ -18,27 +17,28 @@ See that the core Terraform workflow carries over to GCP and Azure while provide
 ### In scope (in the order to tackle)
 
 1. Confirming access to the GCP and Azure sandboxes
-2. GCP — Application Default Credentials sign-in, explicit project, provider configuration
-3. Azure — CLI sign-in, explicit subscription, provider configuration
+2. GCP — Application Default Credentials sign-in, project selection, provider configuration
+3. Azure — CLI sign-in, subscription selection, provider configuration
 4. Read-only data sources as a safe proof of identity
-5. Sign-in modes for when no browser is available — inside a container or remote workspace
-6. Where the clouds differ, stated explicitly — no abstraction layer
-7. The `gcs` and `azurerm` state backends — reference only
+5. Where the clouds differ, stated explicitly
+6. The `gcs` and `azurerm` state backends — reference only
+7. Where this course stops — HCP Terraform and Sentinel, named and not taught
 
 ### Out of scope
 
 - Installing the Google Cloud and Azure command-line tools (M01)
 - Creating any cloud resource
-- Configuring the `gcs` or `azurerm` backends (ADR-003, solution-design A10)
+- Configuring the `gcs` or `azurerm` backends
 - Networking or compute on GCP or Azure
-- Any wrapper or abstraction that hides cloud differences (ADR-003)
+- Any wrapper or abstraction that hides cloud differences
+- Teaching HCP Terraform or Sentinel — they are named in the next-steps note only
 
 ## Stack constraints
 
-- Everything under [Rules for every stage](../README.md#rules-for-every-stage).
-- GCP uses Application Default Credentials from an interactive login; Azure uses the Azure CLI login. Nothing else (ADR-005).
+- Everything under [Rules for every stage](../../README.md#rules-for-every-stage).
+- GCP uses Application Default Credentials from an interactive login; Azure uses the Azure CLI login. Nothing else.
 - No service-account keys, client secrets or any static credential, in the repository or on disk.
-- The GCP project and the Azure subscription are set explicitly in the configuration, not inferred from whichever login happens to be active (ADR-003).
+- The GCP project and the Azure subscription each configuration uses must not depend on whichever login happens to be active.
 - Read-only data sources only. No resources are created.
 - One configuration per cloud. Terraform 1.11 or later with provider versions pinned from `versions.env`.
 - If either sandbox is not accessible to you, tell the trainer before you start.
@@ -58,13 +58,14 @@ See that the core Terraform workflow carries over to GCP and Azure while provide
 
 - [ ] **DoD-1** Both configurations pass formatting and validation checks.
 - [ ] **DoD-2** Both configurations plan successfully and the plan output includes an identity output for each cloud (output pasted).
-- [ ] **DoD-3** The GCP project and the Azure subscription are set explicitly in configuration.
+- [ ] **DoD-3** Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your write-up records why that was not possible.
 - [ ] **DoD-4** No secrets or keys exist in the repository or on disk (the scan you ran is in your evidence).
 - [ ] **DoD-5** Neither configuration creates a resource (the plan shows nothing to add).
-- [ ] **DoD-6** Your written comparison of cloud differences agrees with the trainer's model answer on review.
+- [ ] **DoD-6** Your trainer confirms your written comparison of cloud differences is correct on review.
+- [ ] **DoD-7** Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
 
 ## Best practices this stage demonstrates
 
-- No static credentials (Activity 10 check)
-- Cloud differences explicit (Activity 10 note)
+- No static credentials
+- Cloud differences explicit
 - fmt and validate

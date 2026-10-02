@@ -1,64 +1,53 @@
-# M08 — Terraform for Multi-Environment Deployments — tasks
+# M08 — Terraform for Multi-Environment Deployments — Tasks
 
-Generated from [brief.md](brief.md) by `/trainee-task-planner`. Work top to bottom and tick each box when it is true. This list contains no answers, no code and no steps: how to do each item is yours to work out, and recording how is the point of the write-up. Do not edit `brief.md`.
+**Objective:** Deploy two environments — dev and prod — from one configuration with separate state, laid out, named and tagged so consistently that anyone can tell which environment a resource belongs to at a glance. Be able to say when you would use workspaces or a directory per environment instead.
 
-Sections 1–4 are the work. Section 5 runs alongside them: update `write-up.md` as you finish each piece, not at the end, and tick each box only when that section is complete and accurate.
+> There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
-## 0. Set up
+## Setup
 
-- [ ] **S1** Read `brief.md` from top to bottom, including its stack constraints and out-of-scope list, and the rules for every stage in the [README](../README.md#rules-for-every-stage). Ask the trainer about anything unclear before you build. *(set up)*
-- [ ] **S2** Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched. *(set up)*
-- [ ] **S3** Confirm that each stage named under "Builds on" in the brief (M05, M07) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build. *(set up)*
+- [ ] Read `brief.md` from top to bottom, including its cost, stack constraints and out-of-scope list, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Ask the trainer about anything unclear before you build.
+- [ ] Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched.
+- [ ] Confirm that each stage named under "Builds on" in the brief (M05, M07) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
 
-## 1. Build — in the brief's scope order
+## Build
 
-Each task is a topic from the brief's scope. How to approach it is yours to work out.
+- [ ] Work on: One configuration, many environments — what is shared and what must be separate
+- [ ] Work on: Per-environment input values
+- [ ] Work on: Per-environment backend settings and separate state keys in the shared bucket
+- [ ] Work on: Blast radius — what separate state does and does not protect
+- [ ] Work on: The standard file layout for a root configuration
+- [ ] Work on: A naming convention and required tags applied through provider defaults
+- [ ] Work on: Switching between environments safely
+- [ ] Work on: Other ways to separate environments — a directory per environment, and workspaces — and when each fits (explained, not used)
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What makes it easy to apply one environment's values to the other's state, and what will you do to make that harder?
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Which tags would a clean-up or cost report need beyond `Environment`, and why?
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How should the files be laid out so a newcomer finds each concern without being told?
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: When would workspaces be the right tool, and what do you give up by not using them here?
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: When would a directory per environment be the right tool, and what do you give up by not using it here?
+- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: In what ways does keeping both environments in one account misrepresent real practice?
+- [ ] Have ready: One configuration deployed as both dev and prod with separate state
+- [ ] Have ready: a note comparing three ways to separate environments
 
-- [ ] **B1** Work on: One configuration, many environments — what is shared and what must be separate *(scope 1)*
-- [ ] **B2** Work on: Per-environment input values *(scope 2)*
-- [ ] **B3** Work on: Per-environment backend settings and separate state keys in the shared bucket *(scope 3)*
-- [ ] **B4** Work on: Blast radius — what separate state does and does not protect *(scope 4)*
-- [ ] **B5** Work on: The standard file layout for a root configuration *(scope 5)*
-- [ ] **B6** Work on: A naming convention and required tags applied through provider defaults *(scope 6)*
-- [ ] **B7** Work on: Switching between environments safely *(scope 7)*
-- [ ] **B8** Work on: Other ways to separate environments — a directory per environment, and workspaces — and when each fits (explained, not used) *(scope 8)*
+## Verify
 
-## 2. Decide — the brief's open design questions
+- [ ] Confirm DoD-1: Two state objects exist in the bucket under different keys (listing pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Both environments produce clean plans (output for each). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Environment-specific inputs differ between the two environments and live outside the main configuration files. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Every resource follows the naming convention and carries the required tags (shown from the plan, state or cloud side). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: The file layout follows the standard root-configuration layout; a reviewer can find each concern from file names alone. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: Both environments are destroyed and the bucket is retained, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
 
-- [ ] **D1** Answer, with reasons, in write-up section 2 (Q1): What makes it easy to apply one environment's values to the other's state, and what will you do to make that harder? *(question 1)*
-- [ ] **D2** Answer, with reasons, in write-up section 2 (Q2): Which tags would a clean-up or cost report need beyond `Environment`, and why? *(question 2)*
-- [ ] **D3** Answer, with reasons, in write-up section 2 (Q3): How should the files be laid out so a newcomer finds each concern without being told? *(question 3)*
-- [ ] **D4** Answer, with reasons, in write-up section 2 (Q4): When would workspaces be the right tool, and what do you give up by not using them here? *(question 4)*
-- [ ] **D5** Answer, with reasons, in write-up section 2 (Q5): When would a directory per environment be the right tool, and what do you give up by not using it here? *(question 5)*
-- [ ] **D6** Answer, with reasons, in write-up section 2 (Q6): In what ways does keeping both environments in one account misrepresent real practice? *(question 6)*
+## Write-up
 
-## 3. Deliver — the named deliverable
-
-- [ ] **C1** Have ready: One configuration deployed as both dev and prod with separate state *(deliverable)*
-- [ ] **C2** Have ready: a note comparing three ways to separate environments *(deliverable)*
-
-## 4. Verify — the definition of done
-
-- [ ] **V1** Capture evidence in write-up section 6 for DoD-1: Two state objects exist in the bucket under different keys (listing pasted). *(DoD-1)*
-- [ ] **V2** Capture evidence in write-up section 6 for DoD-2: Both environments produce clean plans (output for each). *(DoD-2)*
-- [ ] **V3** Capture evidence in write-up section 6 for DoD-3: Environment-specific inputs differ between the two environments and live outside the main configuration files. *(DoD-3)*
-- [ ] **V4** Capture evidence in write-up section 6 for DoD-4: Every resource follows the naming convention and carries the required tags (shown from the plan, state or cloud side). *(DoD-4)*
-- [ ] **V5** Capture evidence in write-up section 6 for DoD-5: The file layout follows the standard root-configuration layout; a reviewer can find each concern from file names alone. *(DoD-5)*
-- [ ] **V6** Capture evidence in write-up section 6 for DoD-6: The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits. *(DoD-6)*
-- [ ] **V7** Capture evidence in write-up section 6 for DoD-7: Both environments are destroyed and the bucket is retained, confirmed from the cloud side. *(DoD-7)*
-
-## 5. Write up — one task per write-up section
-
-- [ ] **W1** Complete write-up section 1, “What I built”: Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome. *(write-up section 1)*
-- [ ] **W2** Complete write-up section 2, “Key decisions and tradeoffs”: One entry per open design question from the brief, then any further decision of your own worth recording. Say what you considered, what you chose, why, and what you gave up. *(write-up section 2)*
-- [ ] **W3** Complete write-up section 3, “How to build it”: This section becomes the teaching content, so write it for a learner who has finished the previous stage and has not seen this one. They will follow it alone, with no trainer to ask. *(write-up section 3)*
-- [ ] **W4** Complete write-up section 4, “Concepts in my own words”: For each concept: explain it as you would to a colleague, in your own words — no pasted definitions. Give one example from your build and one thing it is commonly confused with. *(write-up section 4)*
-- [ ] **W5** Complete write-up section 5, “What tripped me up”: Add a row whenever you lose more than about ten minutes. These become the course's common-errors entries, so keep the exact error text. *(write-up section 5)*
-- [ ] **W6** Complete write-up section 6, “Checkpoint evidence”: One row per definition-of-done item in the brief. Paste real output, trimmed to the relevant lines, or link a screenshot. *(write-up section 6)*
-- [ ] **W7** Complete write-up section 7, “Versions and sources”. *(write-up section 7)*
-- [ ] **W8** Complete write-up section 8, “Before I submit”. *(write-up section 8)*
-
-## 6. Close out
-
-- [ ] **F1** Self-review: go back through this list and the brief's definition of done. Every item is ticked, or you have written down why not and told the trainer. *(close out)*
-- [ ] **F2** Set Status in `write-up.md` to “In review” and tell the trainer the stage is ready for review. *(close out)*
+- [ ] Under “What I built”: Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome.
+- [ ] Under “Why it's built this way (key decisions)”: One entry per open design question in the brief, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
+- [ ] Under “AI collaboration log”: If you used AI tools, be specific, not a vague "I used AI to help write some code". If you used none, say so in one line.
+- [ ] Under “How to build it (teach it to the next engineer)”: Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
+- [ ] Under “Concepts worth explaining”: Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
+- [ ] Under “What tripped me up”: The real obstacles — errors, wrong assumptions, anything that cost you real time. Keep the exact error text; these become the course's common-errors list.
+- [ ] Under “Checkpoint evidence”: Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
+- [ ] Under “Definition-of-done self-assessment”: Score yourself honestly against every item in the definition of done in `brief.md` before your trainer reviews it: met, partly met or not met, and why. Then rate yourself against each criterion of the stage rubric in the README.
+- [ ] Under “What I'd do differently”: If you started this stage over today, what would you change?
+- [ ] Final self-review: go back through this list, the brief's definition of done and your write-up. Every item is ticked, or you have written down why not and told the trainer. Then set Status in `write-up.md` to “In review” and tell the trainer the stage is ready for review.

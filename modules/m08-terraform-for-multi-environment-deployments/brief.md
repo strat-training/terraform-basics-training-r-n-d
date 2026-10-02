@@ -3,10 +3,9 @@
 | | |
 | --- | --- |
 | Stage | 8 of 12 |
-| Course reference | Module 8 / Activity 8 "Environments" (solution-design §6.2) |
 | Cloud | AWS |
 | Builds on | M05, M07 |
-| Time box | TBC — see [README](../README.md#open-items-for-the-trainer) |
+| Cost | Two environments mean twice the resources. Look up what each resource in your plan bills before you apply, and destroy both environments at the end of the stage. |
 | Leaves behind | Nothing except the M07 state bucket. Destroy both environments. |
 
 ## Objective
@@ -28,20 +27,20 @@ Deploy two environments — dev and prod — from one configuration with separat
 
 ### Out of scope
 
-- Using workspaces for the environments (explain only, ADR-007)
+- Using workspaces for the environments (explain only)
 - Building the environments with a directory or repository per environment (explained in the comparison note, not built)
-- Terragrunt or other wrapper tools (ADR-007)
+- Terragrunt or other wrapper tools
 - Separate accounts per environment — explain why real teams do it, but do not build it
 - Reusable Terraform modules (M10)
 
 ## Stack constraints
 
-- Everything under [Rules for every stage](../README.md#rules-for-every-stage).
-- One configuration, with a variable-definition file and a backend-configuration file per environment (ADR-007, which is still Proposed).
+- Everything under [Rules for every stage](../../README.md#rules-for-every-stage).
+- One configuration, with a variable-definition file and a backend-configuration file per environment.
 - State lives in the bucket from M07, under a distinct key per environment.
 - Resource names follow `<app>-<env>-<resource>`. Provider-level default tags include `Environment`.
 - Both environments live in the same sandbox account. Your write-up must say that real teams usually separate accounts.
-- Keep resources small and cheap; destroy both environments at the end (ADR-011).
+- Keep resources small and cheap; destroy both environments at the end.
 
 ## Deliverable
 
@@ -68,7 +67,7 @@ Deploy two environments — dev and prod — from one configuration with separat
 
 ## Best practices this stage demonstrates
 
-- Separate state per environment (Activity 8 check)
-- Layout and naming (Activity 8 check)
-- `default_tags` (Activity 8 check)
+- Separate state per environment
+- Layout and naming
+- `default_tags`
 - fmt and validate

@@ -1,135 +1,73 @@
-# M12 — Going Multi-Cloud with Terraform — write-up
+# M12 — Going Multi-Cloud with Terraform — Write-up
 
-> **How to use this file.** Copy it to `write-up.md` in this folder and fill in the copy; leave this template blank for the next cohort. Write each section **while you build**, in the same sitting as the work — not after it works. The brief is in [brief.md](brief.md); do not edit it. Never paste credentials, tokens or key material anywhere in this file.
+> This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
 
 | | |
 | --- | --- |
 | Trainee | |
 | Status | Draft <!-- Draft → In review → Revising → Accepted --> |
-| Build location | <!-- repository and branch or merge request holding your Terraform code --> |
-| Started / finished | |
-| Hours spent | <!-- an honest total — the trainer uses it to set time boxes --> |
+| Build location | <!-- your GitLab repository and branch or merge request holding your Terraform code --> |
+| Hours spent | <!-- an honest total --> |
 
-## 1. What I built
+## What I built
 
-<!-- Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome. A reader should know what exists before they read how you got there. -->
+Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome.
 
-## 2. Key decisions and tradeoffs
+## Why it's built this way (key decisions)
 
-<!-- One entry per open design question from the brief, then any further decision of your own worth recording. Say what you considered, what you chose, why, and what you gave up. "The docs said so" is not a reason. -->
+One entry per open design question in the brief, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-### Q1. What can go wrong if the ambient login points at a different project or subscription than you intended, and what in your configuration prevents it?
+- What can go wrong if the ambient login points at a different project or subscription than you intended, and what in your configuration prevents it?
+- What stays the same across all three clouds in the Terraform workflow, and what changes?
+- Why does the course refuse to hide cloud differences behind a common wrapper?
+- Where should state live for a configuration that creates nothing, and does your answer change once it does?
+- Where did you spend the most time, and why?
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+## AI collaboration log
 
-### Q2. What stays the same across all three clouds in the Terraform workflow, and what changes?
+If you used AI tools, be specific, not a vague "I used AI to help write some code". If you used none, say so in one line.
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+- Which AI tool(s) did you use, and for roughly what portion of the work?
+- Give 2–3 concrete examples of what you asked for.
+- At least one moment the tool's first suggestion was wrong, inefficient, or didn't fit your design — what was wrong with it, how you noticed, and what you did instead.
+- What did you accept largely as-is, and what did you rewrite or redesign yourself?
 
-### Q3. Why does the course refuse to hide cloud differences behind a common wrapper?
+## How to build it (teach it to the next engineer)
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
 
-### Q4. Where should state live for a configuration that creates nothing, and does your answer change once it does?
+## Concepts worth explaining
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
+- Confirming access to the GCP and Azure sandboxes
+- GCP — Application Default Credentials sign-in, project selection, provider configuration
+- Azure — CLI sign-in, subscription selection, provider configuration
+- Read-only data sources as a safe proof of identity
+- Where the clouds differ, stated explicitly
+- The `gcs` and `azurerm` state backends — reference only
+- Where this course stops — HCP Terraform and Sentinel, named and not taught
 
-### Additional decisions
+## What tripped me up
 
-<!-- Add as many as you need, in the same shape. -->
+The real obstacles — errors, wrong assumptions, anything that cost you real time. Keep the exact error text; these become the course's common-errors list.
 
-## 3. How to build it
+## Checkpoint evidence
 
-<!-- This section becomes the teaching content, so write it for a learner who has finished the previous stage and has not seen this one. They will follow it alone, with no trainer to ask. Include the commands and code they need, the reason for each step, what they should see afterwards, and where to stop and check before moving on. -->
+Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-### Before you start
+- DoD-1: Both configurations pass formatting and validation checks.
+- DoD-2: Both configurations plan successfully and the plan output includes an identity output for each cloud (output pasted).
+- DoD-3: Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your write-up records why that was not possible.
+- DoD-4: No secrets or keys exist in the repository or on disk (the scan you ran is in your evidence).
+- DoD-5: Neither configuration creates a resource (the plan shows nothing to add).
+- DoD-6: Your trainer confirms your written comparison of cloud differences is correct on review.
+- DoD-7: Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
 
-<!-- What the learner needs in place: earlier stages, access, tools, versions. -->
+## Definition-of-done self-assessment
 
-### Steps
+Score yourself honestly against every item in the definition of done in `brief.md` before your trainer reviews it: met, partly met or not met, and why. Then rate yourself against each criterion of the stage rubric in the README. Name any part of your own work you would struggle to explain cold, without re-reading it first.
 
-<!-- Numbered, in the order you would do them again. -->
+## What I'd do differently
 
-### How you know it worked
-
-<!-- What the learner can check to be sure, without asking you. -->
-
-### Clean-up
-
-<!-- Exactly what to destroy or retire, and how to confirm nothing is left. -->
-
-## 4. Concepts in my own words
-
-<!-- For each concept: explain it as you would to a colleague, in your own words — no pasted definitions. Give one example from your build and one thing it is commonly confused with. -->
-
-### Confirming access to the GCP and Azure sandboxes
-
-
-### GCP — Application Default Credentials sign-in, explicit project, provider configuration
-
-
-### Azure — CLI sign-in, explicit subscription, provider configuration
-
-
-### Read-only data sources as a safe proof of identity
-
-
-### Sign-in modes for when no browser is available — inside a container or remote workspace
-
-
-### Where the clouds differ, stated explicitly — no abstraction layer
-
-
-### The `gcs` and `azurerm` state backends — reference only
-
-
-
-## 5. What tripped me up
-
-<!-- Add a row whenever you lose more than about ten minutes. These become the course's common-errors entries, so keep the exact error text. -->
-
-| What happened (symptom or error text) | What I assumed | What it actually was | How I found out and fixed it |
-| --- | --- | --- | --- |
-| | | | |
-
-## 6. Checkpoint evidence
-
-<!-- One row per definition-of-done item in the brief. Paste real output, trimmed to the relevant lines, or link a screenshot. Redact anything sensitive. A row with no evidence is not done. -->
-
-| Item | Evidence | Reviewer |
-| --- | --- | --- |
-| **DoD-1** Both configurations pass formatting and validation checks. | | |
-| **DoD-2** Both configurations plan successfully and the plan output includes an identity output for each cloud (output pasted). | | |
-| **DoD-3** The GCP project and the Azure subscription are set explicitly in configuration. | | |
-| **DoD-4** No secrets or keys exist in the repository or on disk (the scan you ran is in your evidence). | | |
-| **DoD-5** Neither configuration creates a resource (the plan shows nothing to add). | | |
-| **DoD-6** Your written comparison of cloud differences agrees with the trainer's model answer on review. | | |
-
-## 7. Versions and sources
-
-**Versions this was written for:** <!-- Terraform, each provider and each CLI, exact versions. -->
-
-**Official documentation used:** <!-- Links, one per concept or step that relied on them. -->
-
-## 8. Before I submit
-
-- [ ] Every definition-of-done item has evidence in section 6
-- [ ] I followed section 3 from a clean start and it worked as written
-- [ ] Every concept in section 4 is in my own words
-- [ ] Every open design question in section 2 has a reasoned answer, including what I gave up
-- [ ] Section 5 records everything that cost me real time
-- [ ] No credentials, tokens or key material appear anywhere in this file or my repository
-- [ ] Status above is set to "In review"
+If you started this stage over today, what would you change?

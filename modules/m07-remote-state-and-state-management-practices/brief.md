@@ -3,10 +3,9 @@
 | | |
 | --- | --- |
 | Stage | 7 of 12 |
-| Course reference | Module 7 / Activity 7 "Remote state" (solution-design §6.2, §6.4) |
 | Cloud | AWS |
 | Builds on | M06 |
-| Time box | TBC — see [README](../README.md#open-items-for-the-trainer) |
+| Cost | The bucket you keep bills for as long as it exists, so look up what it bills before you create it. Destroy everything else at the end of the stage. |
 | Leaves behind | **The state bucket** — the only thing kept. Everything else is destroyed. |
 
 ## Objective
@@ -24,23 +23,24 @@ Move state off your laptop into a remote backend that is versioned, encrypted, l
 5. Native S3 state locking, and why DynamoDB-based locking is no longer taught
 6. Proving that locking works
 7. A bucket that outlives its stage — lifecycle and eventual retirement
+8. A lock left behind — what it means, what to check, and recovering safely
 
 ### Out of scope
 
-- DynamoDB-based locking, except to explain why it is deprecated (ADR-006)
-- HCP Terraform and any backend other than S3 (ADR-006)
-- GitLab-managed Terraform state — mention only, as something you may meet (ADR-016)
+- DynamoDB-based locking, except to explain why it is deprecated
+- HCP Terraform and any backend other than S3
+- GitLab-managed Terraform state — mention only, as something you may meet
 - The `gcs` and `azurerm` backends (reference only, M12)
 - Per-environment state layout (M08)
 
 ## Stack constraints
 
-- Everything under [Rules for every stage](../README.md#rules-for-every-stage).
-- S3 backend with Terraform's native state locking (ADR-006). No DynamoDB table.
+- Everything under [Rules for every stage](../../README.md#rules-for-every-stage).
+- S3 backend with Terraform's native state locking. No DynamoDB table.
 - Terraform 1.11 or later — native locking is generally available from 1.11. Verify every locking claim in your write-up against the release notes of the pinned version before you write it down.
 - The bucket is bootstrapped from a local-state configuration, then retained. It is the one exception to the destroy-at-the-end rule.
 - Existing local state is migrated into the backend, not recreated.
-- Your sandbox role must be able to create and delete the lock object. If it cannot, tell the trainer — it is a sandbox-contract gap (ADR-005), not something to work around.
+- Your sandbox role must be able to create and delete the lock object. If it cannot, tell the trainer — it is a gap in your sandbox access, not something to work around.
 
 ## Deliverable
 
@@ -61,11 +61,12 @@ Move state off your laptop into a remote backend that is versioned, encrypted, l
 - [ ] **DoD-4** The backend configuration enables native locking and no DynamoDB table is used or created.
 - [ ] **DoD-5** A plan after migrating local state shows no changes — nothing was recreated.
 - [ ] **DoD-6** With one operation in progress, a second is refused with a lock error (the error output pasted).
-- [ ] **DoD-7** The bucket is retained and everything else is destroyed, confirmed from the cloud side.
-- [ ] **DoD-8** No static keys and no state file contents are committed to version control.
+- [ ] **DoD-7** A lock has been left behind deliberately, and you recovered without losing or corrupting state (the error and the recovery output pasted).
+- [ ] **DoD-8** The bucket is retained and everything else is destroyed, confirmed from the cloud side.
+- [ ] **DoD-9** No static keys and no state file contents are committed to version control.
 
 ## Best practices this stage demonstrates
 
-- State hygiene (Activity 7 bucket checks)
-- Remote state with locking (Activity 7 check)
+- State hygiene
+- Remote state with locking
 - fmt and validate

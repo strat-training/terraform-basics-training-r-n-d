@@ -3,10 +3,9 @@
 | | |
 | --- | --- |
 | Stage | 9 of 12 |
-| Course reference | None — added at the trainer's request. The solution design names `for_each` over `count` (§7, Activity 4) and, in ADR-015, preconditions and postconditions, but gives neither a stage of its own. |
 | Cloud | AWS |
 | Builds on | M04, M05, M06 |
-| Time box | TBC — see [README](../README.md#open-items-for-the-trainer) |
+| Cost | Free or near-free resources only. Look up what each one bills before you apply, and destroy everything except the M07 bucket at the end of the stage. |
 | Leaves behind | Nothing except the M07 state bucket. Destroy everything else. |
 
 ## Objective
@@ -32,14 +31,13 @@ Use Terraform's more advanced language features to describe infrastructure from 
 
 - The basics of repeating a resource (M04) and typed, validated variables (M05)
 - Authoring reusable modules (M10)
-- Ephemeral values and write-only arguments — not covered until checked against the pinned version (see README, proposed additions)
-- Policy-as-code engines — preconditions and postconditions are the course's native route (ADR-015)
-- `terraform test` (ADR-015)
+- Policy-as-code engines — preconditions and postconditions are the course's native route
+- `terraform test`
 
 ## Stack constraints
 
-- Everything under [Rules for every stage](../README.md#rules-for-every-stage).
-- AWS only. Choose resources that are free or near-free to run. No NAT gateway (ADR-011).
+- Everything under [Rules for every stage](../../README.md#rules-for-every-stage).
+- AWS only. Choose resources that are free or near-free to run. No NAT gateway.
 - Terraform 1.11 or later, provider versions pinned from `versions.env`.
 - State lives in the M07 bucket under its own key.
 - Data sources are used for reading what already exists; they do not create anything.
@@ -76,8 +74,8 @@ Use Terraform's more advanced language features to describe infrastructure from 
 
 ## Best practices this stage demonstrates
 
-- `for_each` over `count` (extends the Activity 4 check)
+- `for_each` over `count`
 - Typed, validated inputs (the shape of the structured input)
 - Plan review (the key-change plans)
 - fmt and validate
-- Not in the current 14-practice list: conditions that check assumptions (named in ADR-015, not mapped in the coverage matrix)
+- Conditions that check assumptions (preconditions and postconditions)

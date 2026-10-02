@@ -3,10 +3,9 @@
 | | |
 | --- | --- |
 | Stage | 11 of 12 |
-| Course reference | Solution-design Module 9 / Activity 9 "Refactor" (§6.2); stage 11 here because M09 and M10 are new |
 | Cloud | AWS |
 | Builds on | M03, M06, M07, M10 |
-| Time box | TBC — see [README](../README.md#open-items-for-the-trainer) |
+| Cost | Look up what each resource in your plan bills before you apply, and destroy everything except the M07 bucket at the end of the stage. |
 | Leaves behind | Nothing except the M07 state bucket. |
 
 ## Objective
@@ -22,20 +21,21 @@ Rename, adopt and stop managing resources without destroying anything, by changi
 3. Adopting an existing, unmanaged resource into Terraform
 4. Tidying generated configuration
 5. Ceasing to manage a resource without destroying it
-6. Verifying every refactor with a plan — zero destroys, zero replacements
+6. Verifying every refactor with a plan
 7. Reading a saved plan as JSON with `jq` — checking the action on every resource mechanically
 8. Targeted operations — an emergency tool, never routine
 9. Reading legacy guidance that relies on imperative state commands
+10. When an apply goes wrong — a partial apply, a failed destroy, and reading provider errors
 
 ### Out of scope
 
-- Imperative state mutation as the method for any refactor (ADR-008)
+- Imperative state mutation as the method for any refactor
 - Editing state by hand
 
 ## Stack constraints
 
-- Everything under [Rules for every stage](../README.md#rules-for-every-stage).
-- Every refactor is a declarative change in configuration, reviewable as code. State subcommands are for inspection only and are not how any refactor here is performed (ADR-008, which is still Proposed).
+- Everything under [Rules for every stage](../../README.md#rules-for-every-stage).
+- Every refactor is a declarative change in configuration. State subcommands are for inspection only and are not how any refactor here is performed.
 - State lives in the M07 bucket under its own key.
 - Terraform 1.11 or later. Verify the refactoring features you rely on against the release notes of the pinned version before you write them up.
 - The resource you adopt must genuinely exist outside Terraform's management beforehand.
@@ -51,6 +51,7 @@ Rename, adopt and stop managing resources without destroying anything, by changi
 2. What did the generated configuration get wrong or leave out, and how did you decide what to keep?
 3. When a resource stops being managed, what is responsible for it afterwards, and how do you avoid orphaning cost?
 4. Why does the course prefer changes that appear in a plan over commands that edit state, and when might you still see those commands?
+5. How do you recover when an apply stops part-way, and what do you check before you run it again?
 
 ## Definition of done
 
@@ -60,12 +61,14 @@ Rename, adopt and stop managing resources without destroying anything, by changi
 - [ ] **DoD-4** The adopted resource is in state and described by configuration, and a plan after adoption shows no changes.
 - [ ] **DoD-5** The stop-managing resource still exists in AWS afterwards and Terraform no longer tracks it.
 - [ ] **DoD-6** Each refactor is visible as a reviewable change in configuration (the diff is in your evidence).
-- [ ] **DoD-7** Your write-up declares that no state-mutating command was used for any refactor.
+- [ ] **DoD-7** Your write-up lists every command you ran against state and what each one did.
 - [ ] **DoD-8** Your note on legacy imperative commands says when you will meet them and what the declarative equivalent is.
-- [ ] **DoD-9** No billable resource is left behind, including anything Terraform no longer manages; only the M07 bucket remains.
+- [ ] **DoD-9** You have caused an apply to stop part-way, captured the error and what state holds afterwards, and brought the configuration back to a clean plan without editing state by hand (output pasted).
+- [ ] **DoD-10** Your write-up explains how to read a provider error, and what to do after a failed destroy.
+- [ ] **DoD-11** No billable resource is left behind; only the M07 bucket remains.
 
 ## Best practices this stage demonstrates
 
-- Refactoring blocks (Activity 9 check)
-- Plan review (Activity 9 plan assertions)
+- Refactoring blocks
+- Plan review
 - fmt and validate

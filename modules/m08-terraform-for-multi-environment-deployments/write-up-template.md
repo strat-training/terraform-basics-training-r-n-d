@@ -1,153 +1,76 @@
-# M08 — Terraform for Multi-Environment Deployments — write-up
+# M08 — Terraform for Multi-Environment Deployments — Write-up
 
-> **How to use this file.** Copy it to `write-up.md` in this folder and fill in the copy; leave this template blank for the next cohort. Write each section **while you build**, in the same sitting as the work — not after it works. The brief is in [brief.md](brief.md); do not edit it. Never paste credentials, tokens or key material anywhere in this file.
+> This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
 
 | | |
 | --- | --- |
 | Trainee | |
 | Status | Draft <!-- Draft → In review → Revising → Accepted --> |
-| Build location | <!-- repository and branch or merge request holding your Terraform code --> |
-| Started / finished | |
-| Hours spent | <!-- an honest total — the trainer uses it to set time boxes --> |
+| Build location | <!-- your GitLab repository and branch or merge request holding your Terraform code --> |
+| Hours spent | <!-- an honest total --> |
 
-## 1. What I built
+## What I built
 
-<!-- Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome. A reader should know what exists before they read how you got there. -->
+Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome.
 
-## 2. Key decisions and tradeoffs
+## Why it's built this way (key decisions)
 
-<!-- One entry per open design question from the brief, then any further decision of your own worth recording. Say what you considered, what you chose, why, and what you gave up. "The docs said so" is not a reason. -->
+One entry per open design question in the brief, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-### Q1. What makes it easy to apply one environment's values to the other's state, and what will you do to make that harder?
+- What makes it easy to apply one environment's values to the other's state, and what will you do to make that harder?
+- Which tags would a clean-up or cost report need beyond `Environment`, and why?
+- How should the files be laid out so a newcomer finds each concern without being told?
+- When would workspaces be the right tool, and what do you give up by not using them here?
+- When would a directory per environment be the right tool, and what do you give up by not using it here?
+- In what ways does keeping both environments in one account misrepresent real practice?
+- Where did you spend the most time, and why?
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+## AI collaboration log
 
-### Q2. Which tags would a clean-up or cost report need beyond `Environment`, and why?
+If you used AI tools, be specific, not a vague "I used AI to help write some code". If you used none, say so in one line.
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+- Which AI tool(s) did you use, and for roughly what portion of the work?
+- Give 2–3 concrete examples of what you asked for.
+- At least one moment the tool's first suggestion was wrong, inefficient, or didn't fit your design — what was wrong with it, how you noticed, and what you did instead.
+- What did you accept largely as-is, and what did you rewrite or redesign yourself?
 
-### Q3. How should the files be laid out so a newcomer finds each concern without being told?
+## How to build it (teach it to the next engineer)
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
 
-### Q4. When would workspaces be the right tool, and what do you give up by not using them here?
+## Concepts worth explaining
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-### Q5. When would a directory per environment be the right tool, and what do you give up by not using it here?
+- One configuration, many environments — what is shared and what must be separate
+- Per-environment input values
+- Per-environment backend settings and separate state keys in the shared bucket
+- Blast radius — what separate state does and does not protect
+- The standard file layout for a root configuration
+- A naming convention and required tags applied through provider defaults
+- Switching between environments safely
+- Other ways to separate environments — a directory per environment, and workspaces — and when each fits (explained, not used)
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+## What tripped me up
 
-### Q6. In what ways does keeping both environments in one account misrepresent real practice?
+The real obstacles — errors, wrong assumptions, anything that cost you real time. Keep the exact error text; these become the course's common-errors list.
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+## Checkpoint evidence
 
+Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-### Additional decisions
+- DoD-1: Two state objects exist in the bucket under different keys (listing pasted).
+- DoD-2: Both environments produce clean plans (output for each).
+- DoD-3: Environment-specific inputs differ between the two environments and live outside the main configuration files.
+- DoD-4: Every resource follows the naming convention and carries the required tags (shown from the plan, state or cloud side).
+- DoD-5: The file layout follows the standard root-configuration layout; a reviewer can find each concern from file names alone.
+- DoD-6: The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits.
+- DoD-7: Both environments are destroyed and the bucket is retained, confirmed from the cloud side.
 
-<!-- Add as many as you need, in the same shape. -->
+## Definition-of-done self-assessment
 
-## 3. How to build it
+Score yourself honestly against every item in the definition of done in `brief.md` before your trainer reviews it: met, partly met or not met, and why. Then rate yourself against each criterion of the stage rubric in the README. Name any part of your own work you would struggle to explain cold, without re-reading it first.
 
-<!-- This section becomes the teaching content, so write it for a learner who has finished the previous stage and has not seen this one. They will follow it alone, with no trainer to ask. Include the commands and code they need, the reason for each step, what they should see afterwards, and where to stop and check before moving on. -->
+## What I'd do differently
 
-### Before you start
-
-<!-- What the learner needs in place: earlier stages, access, tools, versions. -->
-
-### Steps
-
-<!-- Numbered, in the order you would do them again. -->
-
-### How you know it worked
-
-<!-- What the learner can check to be sure, without asking you. -->
-
-### Clean-up
-
-<!-- Exactly what to destroy or retire, and how to confirm nothing is left. -->
-
-## 4. Concepts in my own words
-
-<!-- For each concept: explain it as you would to a colleague, in your own words — no pasted definitions. Give one example from your build and one thing it is commonly confused with. -->
-
-### One configuration, many environments — what is shared and what must be separate
-
-
-### Per-environment input values
-
-
-### Per-environment backend settings and separate state keys in the shared bucket
-
-
-### Blast radius — what separate state does and does not protect
-
-
-### The standard file layout for a root configuration
-
-
-### A naming convention and required tags applied through provider defaults
-
-
-### Switching between environments safely
-
-
-### Other ways to separate environments — a directory per environment, and workspaces — and when each fits (explained, not used)
-
-
-
-## 5. What tripped me up
-
-<!-- Add a row whenever you lose more than about ten minutes. These become the course's common-errors entries, so keep the exact error text. -->
-
-| What happened (symptom or error text) | What I assumed | What it actually was | How I found out and fixed it |
-| --- | --- | --- | --- |
-| | | | |
-
-## 6. Checkpoint evidence
-
-<!-- One row per definition-of-done item in the brief. Paste real output, trimmed to the relevant lines, or link a screenshot. Redact anything sensitive. A row with no evidence is not done. -->
-
-| Item | Evidence | Reviewer |
-| --- | --- | --- |
-| **DoD-1** Two state objects exist in the bucket under different keys (listing pasted). | | |
-| **DoD-2** Both environments produce clean plans (output for each). | | |
-| **DoD-3** Environment-specific inputs differ between the two environments and live outside the main configuration files. | | |
-| **DoD-4** Every resource follows the naming convention and carries the required tags (shown from the plan, state or cloud side). | | |
-| **DoD-5** The file layout follows the standard root-configuration layout; a reviewer can find each concern from file names alone. | | |
-| **DoD-6** The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits. | | |
-| **DoD-7** Both environments are destroyed and the bucket is retained, confirmed from the cloud side. | | |
-
-## 7. Versions and sources
-
-**Versions this was written for:** <!-- Terraform, each provider and each CLI, exact versions. -->
-
-**Official documentation used:** <!-- Links, one per concept or step that relied on them. -->
-
-## 8. Before I submit
-
-- [ ] Every definition-of-done item has evidence in section 6
-- [ ] I followed section 3 from a clean start and it worked as written
-- [ ] Every concept in section 4 is in my own words
-- [ ] Every open design question in section 2 has a reasoned answer, including what I gave up
-- [ ] Section 5 records everything that cost me real time
-- [ ] No credentials, tokens or key material appear anywhere in this file or my repository
-- [ ] Status above is set to "In review"
+If you started this stage over today, what would you change?

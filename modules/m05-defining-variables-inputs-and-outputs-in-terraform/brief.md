@@ -3,10 +3,9 @@
 | | |
 | --- | --- |
 | Stage | 5 of 12 |
-| Course reference | Module 5 / Activity 5 "Variables" (solution-design §6.2), extended at the trainer's request with value precedence and sensitive inputs and outputs |
 | Cloud | AWS |
 | Builds on | M04 (you may reuse that work) |
-| Time box | TBC — see [README](../README.md#open-items-for-the-trainer) |
+| Cost | Small, cheap resources only. Look up what each resource in your plan bills before you apply, and destroy everything at the end of the stage. |
 | Leaves behind | Nothing. Destroy everything. |
 
 ## Objective
@@ -33,14 +32,14 @@ Turn a hard-wired configuration into a parameterised one with typed, described a
 - Per-environment backends and state (M08)
 - Sensitive values in state — how they get there and who can read them (M06)
 - Secrets managers and credential stores — not covered in these stages
-- Policy-as-code engines (ADR-015)
+- Policy-as-code engines
 - Reusable Terraform modules (M10)
 
 ## Stack constraints
 
-- Everything under [Rules for every stage](../README.md#rules-for-every-stage).
+- Everything under [Rules for every stage](../../README.md#rules-for-every-stage).
 - AWS only. The AWS region, the network address ranges and the resource name prefix must all be inputs.
-- Validation uses only what Terraform provides natively; no external policy tooling (ADR-015).
+- Validation uses only what Terraform provides natively; no external policy tooling.
 - **Precedence experiments are mutually exclusive.** Each experiment lets exactly one source supply the variable, so every result can be attributed to that source. Only after every source has been tried alone may you combine sources to establish which wins.
 - Use throwaway placeholder values for every sensitive input. Never use a real credential.
 - State is local in this stage and is never committed.
@@ -78,6 +77,6 @@ Turn a hard-wired configuration into a parameterised one with typed, described a
 
 ## Best practices this stage demonstrates
 
-- Typed, validated inputs (Activity 5 check)
+- Typed, validated inputs
 - fmt and validate
 - Not in the current 14-practice list: value precedence, and handling sensitive inputs and outputs

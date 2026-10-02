@@ -1,4 +1,14 @@
-# M07 — Remote State and State Management Practices — Write-up
+# <Stage ID> — <Stage title> — Write-up
+
+<!--
+TEMPLATE: stage write-up. Copy to modules/<stage-folder>/write-up-template.md and replace every
+<placeholder>. Delete these comments when you are done. The trainee copies the result to write-up.md
+and fills in the copy, so the file in the stage folder stays blank for the next cohort.
+
+Generate the lists from the stage's brief, word for word: the open design questions under "Why it's
+built this way", the scope items under "Concepts worth explaining", and the definition-of-done items
+under "Checkpoint evidence". The other six sections are the same in every stage.
+-->
 
 > This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
 
@@ -17,10 +27,8 @@ Describe the deliverable named in the brief: what it is, what it does, how it is
 
 One entry per open design question in the brief, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-- Who and what needs access to the state bucket, and how narrow can you make that without breaking Terraform?
-- How did you solve the problem of creating the thing that stores your state, and what would you do differently on a team?
-- What happens if a lock is left behind, and what must you check before overriding one?
-- Why is this bucket kept when everything else is destroyed, and what risk does that carry?
+- <open design question 1, from the brief>
+- <open design question 2, from the brief>
 - Where did you spend the most time, and why?
 
 ## AI collaboration log
@@ -34,20 +42,14 @@ If you used AI tools, be specific, not a vague "I used AI to help write some cod
 
 ## How to build it (teach it to the next engineer)
 
-Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
+Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader is new to Terraform and to this course.
 
 ## Concepts worth explaining
 
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-- Why state moves to a remote backend, and what locking prevents
-- The bootstrapping problem — where the state bucket itself comes from
-- Protecting the bucket — versioning, encryption at rest, blocked public access, restricted access
-- Configuring the backend and migrating existing local state into it
-- Native S3 state locking, and why DynamoDB-based locking is no longer taught
-- Proving that locking works
-- A bucket that outlives its stage — lifecycle and eventual retirement
-- A lock left behind — what it means, what to check, and recovering safely
+- <scope item 1, from the brief>
+- <scope item 2, from the brief>
 
 ## What tripped me up
 
@@ -57,15 +59,8 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: A state object for your configuration exists in the bucket (listing pasted).
-- DoD-2: Versioning is enabled on the bucket (shown from the cloud side).
-- DoD-3: Encryption at rest is enabled and public access is fully blocked (shown from the cloud side).
-- DoD-4: The backend configuration enables native locking and no DynamoDB table is used or created.
-- DoD-5: A plan after migrating local state shows no changes — nothing was recreated.
-- DoD-6: With one operation in progress, a second is refused with a lock error (the error output pasted).
-- DoD-7: A lock has been left behind deliberately, and you recovered without losing or corrupting state (the error and the recovery output pasted).
-- DoD-8: The bucket is retained and everything else is destroyed, confirmed from the cloud side.
-- DoD-9: No static keys and no state file contents are committed to version control.
+- DoD-1: <definition-of-done item 1, from the brief>
+- DoD-2: <definition-of-done item 2, from the brief>
 
 ## Definition-of-done self-assessment
 

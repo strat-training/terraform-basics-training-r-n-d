@@ -3,10 +3,9 @@
 | | |
 | --- | --- |
 | Stage | 4 of 12 |
-| Course reference | Module 4 / Activity 4 "Network" (solution-design §6.2) |
 | Cloud | AWS |
 | Builds on | M03 |
-| Time box | TBC — see [README](../README.md#open-items-for-the-trainer) |
+| Cost | Some networking resources bill by the hour (see scope 7). Look up what each resource in your plan bills before you apply, and destroy everything at the end of the stage. |
 | Leaves behind | Nothing. Destroy everything. |
 
 ## Objective
@@ -19,7 +18,7 @@ Provision a small AWS network and use it to understand how Terraform works out w
 
 1. Resource references and the dependency graph Terraform builds from them
 2. Implicit versus explicit dependencies
-3. Repeating a resource — the two mechanisms Terraform offers and the course's preference
+3. Repeating a resource — the two mechanisms Terraform offers
 4. Data sources — reading information that already exists, and how it differs from a resource
 5. A VPC, subnets in more than one availability zone, and the routing a public tier needs
 6. Public versus private subnets — what makes a subnet public
@@ -27,7 +26,7 @@ Provision a small AWS network and use it to understand how Terraform works out w
 
 ### Out of scope
 
-- NAT gateways — hourly billing, so not used in these stages (ADR-011)
+- NAT gateways — hourly billing, so not used in these stages
 - Compute instances, security groups and IAM roles — not covered in these stages
 - Variables and validation (M05)
 - Advanced repetition, dynamic blocks and in-depth data sources (M09)
@@ -35,10 +34,10 @@ Provision a small AWS network and use it to understand how Terraform works out w
 
 ## Stack constraints
 
-- Everything under [Rules for every stage](../README.md#rules-for-every-stage).
-- AWS only. No NAT gateway anywhere in this stage (ADR-011).
+- Everything under [Rules for every stage](../../README.md#rules-for-every-stage).
+- AWS only. No NAT gateway anywhere in this stage.
 - State is local in this stage.
-- Anything repeated across availability zones uses the mechanism the course prefers (see Definition of done).
+- Anything repeated across availability zones is repeated by one of the mechanisms in scope, and your write-up says which.
 
 ## Deliverable
 
@@ -56,7 +55,7 @@ Provision a small AWS network and use it to understand how Terraform works out w
 
 - [ ] **DoD-1** Formatting and validation checks pass with no errors.
 - [ ] **DoD-2** The plan contains the VPC, subnets in at least two availability zones, and the routing for the public tier (resource addresses shown from the plan output or its JSON form).
-- [ ] **DoD-3** Subnets are created from a keyed collection; the `count` meta-argument is not used to repeat any resource (a reviewer reads the configuration to confirm).
+- [ ] **DoD-3** Subnets in more than one availability zone are created by repeating one resource block rather than writing each one out (a reviewer reads the configuration).
 - [ ] **DoD-4** At least one value the configuration needs about the account or region is read with a data source rather than hard-coded (a reviewer reads the configuration).
 - [ ] **DoD-5** No NAT gateway appears in the plan or in state.
 - [ ] **DoD-6** Your note names the implicit dependencies in your configuration and where each one comes from.
@@ -64,6 +63,6 @@ Provision a small AWS network and use it to understand how Terraform works out w
 
 ## Best practices this stage demonstrates
 
-- Implicit dependencies (Activity 4 note)
-- `for_each` over `count` (Activity 4 check)
+- Implicit dependencies
+- `for_each` over `count`
 - fmt and validate

@@ -1,143 +1,74 @@
-# M04 — Managing Resources with Network Provisioning — write-up
+# M04 — Managing Resources with Network Provisioning — Write-up
 
-> **How to use this file.** Copy it to `write-up.md` in this folder and fill in the copy; leave this template blank for the next cohort. Write each section **while you build**, in the same sitting as the work — not after it works. The brief is in [brief.md](brief.md); do not edit it. Never paste credentials, tokens or key material anywhere in this file.
+> This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
 
 | | |
 | --- | --- |
 | Trainee | |
 | Status | Draft <!-- Draft → In review → Revising → Accepted --> |
-| Build location | <!-- repository and branch or merge request holding your Terraform code --> |
-| Started / finished | |
-| Hours spent | <!-- an honest total — the trainer uses it to set time boxes --> |
+| Build location | <!-- your GitLab repository and branch or merge request holding your Terraform code --> |
+| Hours spent | <!-- an honest total --> |
 
-## 1. What I built
+## What I built
 
-<!-- Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome. A reader should know what exists before they read how you got there. -->
+Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome.
 
-## 2. Key decisions and tradeoffs
+## Why it's built this way (key decisions)
 
-<!-- One entry per open design question from the brief, then any further decision of your own worth recording. Say what you considered, what you chose, why, and what you gave up. "The docs said so" is not a reason. -->
+One entry per open design question in the brief, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-### Q1. Where in your configuration did you rely on Terraform to infer ordering, and was there anywhere you felt you had to state it explicitly? Why?
+- Where in your configuration did you rely on Terraform to infer ordering, and was there anywhere you felt you had to state it explicitly? Why?
+- What are the trade-offs between the two ways of repeating a resource, and why does the course want one preferred?
+- What happens to your existing subnets if you later add or remove one from the set you are repeating over?
+- What distinguishes a public subnet from a private one in AWS, and how would you prove which is which?
+- What is the difference between a resource and a data source in what Terraform manages, and what happens to each when you destroy?
+- Where did you spend the most time, and why?
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+## AI collaboration log
 
-### Q2. What are the trade-offs between the two ways of repeating a resource, and why does the course want one preferred?
+If you used AI tools, be specific, not a vague "I used AI to help write some code". If you used none, say so in one line.
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+- Which AI tool(s) did you use, and for roughly what portion of the work?
+- Give 2–3 concrete examples of what you asked for.
+- At least one moment the tool's first suggestion was wrong, inefficient, or didn't fit your design — what was wrong with it, how you noticed, and what you did instead.
+- What did you accept largely as-is, and what did you rewrite or redesign yourself?
 
-### Q3. What happens to your existing subnets if you later add or remove one from the set you are repeating over?
+## How to build it (teach it to the next engineer)
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
 
-### Q4. What distinguishes a public subnet from a private one in AWS, and how would you prove which is which?
+## Concepts worth explaining
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-### Q5. What is the difference between a resource and a data source in what Terraform manages, and what happens to each when you destroy?
+- Resource references and the dependency graph Terraform builds from them
+- Implicit versus explicit dependencies
+- Repeating a resource — the two mechanisms Terraform offers
+- Data sources — reading information that already exists, and how it differs from a resource
+- A VPC, subnets in more than one availability zone, and the routing a public tier needs
+- Public versus private subnets — what makes a subnet public
+- Cost awareness — why some networking resources bill by the hour
 
-- Options considered:
-- Chosen:
-- Why:
-- Trade-off accepted:
+## What tripped me up
 
+The real obstacles — errors, wrong assumptions, anything that cost you real time. Keep the exact error text; these become the course's common-errors list.
 
-### Additional decisions
+## Checkpoint evidence
 
-<!-- Add as many as you need, in the same shape. -->
+Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-## 3. How to build it
+- DoD-1: Formatting and validation checks pass with no errors.
+- DoD-2: The plan contains the VPC, subnets in at least two availability zones, and the routing for the public tier (resource addresses shown from the plan output or its JSON form).
+- DoD-3: Subnets in more than one availability zone are created by repeating one resource block rather than writing each one out (a reviewer reads the configuration).
+- DoD-4: At least one value the configuration needs about the account or region is read with a data source rather than hard-coded (a reviewer reads the configuration).
+- DoD-5: No NAT gateway appears in the plan or in state.
+- DoD-6: Your note names the implicit dependencies in your configuration and where each one comes from.
+- DoD-7: Everything is destroyed, confirmed from the cloud side.
 
-<!-- This section becomes the teaching content, so write it for a learner who has finished the previous stage and has not seen this one. They will follow it alone, with no trainer to ask. Include the commands and code they need, the reason for each step, what they should see afterwards, and where to stop and check before moving on. -->
+## Definition-of-done self-assessment
 
-### Before you start
+Score yourself honestly against every item in the definition of done in `brief.md` before your trainer reviews it: met, partly met or not met, and why. Then rate yourself against each criterion of the stage rubric in the README. Name any part of your own work you would struggle to explain cold, without re-reading it first.
 
-<!-- What the learner needs in place: earlier stages, access, tools, versions. -->
+## What I'd do differently
 
-### Steps
-
-<!-- Numbered, in the order you would do them again. -->
-
-### How you know it worked
-
-<!-- What the learner can check to be sure, without asking you. -->
-
-### Clean-up
-
-<!-- Exactly what to destroy or retire, and how to confirm nothing is left. -->
-
-## 4. Concepts in my own words
-
-<!-- For each concept: explain it as you would to a colleague, in your own words — no pasted definitions. Give one example from your build and one thing it is commonly confused with. -->
-
-### Resource references and the dependency graph Terraform builds from them
-
-
-### Implicit versus explicit dependencies
-
-
-### Repeating a resource — the two mechanisms Terraform offers and the course's preference
-
-
-### Data sources — reading information that already exists, and how it differs from a resource
-
-
-### A VPC, subnets in more than one availability zone, and the routing a public tier needs
-
-
-### Public versus private subnets — what makes a subnet public
-
-
-### Cost awareness — why some networking resources bill by the hour
-
-
-
-## 5. What tripped me up
-
-<!-- Add a row whenever you lose more than about ten minutes. These become the course's common-errors entries, so keep the exact error text. -->
-
-| What happened (symptom or error text) | What I assumed | What it actually was | How I found out and fixed it |
-| --- | --- | --- | --- |
-| | | | |
-
-## 6. Checkpoint evidence
-
-<!-- One row per definition-of-done item in the brief. Paste real output, trimmed to the relevant lines, or link a screenshot. Redact anything sensitive. A row with no evidence is not done. -->
-
-| Item | Evidence | Reviewer |
-| --- | --- | --- |
-| **DoD-1** Formatting and validation checks pass with no errors. | | |
-| **DoD-2** The plan contains the VPC, subnets in at least two availability zones, and the routing for the public tier (resource addresses shown from the plan output or its JSON form). | | |
-| **DoD-3** Subnets are created from a keyed collection; the `count` meta-argument is not used to repeat any resource (a reviewer reads the configuration to confirm). | | |
-| **DoD-4** At least one value the configuration needs about the account or region is read with a data source rather than hard-coded (a reviewer reads the configuration). | | |
-| **DoD-5** No NAT gateway appears in the plan or in state. | | |
-| **DoD-6** Your note names the implicit dependencies in your configuration and where each one comes from. | | |
-| **DoD-7** Everything is destroyed, confirmed from the cloud side. | | |
-
-## 7. Versions and sources
-
-**Versions this was written for:** <!-- Terraform, each provider and each CLI, exact versions. -->
-
-**Official documentation used:** <!-- Links, one per concept or step that relied on them. -->
-
-## 8. Before I submit
-
-- [ ] Every definition-of-done item has evidence in section 6
-- [ ] I followed section 3 from a clean start and it worked as written
-- [ ] Every concept in section 4 is in my own words
-- [ ] Every open design question in section 2 has a reasoned answer, including what I gave up
-- [ ] Section 5 records everything that cost me real time
-- [ ] No credentials, tokens or key material appear anywhere in this file or my repository
-- [ ] Status above is set to "In review"
+If you started this stage over today, what would you change?
