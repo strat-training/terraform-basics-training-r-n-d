@@ -10,13 +10,21 @@ Reusable starting points for new stages and capstones. Copy one into the folder 
 | [capstone-brief.md](capstone-brief.md) | `modules/capstone/brief.md` | A capstone brief: AI-assisted development policy, requirements, presentation, rubric |
 | [capstone-write-up-template.md](capstone-write-up-template.md) | `modules/capstone/write-up-template.md` | The blank write-up for a capstone |
 | [capstone-tasks.md](capstone-tasks.md) | `modules/capstone/tasks.md` | The shape of a capstone checklist, written by hand |
-| [trainee-task-planner.md](trainee-task-planner.md) | — | A copy of the `/trainee-task-planner` command |
+| [course-readme.md](course-readme.md) | `README.md` (repository root) | The trainee-facing course README: how a stage works, the stages, the capstone, the rules and the stage rubric |
+| [trainee-task-planner.md](trainee-task-planner.md) | `.claude/commands/trainee-task-planner.md` | The `/trainee-task-planner` command, which generates a stage checklist without leaking answers |
+| [build-to-teach-playbook.md](build-to-teach-playbook.md) | — | The step-by-step prompt sequence for building a course repository like this one, for another trainer to reuse |
 
 ## The planner command
 
 [trainee-task-planner.md](trainee-task-planner.md) is a copy of `.claude/commands/trainee-task-planner.md`. The command only runs from `.claude/commands/`, and that folder is not tracked in git, so this copy is the one that is kept. If you change the command, copy it here too, or the two will drift.
 
 To use it on a new machine, copy it into `.claude/commands/`. It reads a stage's `brief.md` and `write-up-template.md` and writes `tasks.md` beside them. It covers stage briefs only.
+
+## Starting a course
+
+Follow [build-to-teach-playbook.md](build-to-teach-playbook.md): it settles the decisions to make first, then takes you from the stage list to a validated repository, one prompt at a time, using the templates in this folder.
+
+Copy `course-readme.md` to the repository root as `README.md` and fill it in. It is written for the trainee, so keep trainer and maintainer notes out of it and put them in `docs/README.md`. Keep its "Rules for every stage" heading, because the stage checklists link to it.
 
 ## Adding a stage
 
