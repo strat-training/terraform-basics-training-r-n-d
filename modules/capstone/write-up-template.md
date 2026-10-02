@@ -61,7 +61,7 @@ Show: both stacks applying and the clean plan after each apply; failure proofs 1
 
 ## Rubric self-assessment
 
-Score yourself honestly against all six criteria in the fixed rubric in `brief.md` before your panel reviews it — where do you think you land, and why? For understanding specifically: is there any part of your own work you'd struggle to explain cold, without re-reading it first? Name it here rather than hoping it doesn't come up in the presentation.
+Score yourself honestly against all three criteria in the fixed rubric in `brief.md` before your panel reviews it — where do you think you land, and why? For understanding specifically: is there any part of your own work you'd struggle to explain cold, without re-reading it first? Name it here rather than hoping it doesn't come up in the presentation.
 
 ## What I'd do differently
 

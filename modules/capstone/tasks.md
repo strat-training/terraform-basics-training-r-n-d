@@ -60,6 +60,6 @@
 - [ ] Under “Concepts worth explaining”, pick 2–3 ideas from across the course and explain them in your own words.
 - [ ] Under “What tripped me up”, capture the real obstacles, including what the sandbox allowed and what it blocked.
 - [ ] Under “Checkpoint evidence”, show the evidence the template lists, and keep the saved plans, your release demonstration record and command output in `evidence/`.
-- [ ] Under “Rubric self-assessment”, score yourself against all six criteria; name any part of your work you'd struggle to explain cold.
+- [ ] Under “Rubric self-assessment”, score yourself against all three criteria; name any part of your work you'd struggle to explain cold.
 - [ ] Under “What I'd do differently”, reflect on what you'd change.
 - [ ] Final self-review: re-read your capstone and write-up against the definition of done and the full six-criteria rubric — confirm you're ready for the live walkthrough, not just that it runs.
