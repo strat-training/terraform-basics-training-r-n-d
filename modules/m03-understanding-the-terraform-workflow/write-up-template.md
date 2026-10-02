@@ -46,7 +46,6 @@ Pick 2–3 ideas from this stage and explain each one in your own words, as if t
 - The core workflow — initialise, plan, apply, destroy
 - What a plan shows — reading the action for each resource
 - In-place updates versus replacement
-- What causes a replacement
 - Plan review as a habit — what to check before approving
 - Destroying what you created
 
@@ -63,8 +62,7 @@ Show the evidence for every item in the definition of done in `brief.md`, one by
 - DoD-3: Your write-up identifies the type, name, arguments and attributes of your resource, and shows an attribute whose value you did not set.
 - DoD-4: You made at least one in-place change and at least one forced replacement; the plan output for each was captured before it was applied.
 - DoD-5: Your plan-review note classifies every change you made as in-place or replacement, and your trainer confirms each classification on review.
-- DoD-6: For each classification the note explains the cause in terms of the resource itself, not just the plan's symbols.
-- DoD-7: After destroy the resource is gone — confirmed from the cloud side, not only from Terraform's output.
+- DoD-6: After destroy the resource is gone — confirmed from the cloud side, not only from Terraform's output.
 
 ## Definition-of-done self-assessment
 

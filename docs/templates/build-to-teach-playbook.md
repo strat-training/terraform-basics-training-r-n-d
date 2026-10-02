@@ -2,7 +2,7 @@
 
 A reusable, step-by-step guide for a trainer who wants to run a Build-to-Teach research-and-development course for any technical subject: trainees build real things from briefs, write up how as they go, and the finished pairs become the next cohort's teaching material. Each prompt is in its own block. Replace every `<…>` placeholder, copy the whole block and send it as it is.
 
-This playbook is the updated, reusable version of the prompt sequence that produced this repository. The original prompts are in [../build-to-teach-playbook.md](../build-to-teach-playbook.md); this one adds what that run taught us.
+This playbook is the prompt sequence that produced this repository, with what that run taught us added.
 
 ## What you end up with
 

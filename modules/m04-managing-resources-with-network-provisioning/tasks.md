@@ -19,11 +19,6 @@
 - [ ] Work on: A VPC, subnets in more than one availability zone, and the routing a public tier needs
 - [ ] Work on: Public versus private subnets — what makes a subnet public
 - [ ] Work on: Cost awareness — why some networking resources bill by the hour
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Where in your configuration did you rely on Terraform to infer ordering, and was there anywhere you felt you had to state it explicitly? Why?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What are the trade-offs between the two ways of repeating a resource, and why does the course want one preferred?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What happens to your existing subnets if you later add or remove one from the set you are repeating over?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What distinguishes a public subnet from a private one in AWS, and how would you prove which is which?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What is the difference between a resource and a data source in what Terraform manages, and what happens to each when you destroy?
 - [ ] Have ready: A small AWS network configuration — one VPC with public and private subnets across more than one availability zone and the routing the public tier needs — with no NAT gateway
 
 ## Verify

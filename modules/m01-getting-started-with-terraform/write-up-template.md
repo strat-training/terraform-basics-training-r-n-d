@@ -42,13 +42,10 @@ Write this as a guide someone could actually follow to build this stage from scr
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
 - What Terraform is — infrastructure as code, and the problem Terraform solves
-- The tools the labs need, and what each one is for
-- Installing Terraform at the pinned version on macOS
-- Installing Terraform at the pinned version on Windows
-- Visual Studio Code for Terraform work — installation and the Terraform extension
-- The AWS, Google Cloud and Azure command-line tools, plus Git, `jq` and `curl`
+- The core toolchain — AWS/GCP/Azure CLIs, Git, jq, curl, and their purposes
+- Installing Terraform (macOS/Windows) and managing versions
+- Configuring Visual Studio Code for Terraform work
 - A shell that can run the labs' shell scripts on Windows
-- Switching between Terraform versions with a version manager
 - Verifying the toolchain end to end — versions, and formatting and validation of a configuration that creates nothing
 - OpenTofu differences — optional; you decide whether to include it
 

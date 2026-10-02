@@ -24,7 +24,6 @@ counts the tasks.
 
 ## Build
 
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: every row of “Your design decisions” in `brief.md`.
 - [ ] Work on: <one task per requirement, stage or proof in the brief, in the brief's order — topics, not steps>
 - [ ] (Optional) Work on: <each stretch or distinction item, once everything required is solid>
 - [ ] Commit in stages as you go — not as one commit at the end.

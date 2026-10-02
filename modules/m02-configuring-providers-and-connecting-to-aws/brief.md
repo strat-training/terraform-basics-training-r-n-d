@@ -16,17 +16,14 @@ Sign in to the AWS sandbox with the access you were given, and know at any momen
 
 ### In scope (in the order to tackle)
 
-1. Signing in to the AWS sandbox with the access you were given — IAM Identity Center (SSO) through the AWS CLI
-2. Confirming which identity and account Terraform will act as
-3. Credential lifetime — session expiry, its symptoms, and recovering from it
-4. Keeping static access keys off disk and out of the repository
-5. What a provider is and how Terraform finds and installs one
-6. Version constraints — for Terraform itself and for each provider
-7. The dependency lock file — what it records and why it is committed
-8. Using more than one provider in a single configuration
-9. Provider configuration — how a provider obtains its credentials, and provider-level default tags
-10. Inspecting which providers and versions a configuration actually uses
-11. Upgrading a pinned version deliberately
+1. Authenticating to AWS (IAM Identity Center) and verifying Terraform identity
+2. Keeping static access keys off disk and out of the repository
+3. What a provider is and how Terraform finds and installs one, checking Provider version
+4. Version constraints — for Terraform itself and for each provider
+5. The dependency lock file — what it records and why it is committed
+6. Using more than one provider in a single configuration
+7. Provider configuration — how a provider obtains its credentials, and provider-level default tags
+8. Upgrading a pinned version deliberately
 
 ### Out of scope
 
@@ -51,25 +48,23 @@ Sign in to the AWS sandbox with the access you were given, and know at any momen
 
 ## Open design questions
 
-1. What does a learner see when their session has expired, and how will you help them tell that apart from a genuine permissions problem?
-2. How does the AWS provider decide which credentials to use, and how would you prove which identity a plan is using?
-3. What is the difference between a version constraint you declare and what the lock file records, and why does the course want both?
-4. How loose or tight should a provider constraint be, and who carries the risk of each choice?
-5. Why set tags at the provider rather than on each resource, and what would make you tag a resource individually anyway?
-6. What should a reviewer look for in a merge request that changes the lock file?
+1. How does the AWS provider decide which credentials to use, and how would you prove which identity a plan is using?
+2. What is the difference between a version constraint you declare and what the lock file records, and why does the course want both?
+3. How loose or tight should a provider constraint be, and who carries the risk of each choice?
+4. Why set tags at the provider rather than on each resource, and what would make you tag a resource individually anyway?
+5. What should a reviewer look for in a merge request that changes the lock file?
 
 ## Definition of done
 
 - [ ] **DoD-1** An authenticated AWS sandbox session exists and a caller-identity query returns the sandbox identity (output pasted, account details redacted as the trainer directs).
-- [ ] **DoD-2** You have caused a session to fail, captured the symptom, and recovered; the write-up records both.
-- [ ] **DoD-3** No static access keys are present in your AWS configuration on disk or in your repository; your evidence shows the scan you ran and what it looked for.
-- [ ] **DoD-4** The configuration declares a required Terraform version and, for every provider it uses, a source and a version constraint.
-- [ ] **DoD-5** The lock file exists and is committed to version control (it appears in your commit).
-- [ ] **DoD-6** The provider listing for the configuration shows both `aws` and `random` (output pasted).
-- [ ] **DoD-7** Formatting and validation checks pass with no errors (output pasted).
-- [ ] **DoD-8** Default tags are configured on the AWS provider and the plan shows them on at least one taggable resource the configuration would create (plan excerpt).
-- [ ] **DoD-9** One deliberate version change is shown with its effect on the lock file (before and after).
-- [ ] **DoD-10** No resources exist in the sandbox as a result of this stage, confirmed from the cloud side.
+- [ ] **DoD-2** No static access keys are present in your AWS configuration on disk or in your repository; your evidence shows the scan you ran and what it looked for.
+- [ ] **DoD-3** The configuration declares a required Terraform version and, for every provider it uses, a source and a version constraint.
+- [ ] **DoD-4** The lock file exists and is committed to version control (it appears in your commit).
+- [ ] **DoD-5** The provider listing for the configuration shows both `aws` and `random` (output pasted).
+- [ ] **DoD-6** Formatting and validation checks pass with no errors (output pasted).
+- [ ] **DoD-7** Default tags are configured on the AWS provider and the plan shows them on at least one taggable resource the configuration would create (plan excerpt).
+- [ ] **DoD-8** One deliberate version change is shown with its effect on the lock file (before and after).
+- [ ] **DoD-9** No resources exist in the sandbox as a result of this stage, confirmed from the cloud side.
 
 ## Best practices this stage demonstrates
 

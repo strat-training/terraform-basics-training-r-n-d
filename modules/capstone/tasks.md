@@ -17,7 +17,6 @@
 
 ## Build
 
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: every row of “Your design decisions” in `brief.md`, including what your shop sells.
 - [ ] Work on: your cost estimate against the cost challenge, before you build and again when you finish — every billed resource, its hourly rate and the hours you expect it to run.
 - [ ] Work on: the `foundation` stack, as the brief says what it holds and reads from.
 - [ ] Work on: the `release` stack, as the brief says what it holds and reads from.

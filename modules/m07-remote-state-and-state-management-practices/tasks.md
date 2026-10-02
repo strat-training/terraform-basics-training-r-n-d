@@ -20,10 +20,6 @@
 - [ ] Work on: Proving that locking works
 - [ ] Work on: A bucket that outlives its stage — lifecycle and eventual retirement
 - [ ] Work on: A lock left behind — what it means, what to check, and recovering safely
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Who and what needs access to the state bucket, and how narrow can you make that without breaking Terraform?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How did you solve the problem of creating the thing that stores your state, and what would you do differently on a team?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What happens if a lock is left behind, and what must you check before overriding one?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Why is this bucket kept when everything else is destroyed, and what risk does that carry?
 - [ ] Have ready: A protected S3 state bucket and a configuration that uses it as its remote backend
 - [ ] Have ready: locking demonstrated
 

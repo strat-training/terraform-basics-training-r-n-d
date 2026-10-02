@@ -17,14 +17,8 @@
 - [ ] Work on: The core workflow — initialise, plan, apply, destroy
 - [ ] Work on: What a plan shows — reading the action for each resource
 - [ ] Work on: In-place updates versus replacement
-- [ ] Work on: What causes a replacement
 - [ ] Work on: Plan review as a habit — what to check before approving
 - [ ] Work on: Destroying what you created
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How does describing the desired state differ from scripting the steps, and what does that change about running the same configuration twice?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How can you tell from the plan alone that a change will destroy something, before you apply it?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: For your chosen resource, which changes are made in place and which force replacement — how did you establish that, and how sure are you?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What would you do if a plan showed a destroy you did not expect?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What does a replacement cost when the resource holds data or other resources depend on it?
 - [ ] Have ready: A configuration managing one small AWS resource, taken through create, in-place change, forced replacement and destroy
 - [ ] Have ready: a written plan-review note
 
@@ -35,8 +29,7 @@
 - [ ] Confirm DoD-3: Your write-up identifies the type, name, arguments and attributes of your resource, and shows an attribute whose value you did not set. Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-4: You made at least one in-place change and at least one forced replacement; the plan output for each was captured before it was applied. Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-5: Your plan-review note classifies every change you made as in-place or replacement, and your trainer confirms each classification on review. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: For each classification the note explains the cause in terms of the resource itself, not just the plan's symbols. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: After destroy the resource is gone — confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: After destroy the resource is gone — confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

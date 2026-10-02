@@ -13,20 +13,12 @@
 ## Build
 
 - [ ] Work on: What Terraform is — infrastructure as code, and the problem Terraform solves
-- [ ] Work on: The tools the labs need, and what each one is for
-- [ ] Work on: Installing Terraform at the pinned version on macOS
-- [ ] Work on: Installing Terraform at the pinned version on Windows
-- [ ] Work on: Visual Studio Code for Terraform work — installation and the Terraform extension
-- [ ] Work on: The AWS, Google Cloud and Azure command-line tools, plus Git, `jq` and `curl`
+- [ ] Work on: The core toolchain — AWS/GCP/Azure CLIs, Git, jq, curl, and their purposes
+- [ ] Work on: Installing Terraform (macOS/Windows) and managing versions
+- [ ] Work on: Configuring Visual Studio Code for Terraform work
 - [ ] Work on: A shell that can run the labs' shell scripts on Windows
-- [ ] Work on: Switching between Terraform versions with a version manager
 - [ ] Work on: Verifying the toolchain end to end — versions, and formatting and validation of a configuration that creates nothing
 - [ ] Work on: OpenTofu differences — optional; you decide whether to include it
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Which install method would you choose for each tool on each operating system, and what does each choice cost in maintenance and support?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Which parts of the toolchain must be identical for every learner, which can vary, and what does each choice cost in support?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What fails differently on Windows than on macOS, and how will a learner tell a broken install from a misconfigured one?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How will a learner know the toolchain is correct, rather than merely present?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What problem does Terraform solve that a script or the cloud console does not, and where would you not use it?
 - [ ] Have ready: A verified lab toolchain for macOS and Windows — Terraform, Visual Studio Code with its Terraform extension, and the cloud and shell tools the labs use
 - [ ] Have ready: your written installation guide for both systems (the write-up)
 

@@ -21,9 +21,8 @@ Understand why Terraform describes the desired state of infrastructure instead o
 3. The core workflow — initialise, plan, apply, destroy
 4. What a plan shows — reading the action for each resource
 5. In-place updates versus replacement
-6. What causes a replacement
-7. Plan review as a habit — what to check before approving
-8. Destroying what you created
+6. Plan review as a habit — what to check before approving
+7. Destroying what you created
 
 ### Out of scope
 
@@ -59,8 +58,7 @@ Understand why Terraform describes the desired state of infrastructure instead o
 - [ ] **DoD-3** Your write-up identifies the type, name, arguments and attributes of your resource, and shows an attribute whose value you did not set.
 - [ ] **DoD-4** You made at least one in-place change and at least one forced replacement; the plan output for each was captured before it was applied.
 - [ ] **DoD-5** Your plan-review note classifies every change you made as in-place or replacement, and your trainer confirms each classification on review.
-- [ ] **DoD-6** For each classification the note explains the cause in terms of the resource itself, not just the plan's symbols.
-- [ ] **DoD-7** After destroy the resource is gone — confirmed from the cloud side, not only from Terraform's output.
+- [ ] **DoD-6** After destroy the resource is gone — confirmed from the cloud side, not only from Terraform's output.
 
 ## Best practices this stage demonstrates
 

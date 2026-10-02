@@ -19,11 +19,6 @@
 - [ ] Work on: Drift — how it arises and how Terraform detects it
 - [ ] Work on: Reconciling drift — deciding whether the code or the real world wins
 - [ ] Work on: Why state is never edited by hand
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What can leak a secret into state, and how would you demonstrate that safely, without using a real credential?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: When Terraform reports drift, who decides whether the code or the real world is right, and on what basis?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What would you check before trusting a state file you did not create?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Why does the course treat a state file as sensitive even when the configuration contains no secrets?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: When can a secret be kept out of state altogether, and what do you still have to protect when it is?
 - [ ] Have ready: A small configuration taken through an out-of-band change and back to a clean plan
 - [ ] Have ready: your written answers to the stage's questions
 

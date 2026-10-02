@@ -12,38 +12,28 @@
 
 ## Build
 
-- [ ] Work on: Signing in to the AWS sandbox with the access you were given — IAM Identity Center (SSO) through the AWS CLI
-- [ ] Work on: Confirming which identity and account Terraform will act as
-- [ ] Work on: Credential lifetime — session expiry, its symptoms, and recovering from it
+- [ ] Work on: Authenticating to AWS (IAM Identity Center) and verifying Terraform identity
 - [ ] Work on: Keeping static access keys off disk and out of the repository
-- [ ] Work on: What a provider is and how Terraform finds and installs one
+- [ ] Work on: What a provider is and how Terraform finds and installs one, checking Provider version
 - [ ] Work on: Version constraints — for Terraform itself and for each provider
 - [ ] Work on: The dependency lock file — what it records and why it is committed
 - [ ] Work on: Using more than one provider in a single configuration
 - [ ] Work on: Provider configuration — how a provider obtains its credentials, and provider-level default tags
-- [ ] Work on: Inspecting which providers and versions a configuration actually uses
 - [ ] Work on: Upgrading a pinned version deliberately
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What does a learner see when their session has expired, and how will you help them tell that apart from a genuine permissions problem?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How does the AWS provider decide which credentials to use, and how would you prove which identity a plan is using?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What is the difference between a version constraint you declare and what the lock file records, and why does the course want both?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How loose or tight should a provider constraint be, and who carries the risk of each choice?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Why set tags at the provider rather than on each resource, and what would make you tag a resource individually anyway?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What should a reviewer look for in a merge request that changes the lock file?
 - [ ] Have ready: A signed-in sandbox session and a minimal Terraform configuration that uses the `aws` and `random` providers
 - [ ] Have ready: Terraform and provider versions pinned, the lock file committed, and default tags configured on the AWS provider
 
 ## Verify
 
 - [ ] Confirm DoD-1: An authenticated AWS sandbox session exists and a caller-identity query returns the sandbox identity (output pasted, account details redacted as the trainer directs). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: You have caused a session to fail, captured the symptom, and recovered; the write-up records both. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: No static access keys are present in your AWS configuration on disk or in your repository; your evidence shows the scan you ran and what it looked for. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: The configuration declares a required Terraform version and, for every provider it uses, a source and a version constraint. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: The lock file exists and is committed to version control (it appears in your commit). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: The provider listing for the configuration shows both `aws` and `random` (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: Formatting and validation checks pass with no errors (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-8: Default tags are configured on the AWS provider and the plan shows them on at least one taggable resource the configuration would create (plan excerpt). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-9: One deliberate version change is shown with its effect on the lock file (before and after). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-10: No resources exist in the sandbox as a result of this stage, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: No static access keys are present in your AWS configuration on disk or in your repository; your evidence shows the scan you ran and what it looked for. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: The configuration declares a required Terraform version and, for every provider it uses, a source and a version constraint. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: The lock file exists and is committed to version control (it appears in your commit). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: The provider listing for the configuration shows both `aws` and `random` (output pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Formatting and validation checks pass with no errors (output pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: Default tags are configured on the AWS provider and the plan shows them on at least one taggable resource the configuration would create (plan excerpt). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-8: One deliberate version change is shown with its effect on the lock file (before and after). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-9: No resources exist in the sandbox as a result of this stage, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

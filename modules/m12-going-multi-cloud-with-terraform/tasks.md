@@ -19,10 +19,6 @@
 - [ ] Work on: Where the clouds differ, stated explicitly
 - [ ] Work on: The `gcs` and `azurerm` state backends — reference only
 - [ ] Work on: Where this course stops — HCP Terraform and Sentinel, named and not taught
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What can go wrong if the ambient login points at a different project or subscription than you intended, and what in your configuration prevents it?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What stays the same across all three clouds in the Terraform workflow, and what changes?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Why does the course refuse to hide cloud differences behind a common wrapper?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Where should state live for a configuration that creates nothing, and does your answer change once it does?
 - [ ] Have ready: Two small Terraform configurations, one per cloud, each authenticating with a short-lived login and outputting the identity it runs as
 - [ ] Have ready: a written comparison of how the clouds differ in setup
 

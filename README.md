@@ -30,7 +30,7 @@ Review happens at the end of every stage, not just at the end of the course. A w
 | `brief.md` | Your trainer | What to build and how you will know it is done. Do not edit it. |
 | `write-up-template.md` | Your trainer | A blank template. Leave it untouched so the next cohort starts clean. |
 | `write-up.md` | You | Your copy of the template, filled in as you build. |
-| `tasks.md` | Your trainer | An ordered checklist for the stage, one task per scope item, question, check and write-up section. You tick the boxes; it holds no answers and no steps. |
+| `tasks.md` | Your trainer | An ordered checklist for the stage, one task per scope item, deliverable component, check and write-up section. You tick the boxes; it holds no answers and no steps. |
 
 Your Terraform code lives outside this repository, in your own GitLab repository. Link it from the header of your write-up. The capstone folder has the same three files.
 
@@ -39,7 +39,7 @@ Your Terraform code lives outside this repository, in your own GitLab repository
 | Stage | Title | Checklist | Theme | Leaves behind |
 | --- | --- | --- | --- | --- |
 | M01 | [Getting Started with Terraform](modules/m01-getting-started-with-terraform/brief.md) | [tasks](modules/m01-getting-started-with-terraform/tasks.md) | What Terraform is; install and verify Terraform, VS Code and the other lab tools on macOS and Windows | Tools only |
-| M02 | [Configuring Providers and Connecting to AWS](modules/m02-configuring-providers-and-connecting-to-aws/brief.md) | [tasks](modules/m02-configuring-providers-and-connecting-to-aws/tasks.md) | Sign in to AWS, session expiry, no static keys; providers, version constraints, lock file (plan only) | Nothing |
+| M02 | [Configuring Providers and Connecting to AWS](modules/m02-configuring-providers-and-connecting-to-aws/brief.md) | [tasks](modules/m02-configuring-providers-and-connecting-to-aws/tasks.md) | Sign in to AWS, no static keys; providers, version constraints, lock file (plan only) | Nothing |
 | M03 | [Understanding the Terraform Workflow](modules/m03-understanding-the-terraform-workflow/brief.md) | [tasks](modules/m03-understanding-the-terraform-workflow/tasks.md) | Declarative model, resource anatomy; plan, apply, destroy; plan review; in-place vs replace | Nothing |
 | M04 | [Managing Resources with Network Provisioning](modules/m04-managing-resources-with-network-provisioning/brief.md) | [tasks](modules/m04-managing-resources-with-network-provisioning/tasks.md) | Dependencies, repetition, data sources, a small VPC | Nothing |
 | M05 | [Defining Variables, Inputs and Outputs in Terraform](modules/m05-defining-variables-inputs-and-outputs-in-terraform/brief.md) | [tasks](modules/m05-defining-variables-inputs-and-outputs-in-terraform/tasks.md) | Typed, validated inputs; value precedence; locals; sensitive inputs and outputs | Nothing |

@@ -17,15 +17,12 @@ Understand what Terraform is and the problem it solves, then install and verify 
 ### In scope (in the order to tackle)
 
 1. What Terraform is — infrastructure as code, and the problem Terraform solves
-2. The tools the labs need, and what each one is for
-3. Installing Terraform at the pinned version on macOS
-4. Installing Terraform at the pinned version on Windows
-5. Visual Studio Code for Terraform work — installation and the Terraform extension
-6. The AWS, Google Cloud and Azure command-line tools, plus Git, `jq` and `curl`
-7. A shell that can run the labs' shell scripts on Windows
-8. Switching between Terraform versions with a version manager
-9. Verifying the toolchain end to end — versions, and formatting and validation of a configuration that creates nothing
-10. OpenTofu differences — optional; you decide whether to include it
+2. The core toolchain — AWS/GCP/Azure CLIs, Git, jq, curl, and their purposes
+3. Installing Terraform (macOS/Windows) and managing versions
+4. Configuring Visual Studio Code for Terraform work
+5. A shell that can run the labs' shell scripts on Windows
+6. Verifying the toolchain end to end — versions, and formatting and validation of a configuration that creates nothing
+7. OpenTofu differences — optional; you decide whether to include it
 
 ### Out of scope
 

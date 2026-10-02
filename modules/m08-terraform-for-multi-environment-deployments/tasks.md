@@ -20,12 +20,6 @@
 - [ ] Work on: A naming convention and required tags applied through provider defaults
 - [ ] Work on: Switching between environments safely
 - [ ] Work on: Other ways to separate environments — a directory per environment, and workspaces — and when each fits (explained, not used)
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What makes it easy to apply one environment's values to the other's state, and what will you do to make that harder?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Which tags would a clean-up or cost report need beyond `Environment`, and why?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How should the files be laid out so a newcomer finds each concern without being told?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: When would workspaces be the right tool, and what do you give up by not using them here?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: When would a directory per environment be the right tool, and what do you give up by not using it here?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: In what ways does keeping both environments in one account misrepresent real practice?
 - [ ] Have ready: One configuration deployed as both dev and prod with separate state
 - [ ] Have ready: a note comparing three ways to separate environments
 

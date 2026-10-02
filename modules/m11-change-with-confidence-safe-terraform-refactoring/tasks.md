@@ -22,11 +22,6 @@
 - [ ] Work on: Targeted operations — an emergency tool, never routine
 - [ ] Work on: Reading legacy guidance that relies on imperative state commands
 - [ ] Work on: When an apply goes wrong — a partial apply, a failed destroy, and reading provider errors
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How can you tell, before applying, that a refactor will not touch real infrastructure?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What did the generated configuration get wrong or leave out, and how did you decide what to keep?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: When a resource stops being managed, what is responsible for it afterwards, and how do you avoid orphaning cost?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Why does the course prefer changes that appear in a plan over commands that edit state, and when might you still see those commands?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How do you recover when an apply stops part-way, and what do you check before you run it again?
 - [ ] Have ready: Three refactors applied to a small configuration — a rename, an adoption and a stop-managing — each verified by a plan with no destroys and no replacements
 - [ ] Have ready: a short note on legacy imperative commands
 

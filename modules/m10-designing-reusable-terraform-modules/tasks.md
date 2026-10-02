@@ -24,14 +24,6 @@
 - [ ] Work on: Consuming a published module — reading someone else's module before trusting it
 - [ ] Work on: What a module may assume about provider configuration
 - [ ] Work on: Module anti-patterns
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What belongs inside a module and what should stay in the root, and how did you draw that line?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: Which inputs did you expose, which did you fix, and what does each extra input cost the next person who has to understand the module?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What does a caller need to be told by a module's outputs, and what should stay hidden?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How should a module's files be laid out so a newcomer finds inputs, outputs and resources without being told?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: What deserves a comment in a module, and what should the code make obvious without one?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How do resource addresses change when something moves into a module, and what would that mean for a configuration that is already deployed?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: How much do you trust a module you did not write, and what do you check before using it?
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: When is a module the wrong answer?
 - [ ] Have ready: A reusable AWS module with a standard file structure and a documented, commented interface, and a root configuration that calls it at least twice with different inputs, deployed with the M08 environment arrangement
 - [ ] Have ready: a decision note on what you put in the module and what you left out
 

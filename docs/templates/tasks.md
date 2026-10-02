@@ -23,7 +23,6 @@ holds code, a name the brief does not use, a design choice, a hint or an explana
 ## Build
 
 - [ ] Work on: <scope item, verbatim — one task per scope item, in the brief's order>
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: <open design question, verbatim — one task per question>
 - [ ] Have ready: <deliverable component, verbatim — one task per component>
 
 ## Verify

@@ -4,9 +4,9 @@ Material for the people who run and maintain the course. Trainees do not need it
 
 | Path | What it holds |
 | --- | --- |
-| [templates/](templates/README.md) | Reusable templates for a stage brief, a capstone brief, the write-ups and the checklists, and a copy of the planner command |
+| [templates/](templates/README.md) | Reusable templates for a stage brief, a capstone brief, the write-ups, the checklists and the course README, a copy of the planner command, and the [playbook](templates/build-to-teach-playbook.md) for building a course like this one |
 | `arch-docs/` | The design documents behind the course (trainers only) |
-| `build-to-teach-framework/`, [build-to-teach-playbook.md](build-to-teach-playbook.md) | The framework and the original prompt playbook that produced this structure. The framework calls the trainer the EM. The updated, reusable playbook for other trainers is [templates/build-to-teach-playbook.md](templates/build-to-teach-playbook.md) |
+| `build-to-teach-framework/` | The framework this course follows. It calls the trainer the EM |
 | [../knowledge/retros/](../knowledge/retros/2026-10-02-briefs-that-answer-their-own-questions.md) | Findings worth keeping, such as briefs that answer their own questions |
 | `../.claude/commands/` | Project commands, including `/trainee-task-planner`. This folder is not tracked in git, so the planner is also kept as [a copy in `templates/`](templates/trainee-task-planner.md) |
 

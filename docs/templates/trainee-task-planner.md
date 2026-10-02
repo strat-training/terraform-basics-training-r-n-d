@@ -51,7 +51,7 @@ The brief hands the trainee a problem on purpose. `tasks.md` keeps them moving t
 - **A hint in disguise**: "consider using…", "you may want to…", "for example", "e.g.", "such as", "think about X" where X is the answer, a rhetorical question that names its own answer, or a ladder of leading sub-questions.
 - **Explanation**: definitions, reasons, background. A task says what to produce, never why or how.
 
-Allowed: the brief's and template's own words, verbatim; pointing at a brief section by name; the verbs *work on, decide, have ready, confirm, capture*.
+Allowed: the brief's and template's own words, verbatim; pointing at a brief section by name; the verbs *work on, have ready, confirm, capture*.
 
 **Frames plus verbatim text.** To make this checkable, every task is one of the fixed frames in APPLY with only text lifted verbatim from the brief or template filling its blanks. "Verbatim" means the same words and punctuation; markdown emphasis markers (`**`) may be dropped. The frames are the only free text in the file. If a task seems to need a clarifying phrase of your own, that phrase is the leak — leave it out. If a verbatim line in the brief would itself resolve an open question, do not paraphrase around it and do not edit the brief: restate it exactly as written and report it under "Brief issues" for the trainer.
 
@@ -111,7 +111,7 @@ Do NOT plan task wording or write any file yet. End with:
 | Section | Holds | One task per |
 | --- | --- | --- |
 | Setup | Read the brief, make the write-up copy, confirm access | fixed: three tasks |
-| Build | The brief's scope in the brief's order, then its open design questions, then its deliverable | scope item, open question, deliverable component |
+| Build | The brief's scope in the brief's order, then its deliverable | scope item, deliverable component |
 | Verify | The definition of done | DoD check |
 | Write-up | The write-up template, then a closing self-review | template section, plus one closing task |
 
@@ -119,6 +119,7 @@ Rules, all mandatory:
 
 - **One task per source item.** No merging, no splitting, no extra tasks, no task without a source item.
 - **Source order.** Tasks follow the order of the brief and the template.
+- **Open design questions are not tasks.** The trainee answers them in the write-up's "Why it's built this way" section, which has a task of its own, so the checklist stays short. Each question must still appear in the write-up template, and the leak checks still treat every question as sensitive.
 - **`re-plan` carry-over.** Keep a task ticked only if its source text is word-for-word unchanged. Changed and new items come back unticked; items no longer in the brief are dropped. List all three in PLAN.
 
 ### Output — PLAN blueprint
@@ -127,8 +128,8 @@ Rules, all mandatory:
 PLAN
 ────
 File:      <stage-folder>/tasks.md — <new | full rewrite>
-Sections:  Setup 3 · Build <n> (scope <a> · questions <b> · components <c>) · Verify <n> · Write-up <n> (sections <m> + closing review)
-Coverage:  every scope item, question, component, DoD check and write-up section → one task, in source order
+Sections:  Setup 3 · Build <n> (scope <a> · components <b>) · Verify <n> · Write-up <n> (sections <m> + closing review)
+Coverage:  every scope item, component, DoD check and write-up section → one task, in source order; every question → the write-up template
 Split:     <the deliverable split into components, in the brief's words>
 Frames:    <the frames from APPLY that will be used, unmodified>
 Leak watch: <per sensitive question, the temptations to avoid — by category, not by answer>
@@ -163,7 +164,6 @@ Use this structure verbatim. Angle brackets are the only blanks; each is filled 
 ## Build
 
 - [ ] Work on: <scope item n>
-- [ ] Decide, and record your reasons under “Why it's built this way (key decisions)”: <question n>
 - [ ] Have ready: <deliverable component n>
 
 ## Verify
@@ -207,7 +207,7 @@ Write a short script in a scratch location outside the stage folder (the session
 
 - The sections Setup, Build, Verify and Write-up are present, in that order, and every task sits under one.
 - Every task line starts `- [ ] ` or, in `re-plan`, `- [x] `.
-- **Counts and order:** Setup has 3 tasks; Build has one task per scope item, then one per open question, then one per deliverable component; Verify has one per DoD ID; Write-up has one per template section plus the closing task. Each task's blank is the source text, verbatim.
+- **Counts and order:** Setup has 3 tasks; Build has one task per scope item, then one per deliverable component; Verify has one per DoD ID; Write-up has one per template section plus the closing task. Each task's blank is the source text, verbatim.
 - **Deliverable:** every component fragment is a verbatim substring of the Deliverable text, and together they cover all of it except the joining words used to split it.
 - **Frames:** regenerating the whole file from the brief and template reproduces it byte for byte, so every task is its frame with only verbatim text in the blanks.
 
@@ -228,8 +228,7 @@ A flag in your own wording: remove it. A flag inside verbatim brief text: leave 
 
 Not a script. Read `tasks.md` top to bottom as the trainee would, with the EVALUATE sensitivity list beside it, and answer each of these in writing:
 
-- **Decide tasks:** does any decide task's wording favour one option, or imply a mechanism, value or reason?
-- **Cross-leaks:** for each open question, scan every other task — Work on, Have ready, Confirm and Under — for wording that would answer it. A scope item or DoD line that names the very mechanism, approach or reason a question asks the trainee to reach is a leak even though no decide task states it.
+- **Cross-leaks:** for each open question, scan every other task — Work on, Have ready, Confirm and Under — for wording that would answer it. A scope item or DoD line that names the very mechanism, approach or reason a question asks the trainee to reach is a leak even though no task states it.
 - **Topics, not steps:** is every "Work on" task still a topic, or has any become an instruction?
 - **No stowaways:** is every sentence in the file either a frame or verbatim brief or template text?
 
@@ -244,7 +243,7 @@ VALIDATE COMPLETE
 ─────────────────
 File:         <stage-folder>/tasks.md
 Tasks:        <total> (Setup 3 · Build <n> · Verify <n> · Write-up <n>)
-Coverage:     scope <n>/<n> · questions <n>/<n> · components <n>/<n> · DoD <n>/<n> · write-up <n>/<n> · frames OK
+Coverage:     scope <n>/<n> · components <n>/<n> · questions in write-up <n>/<n> · DoD <n>/<n> · write-up <n>/<n> · frames OK
 Leak screen:  <clean | list of flags, each marked own-wording (fixed) or brief text (reported)>
 Re-read:      <per check: tasks examined and the finding>
 Brief issues: <lines in the brief that resolve a question, for the trainer — or "none">
