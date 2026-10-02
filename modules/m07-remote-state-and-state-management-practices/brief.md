@@ -17,17 +17,13 @@ Move state off your laptop into a remote backend that is versioned, encrypted, l
 ### In scope (in the order to tackle)
 
 1. Why state moves to a remote backend, and what locking prevents
-2. The bootstrapping problem — where the state bucket itself comes from
-3. Protecting the bucket — versioning, encryption at rest, blocked public access, restricted access
-4. Configuring the backend and migrating existing local state into it
-5. Native S3 state locking, and why DynamoDB-based locking is no longer taught
-6. Proving that locking works
-7. A bucket that outlives its stage — lifecycle and eventual retirement
-8. A lock left behind — what it means, what to check, and recovering safely
+2. Bootstrapping, securing, and managing the lifecycle of the state bucket
+3. Configuring the backend and migrating existing local state into it
+4. Proving that native locking works and recovering abandoned locks
 
 ### Out of scope
 
-- DynamoDB-based locking, except to explain why it is deprecated
+- DynamoDB-based locking
 - HCP Terraform and any backend other than S3
 - GitLab-managed Terraform state — mention only, as something you may meet
 - The `gcs` and `azurerm` backends (reference only, M12)

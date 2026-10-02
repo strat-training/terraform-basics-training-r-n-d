@@ -10,7 +10,7 @@
 
 ## Objective
 
-See that the core Terraform workflow carries over to GCP and Azure while provider setup does not: sign in with short-lived logins, make the project or subscription explicit, and prove each provider works with a read-only check. Be able to say plainly where the clouds differ.
+See that the core Terraform workflow carries over to GCP and Azure while provider setup does not: sign in with short-lived logins, make the project or subscription explicit, and prove each provider works with a read-only check.
 
 ## Scope
 
@@ -19,10 +19,8 @@ See that the core Terraform workflow carries over to GCP and Azure while provide
 1. Confirming access to the GCP and Azure sandboxes
 2. GCP — Application Default Credentials sign-in, project selection, provider configuration
 3. Azure — CLI sign-in, subscription selection, provider configuration
-4. Read-only data sources as a safe proof of identity
-5. Where the clouds differ, stated explicitly
-6. The `gcs` and `azurerm` state backends — reference only
-7. Where this course stops — HCP Terraform and Sentinel, named and not taught
+4. State management across clouds: `gcs` and `azurerm` backends
+5. Where this course stops — HCP Terraform and Sentinel, named and not taught
 
 ### Out of scope
 
@@ -45,14 +43,12 @@ See that the core Terraform workflow carries over to GCP and Azure while provide
 
 ## Deliverable
 
-**Two small Terraform configurations, one per cloud, each authenticating with a short-lived login and outputting the identity it runs as**, plus a written comparison of how the clouds differ in setup.
+**Two small Terraform configurations, one per cloud, each authenticating with a short-lived login and outputting the identity it runs as**.
 
 ## Open design questions
 
 1. What can go wrong if the ambient login points at a different project or subscription than you intended, and what in your configuration prevents it?
-2. What stays the same across all three clouds in the Terraform workflow, and what changes?
-3. Why does the course refuse to hide cloud differences behind a common wrapper?
-4. Where should state live for a configuration that creates nothing, and does your answer change once it does?
+2. Where should state live for a configuration that creates nothing, and does your answer change once it does?
 
 ## Definition of done
 
@@ -61,8 +57,7 @@ See that the core Terraform workflow carries over to GCP and Azure while provide
 - [ ] **DoD-3** Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your write-up records why that was not possible.
 - [ ] **DoD-4** No secrets or keys exist in the repository or on disk (the scan you ran is in your evidence).
 - [ ] **DoD-5** Neither configuration creates a resource (the plan shows nothing to add).
-- [ ] **DoD-6** Your trainer confirms your written comparison of cloud differences is correct on review.
-- [ ] **DoD-7** Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
+- [ ] **DoD-6** Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
 
 ## Best practices this stage demonstrates
 

@@ -14,12 +14,10 @@
 
 - [ ] Work on: Authenticating to AWS (IAM Identity Center) and verifying Terraform identity
 - [ ] Work on: Keeping static access keys off disk and out of the repository
-- [ ] Work on: What a provider is and how Terraform finds and installs one, checking Provider version
-- [ ] Work on: Version constraints — for Terraform itself and for each provider
-- [ ] Work on: The dependency lock file — what it records and why it is committed
-- [ ] Work on: Using more than one provider in a single configuration
-- [ ] Work on: Provider configuration — how a provider obtains its credentials, and provider-level default tags
-- [ ] Work on: Upgrading a pinned version deliberately
+- [ ] Work on: What a provider is and how Terraform finds and installs one
+- [ ] Work on: Provider concepts, credential configuration, and default tags
+- [ ] Work on: Dependency management: version constraints, lock files, and safe upgrades
+- [ ] Work on: Using and inspecting multiple providers in a single configuration
 - [ ] Have ready: A signed-in sandbox session and a minimal Terraform configuration that uses the `aws` and `random` providers
 - [ ] Have ready: Terraform and provider versions pinned, the lock file committed, and default tags configured on the AWS provider
 

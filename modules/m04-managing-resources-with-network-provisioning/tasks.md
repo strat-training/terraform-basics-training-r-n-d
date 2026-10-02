@@ -17,8 +17,6 @@
 - [ ] Work on: Repeating a resource — the two mechanisms Terraform offers
 - [ ] Work on: Data sources — reading information that already exists, and how it differs from a resource
 - [ ] Work on: A VPC, subnets in more than one availability zone, and the routing a public tier needs
-- [ ] Work on: Public versus private subnets — what makes a subnet public
-- [ ] Work on: Cost awareness — why some networking resources bill by the hour
 - [ ] Have ready: A small AWS network configuration — one VPC with public and private subnets across more than one availability zone and the routing the public tier needs — with no NAT gateway
 
 ## Verify

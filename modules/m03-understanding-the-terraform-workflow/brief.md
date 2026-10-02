@@ -19,10 +19,9 @@ Understand why Terraform describes the desired state of infrastructure instead o
 1. Declarative versus imperative infrastructure — what it means that Terraform describes desired state
 2. Anatomy of a resource — type, name, arguments and attributes
 3. The core workflow — initialise, plan, apply, destroy
-4. What a plan shows — reading the action for each resource
-5. In-place updates versus replacement
-6. Plan review as a habit — what to check before approving
-7. Destroying what you created
+4. What a plan shows — reading the action for each resource, In-place updates versus replacement
+5. Plan review as a habit — what to check before approving
+6. Destroying what you created
 
 ### Out of scope
 

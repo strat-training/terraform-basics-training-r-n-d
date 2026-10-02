@@ -20,7 +20,6 @@ One entry per open design question in the brief, then one for where you spent th
 - Which rules deserve plan-time validation, and which are better left for AWS to reject at apply time?
 - Which inputs should have defaults and which should be required — what is the risk of each?
 - Where does a typed variable stop being enough?
-- What makes a validation error message useful to someone who did not write the rule?
 - If several sources can supply the same variable, why might a team still allow only one source per variable, and how would you enforce that?
 - How should a sensitive value reach Terraform, and what are the risks of each way you tried?
 - What does marking a value sensitive hide, and where can it still be seen?
@@ -54,7 +53,6 @@ Pick 2–3 ideas from this stage and explain each one in your own words, as if t
 - Sensitive input variables — marking them and getting their values into Terraform without committing them
 - Output values — what to expose and how to mark an output sensitive
 - What marking a value sensitive does and does not protect
-- Reading validation errors as feedback
 
 ## What tripped me up
 

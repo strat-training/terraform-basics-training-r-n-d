@@ -1,6 +1,6 @@
 # M12 — Going Multi-Cloud with Terraform — Tasks
 
-**Objective:** See that the core Terraform workflow carries over to GCP and Azure while provider setup does not: sign in with short-lived logins, make the project or subscription explicit, and prove each provider works with a read-only check. Be able to say plainly where the clouds differ.
+**Objective:** See that the core Terraform workflow carries over to GCP and Azure while provider setup does not: sign in with short-lived logins, make the project or subscription explicit, and prove each provider works with a read-only check.
 
 > There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
@@ -15,12 +15,9 @@
 - [ ] Work on: Confirming access to the GCP and Azure sandboxes
 - [ ] Work on: GCP — Application Default Credentials sign-in, project selection, provider configuration
 - [ ] Work on: Azure — CLI sign-in, subscription selection, provider configuration
-- [ ] Work on: Read-only data sources as a safe proof of identity
-- [ ] Work on: Where the clouds differ, stated explicitly
-- [ ] Work on: The `gcs` and `azurerm` state backends — reference only
+- [ ] Work on: State management across clouds: `gcs` and `azurerm` backends
 - [ ] Work on: Where this course stops — HCP Terraform and Sentinel, named and not taught
 - [ ] Have ready: Two small Terraform configurations, one per cloud, each authenticating with a short-lived login and outputting the identity it runs as
-- [ ] Have ready: a written comparison of how the clouds differ in setup
 
 ## Verify
 
@@ -29,8 +26,7 @@
 - [ ] Confirm DoD-3: Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your write-up records why that was not possible. Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-4: No secrets or keys exist in the repository or on disk (the scan you ran is in your evidence). Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-5: Neither configuration creates a resource (the plan shows nothing to add). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: Your trainer confirms your written comparison of cloud differences is correct on review. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

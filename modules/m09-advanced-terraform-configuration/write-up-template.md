@@ -43,16 +43,14 @@ Write this as a guide someone could actually follow to build this stage from scr
 
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-- Composing built-in functions to derive values
-- Conditional expressions — and when a condition belongs in configuration at all
-- `for` expressions and splat expressions — reshaping collections
-- `for_each` in depth — maps, sets and derived collections, and what makes a key stable
-- Dynamic blocks — generating repeated nested blocks from data
-- Data sources in depth — beyond the basic lookup introduced in M04
-- Explicit dependencies with `depends_on` — when a reference cannot express the ordering
-- The `lifecycle` block — controlling replacement, destruction and ignored changes
-- Preconditions and postconditions — checking assumptions about real infrastructure
-- When a feature costs more readability than it saves
+- Composing Values with Built-in Functions
+- Making Configuration Conditional
+- Reshaping Data with `for` and Splat Expressions
+- Going Deeper with `for_each`
+- Generating Nested Configuration with Dynamic Blocks
+- Discovering Existing Infrastructure with Data Sources
+- Controlling Dependencies and Resource Lifecycle
+- Validating Infrastructure with Preconditions and Postconditions
 
 ## What tripped me up
 
@@ -72,8 +70,7 @@ Show the evidence for every item in the definition of done in `brief.md`, one by
 - DoD-8: Every explicit dependency in the configuration is justified in the write-up; if there are none, the write-up says why a reference was always enough.
 - DoD-9: Every lifecycle setting you used is justified in the write-up, and its effect is shown from a plan or a deliberate attempt that it affects (output pasted).
 - DoD-10: At least one precondition or postcondition is in place, and you have deliberately triggered it and captured the failure message (output pasted).
-- DoD-11: Your readability note says, for each advanced feature you used, where it helped and where it made the configuration harder to follow.
-- DoD-12: Everything is destroyed except the M07 bucket, confirmed from the cloud side.
+- DoD-11: Everything is destroyed except the M07 bucket, confirmed from the cloud side.
 
 ## Definition-of-done self-assessment
 

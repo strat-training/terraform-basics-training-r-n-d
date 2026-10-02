@@ -15,8 +15,7 @@
 - [ ] Work on: Declarative versus imperative infrastructure — what it means that Terraform describes desired state
 - [ ] Work on: Anatomy of a resource — type, name, arguments and attributes
 - [ ] Work on: The core workflow — initialise, plan, apply, destroy
-- [ ] Work on: What a plan shows — reading the action for each resource
-- [ ] Work on: In-place updates versus replacement
+- [ ] Work on: What a plan shows — reading the action for each resource, In-place updates versus replacement
 - [ ] Work on: Plan review as a habit — what to check before approving
 - [ ] Work on: Destroying what you created
 - [ ] Have ready: A configuration managing one small AWS resource, taken through create, in-place change, forced replacement and destroy

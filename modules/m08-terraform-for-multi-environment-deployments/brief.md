@@ -10,7 +10,7 @@
 
 ## Objective
 
-Deploy two environments — dev and prod — from one configuration with separate state, laid out, named and tagged so consistently that anyone can tell which environment a resource belongs to at a glance. Be able to say when you would use workspaces or a directory per environment instead.
+Deploy two environments — dev and prod — from one configuration with separate state, named and tagged so consistently that anyone can tell which environment a resource belongs to at a glance. Be able to say when you would use workspaces or a directory per environment instead.
 
 ## Scope
 
@@ -19,11 +19,10 @@ Deploy two environments — dev and prod — from one configuration with separat
 1. One configuration, many environments — what is shared and what must be separate
 2. Per-environment input values
 3. Per-environment backend settings and separate state keys in the shared bucket
-4. Blast radius — what separate state does and does not protect
-5. The standard file layout for a root configuration
-6. A naming convention and required tags applied through provider defaults
-7. Switching between environments safely
-8. Other ways to separate environments — a directory per environment, and workspaces — and when each fits (explained, not used)
+4. Managing blast radius through state separation
+5. Enforcing naming conventions and default provider tags
+6. Switching between environments safely
+7. Alternative isolation methods: directories vs workspaces (theory)
 
 ### Out of scope
 
@@ -50,10 +49,9 @@ Deploy two environments — dev and prod — from one configuration with separat
 
 1. What makes it easy to apply one environment's values to the other's state, and what will you do to make that harder?
 2. Which tags would a clean-up or cost report need beyond `Environment`, and why?
-3. How should the files be laid out so a newcomer finds each concern without being told?
-4. When would workspaces be the right tool, and what do you give up by not using them here?
-5. When would a directory per environment be the right tool, and what do you give up by not using it here?
-6. In what ways does keeping both environments in one account misrepresent real practice?
+3. When would workspaces be the right tool, and what do you give up by not using them here?
+4. When would a directory per environment be the right tool, and what do you give up by not using it here?
+5. In what ways does keeping both environments in one account misrepresent real practice?
 
 ## Definition of done
 
@@ -61,13 +59,12 @@ Deploy two environments — dev and prod — from one configuration with separat
 - [ ] **DoD-2** Both environments produce clean plans (output for each).
 - [ ] **DoD-3** Environment-specific inputs differ between the two environments and live outside the main configuration files.
 - [ ] **DoD-4** Every resource follows the naming convention and carries the required tags (shown from the plan, state or cloud side).
-- [ ] **DoD-5** The file layout follows the standard root-configuration layout; a reviewer can find each concern from file names alone.
-- [ ] **DoD-6** The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits.
-- [ ] **DoD-7** Both environments are destroyed and the bucket is retained, confirmed from the cloud side.
+- [ ] **DoD-5** The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits.
+- [ ] **DoD-6** Both environments are destroyed and the bucket is retained, confirmed from the cloud side.
 
 ## Best practices this stage demonstrates
 
 - Separate state per environment
-- Layout and naming
+- Naming
 - `default_tags`
 - fmt and validate

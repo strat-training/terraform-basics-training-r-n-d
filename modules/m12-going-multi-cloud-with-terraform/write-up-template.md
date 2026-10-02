@@ -18,8 +18,6 @@ Describe the deliverable named in the brief: what it is, what it does, how it is
 One entry per open design question in the brief, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
 - What can go wrong if the ambient login points at a different project or subscription than you intended, and what in your configuration prevents it?
-- What stays the same across all three clouds in the Terraform workflow, and what changes?
-- Why does the course refuse to hide cloud differences behind a common wrapper?
 - Where should state live for a configuration that creates nothing, and does your answer change once it does?
 - Where did you spend the most time, and why?
 
@@ -43,9 +41,7 @@ Pick 2–3 ideas from this stage and explain each one in your own words, as if t
 - Confirming access to the GCP and Azure sandboxes
 - GCP — Application Default Credentials sign-in, project selection, provider configuration
 - Azure — CLI sign-in, subscription selection, provider configuration
-- Read-only data sources as a safe proof of identity
-- Where the clouds differ, stated explicitly
-- The `gcs` and `azurerm` state backends — reference only
+- State management across clouds: `gcs` and `azurerm` backends
 - Where this course stops — HCP Terraform and Sentinel, named and not taught
 
 ## What tripped me up
@@ -61,8 +57,7 @@ Show the evidence for every item in the definition of done in `brief.md`, one by
 - DoD-3: Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your write-up records why that was not possible.
 - DoD-4: No secrets or keys exist in the repository or on disk (the scan you ran is in your evidence).
 - DoD-5: Neither configuration creates a resource (the plan shows nothing to add).
-- DoD-6: Your trainer confirms your written comparison of cloud differences is correct on review.
-- DoD-7: Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
+- DoD-6: Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
 
 ## Definition-of-done self-assessment
 

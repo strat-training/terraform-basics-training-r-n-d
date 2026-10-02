@@ -21,7 +21,6 @@
 - [ ] Work on: Sensitive input variables — marking them and getting their values into Terraform without committing them
 - [ ] Work on: Output values — what to expose and how to mark an output sensitive
 - [ ] Work on: What marking a value sensitive does and does not protect
-- [ ] Work on: Reading validation errors as feedback
 - [ ] Have ready: A parameterised AWS configuration in which region, network address ranges and the resource name prefix are inputs
 - [ ] Have ready: two different sets of values that both plan cleanly
 - [ ] Have ready: a record of your precedence experiments and a configuration that handles a sensitive input and a sensitive output

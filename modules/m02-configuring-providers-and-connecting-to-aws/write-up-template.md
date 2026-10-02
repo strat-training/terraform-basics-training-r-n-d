@@ -43,12 +43,10 @@ Pick 2–3 ideas from this stage and explain each one in your own words, as if t
 
 - Authenticating to AWS (IAM Identity Center) and verifying Terraform identity
 - Keeping static access keys off disk and out of the repository
-- What a provider is and how Terraform finds and installs one, checking Provider version
-- Version constraints — for Terraform itself and for each provider
-- The dependency lock file — what it records and why it is committed
-- Using more than one provider in a single configuration
-- Provider configuration — how a provider obtains its credentials, and provider-level default tags
-- Upgrading a pinned version deliberately
+- What a provider is and how Terraform finds and installs one
+- Provider concepts, credential configuration, and default tags
+- Dependency management: version constraints, lock files, and safe upgrades
+- Using and inspecting multiple providers in a single configuration
 
 ## What tripped me up
 

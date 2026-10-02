@@ -1,6 +1,6 @@
 # M09 — Advanced Terraform Configuration — Tasks
 
-**Objective:** Use Terraform's more advanced language features to describe infrastructure from data instead of by copy-paste: repeat resources and nested blocks from structured input, derive and reshape values, branch on conditions, look up what already exists, and control dependency and lifecycle behaviour. Be able to say when a feature makes a configuration harder to read than the repetition it replaced.
+**Objective:** Use Terraform's more advanced language features to describe infrastructure from data instead of by copy-paste: repeat resources and nested blocks from structured input, derive and reshape values, branch on conditions, look up what already exists, and control dependency and lifecycle behaviour.
 
 > There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
@@ -12,19 +12,16 @@
 
 ## Build
 
-- [ ] Work on: Composing built-in functions to derive values
-- [ ] Work on: Conditional expressions — and when a condition belongs in configuration at all
-- [ ] Work on: `for` expressions and splat expressions — reshaping collections
-- [ ] Work on: `for_each` in depth — maps, sets and derived collections, and what makes a key stable
-- [ ] Work on: Dynamic blocks — generating repeated nested blocks from data
-- [ ] Work on: Data sources in depth — beyond the basic lookup introduced in M04
-- [ ] Work on: Explicit dependencies with `depends_on` — when a reference cannot express the ordering
-- [ ] Work on: The `lifecycle` block — controlling replacement, destruction and ignored changes
-- [ ] Work on: Preconditions and postconditions — checking assumptions about real infrastructure
-- [ ] Work on: When a feature costs more readability than it saves
+- [ ] Work on: Composing Values with Built-in Functions
+- [ ] Work on: Making Configuration Conditional
+- [ ] Work on: Reshaping Data with `for` and Splat Expressions
+- [ ] Work on: Going Deeper with `for_each`
+- [ ] Work on: Generating Nested Configuration with Dynamic Blocks
+- [ ] Work on: Discovering Existing Infrastructure with Data Sources
+- [ ] Work on: Controlling Dependencies and Resource Lifecycle
+- [ ] Work on: Validating Infrastructure with Preconditions and Postconditions
 - [ ] Have ready: A data-driven AWS configuration in which resources and nested blocks are generated from structured input instead of repeated by hand
 - [ ] Have ready: derived values, a conditional, a data-source lookup, dependency and lifecycle controls, and checks on its own assumptions
-- [ ] Have ready: a readability note on where each feature helped and where it hurt
 
 ## Verify
 
@@ -38,8 +35,7 @@
 - [ ] Confirm DoD-8: Every explicit dependency in the configuration is justified in the write-up; if there are none, the write-up says why a reference was always enough. Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-9: Every lifecycle setting you used is justified in the write-up, and its effect is shown from a plan or a deliberate attempt that it affects (output pasted). Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-10: At least one precondition or postcondition is in place, and you have deliberately triggered it and captured the failure message (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-11: Your readability note says, for each advanced feature you used, where it helped and where it made the configuration harder to follow. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-12: Everything is destroyed except the M07 bucket, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-11: Everything is destroyed except the M07 bucket, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

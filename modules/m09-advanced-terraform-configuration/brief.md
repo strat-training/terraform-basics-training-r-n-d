@@ -10,22 +10,20 @@
 
 ## Objective
 
-Use Terraform's more advanced language features to describe infrastructure from data instead of by copy-paste: repeat resources and nested blocks from structured input, derive and reshape values, branch on conditions, look up what already exists, and control dependency and lifecycle behaviour. Be able to say when a feature makes a configuration harder to read than the repetition it replaced.
+Use Terraform's more advanced language features to describe infrastructure from data instead of by copy-paste: repeat resources and nested blocks from structured input, derive and reshape values, branch on conditions, look up what already exists, and control dependency and lifecycle behaviour.
 
 ## Scope
 
 ### In scope (in the order to tackle)
 
-1. Composing built-in functions to derive values
-2. Conditional expressions — and when a condition belongs in configuration at all
-3. `for` expressions and splat expressions — reshaping collections
-4. `for_each` in depth — maps, sets and derived collections, and what makes a key stable
-5. Dynamic blocks — generating repeated nested blocks from data
-6. Data sources in depth — beyond the basic lookup introduced in M04
-7. Explicit dependencies with `depends_on` — when a reference cannot express the ordering
-8. The `lifecycle` block — controlling replacement, destruction and ignored changes
-9. Preconditions and postconditions — checking assumptions about real infrastructure
-10. When a feature costs more readability than it saves
+1. Composing Values with Built-in Functions
+2. Making Configuration Conditional
+3. Reshaping Data with `for` and Splat Expressions
+4. Going Deeper with `for_each`
+5. Generating Nested Configuration with Dynamic Blocks
+6. Discovering Existing Infrastructure with Data Sources
+7. Controlling Dependencies and Resource Lifecycle
+8. Validating Infrastructure with Preconditions and Postconditions
 
 ### Out of scope
 
@@ -45,7 +43,7 @@ Use Terraform's more advanced language features to describe infrastructure from 
 
 ## Deliverable
 
-**A data-driven AWS configuration** in which resources and nested blocks are generated from structured input instead of repeated by hand, with derived values, a conditional, a data-source lookup, dependency and lifecycle controls, and checks on its own assumptions, plus a readability note on where each feature helped and where it hurt.
+**A data-driven AWS configuration** in which resources and nested blocks are generated from structured input instead of repeated by hand, with derived values, a conditional, a data-source lookup, dependency and lifecycle controls, and checks on its own assumptions.
 
 ## Open design questions
 
@@ -69,8 +67,7 @@ Use Terraform's more advanced language features to describe infrastructure from 
 - [ ] **DoD-8** Every explicit dependency in the configuration is justified in the write-up; if there are none, the write-up says why a reference was always enough.
 - [ ] **DoD-9** Every lifecycle setting you used is justified in the write-up, and its effect is shown from a plan or a deliberate attempt that it affects (output pasted).
 - [ ] **DoD-10** At least one precondition or postcondition is in place, and you have deliberately triggered it and captured the failure message (output pasted).
-- [ ] **DoD-11** Your readability note says, for each advanced feature you used, where it helped and where it made the configuration harder to follow.
-- [ ] **DoD-12** Everything is destroyed except the M07 bucket, confirmed from the cloud side.
+- [ ] **DoD-11** Everything is destroyed except the M07 bucket, confirmed from the cloud side.
 
 ## Best practices this stage demonstrates
 

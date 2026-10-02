@@ -16,16 +16,11 @@ Rename, adopt and stop managing resources without destroying anything, by changi
 
 ### In scope (in the order to tackle)
 
-1. Why refactoring must never mean destroy-and-recreate
-2. Renaming or re-addressing a resource without replacing it
-3. Adopting an existing, unmanaged resource into Terraform
-4. Tidying generated configuration
-5. Ceasing to manage a resource without destroying it
-6. Verifying every refactor with a plan
-7. Reading a saved plan as JSON with `jq` — checking the action on every resource mechanically
-8. Targeted operations — an emergency tool, never routine
-9. Reading legacy guidance that relies on imperative state commands
-10. When an apply goes wrong — a partial apply, a failed destroy, and reading provider errors
+1. Refactoring principles: renaming and removing resources without destruction
+2. Adopting existing, unmanaged resources into Terraform
+3. Verifying refactors mechanically: reading plans as JSON with `jq`
+4. Emergency recovery: handling partial applies and failed destroys
+5. Advanced troubleshooting: targeted operations and legacy state commands
 
 ### Out of scope
 
@@ -64,7 +59,7 @@ Rename, adopt and stop managing resources without destroying anything, by changi
 - [ ] **DoD-7** Your write-up lists every command you ran against state and what each one did.
 - [ ] **DoD-8** Your note on legacy imperative commands says when you will meet them and what the declarative equivalent is.
 - [ ] **DoD-9** You have caused an apply to stop part-way, captured the error and what state holds afterwards, and brought the configuration back to a clean plan without editing state by hand (output pasted).
-- [ ] **DoD-10** Your write-up explains how to read a provider error, and what to do after a failed destroy.
+- [ ] **DoD-10** Your write-up explains what to do after a failed destroy.
 - [ ] **DoD-11** No billable resource is left behind; only the M07 bucket remains.
 
 ## Best practices this stage demonstrates

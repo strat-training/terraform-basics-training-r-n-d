@@ -12,16 +12,11 @@
 
 ## Build
 
-- [ ] Work on: Why refactoring must never mean destroy-and-recreate
-- [ ] Work on: Renaming or re-addressing a resource without replacing it
-- [ ] Work on: Adopting an existing, unmanaged resource into Terraform
-- [ ] Work on: Tidying generated configuration
-- [ ] Work on: Ceasing to manage a resource without destroying it
-- [ ] Work on: Verifying every refactor with a plan
-- [ ] Work on: Reading a saved plan as JSON with `jq` — checking the action on every resource mechanically
-- [ ] Work on: Targeted operations — an emergency tool, never routine
-- [ ] Work on: Reading legacy guidance that relies on imperative state commands
-- [ ] Work on: When an apply goes wrong — a partial apply, a failed destroy, and reading provider errors
+- [ ] Work on: Refactoring principles: renaming and removing resources without destruction
+- [ ] Work on: Adopting existing, unmanaged resources into Terraform
+- [ ] Work on: Verifying refactors mechanically: reading plans as JSON with `jq`
+- [ ] Work on: Emergency recovery: handling partial applies and failed destroys
+- [ ] Work on: Advanced troubleshooting: targeted operations and legacy state commands
 - [ ] Have ready: Three refactors applied to a small configuration — a rename, an adoption and a stop-managing — each verified by a plan with no destroys and no replacements
 - [ ] Have ready: a short note on legacy imperative commands
 
@@ -36,7 +31,7 @@
 - [ ] Confirm DoD-7: Your write-up lists every command you ran against state and what each one did. Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-8: Your note on legacy imperative commands says when you will meet them and what the declarative equivalent is. Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-9: You have caused an apply to stop part-way, captured the error and what state holds afterwards, and brought the configuration back to a clean plan without editing state by hand (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-10: Your write-up explains how to read a provider error, and what to do after a failed destroy. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-10: Your write-up explains what to do after a failed destroy. Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-11: No billable resource is left behind; only the M07 bucket remains. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up

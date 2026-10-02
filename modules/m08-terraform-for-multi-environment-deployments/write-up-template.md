@@ -19,7 +19,6 @@ One entry per open design question in the brief, then one for where you spent th
 
 - What makes it easy to apply one environment's values to the other's state, and what will you do to make that harder?
 - Which tags would a clean-up or cost report need beyond `Environment`, and why?
-- How should the files be laid out so a newcomer finds each concern without being told?
 - When would workspaces be the right tool, and what do you give up by not using them here?
 - When would a directory per environment be the right tool, and what do you give up by not using it here?
 - In what ways does keeping both environments in one account misrepresent real practice?
@@ -45,11 +44,10 @@ Pick 2–3 ideas from this stage and explain each one in your own words, as if t
 - One configuration, many environments — what is shared and what must be separate
 - Per-environment input values
 - Per-environment backend settings and separate state keys in the shared bucket
-- Blast radius — what separate state does and does not protect
-- The standard file layout for a root configuration
-- A naming convention and required tags applied through provider defaults
+- Managing blast radius through state separation
+- Enforcing naming conventions and default provider tags
 - Switching between environments safely
-- Other ways to separate environments — a directory per environment, and workspaces — and when each fits (explained, not used)
+- Alternative isolation methods: directories vs workspaces (theory)
 
 ## What tripped me up
 
@@ -63,9 +61,8 @@ Show the evidence for every item in the definition of done in `brief.md`, one by
 - DoD-2: Both environments produce clean plans (output for each).
 - DoD-3: Environment-specific inputs differ between the two environments and live outside the main configuration files.
 - DoD-4: Every resource follows the naming convention and carries the required tags (shown from the plan, state or cloud side).
-- DoD-5: The file layout follows the standard root-configuration layout; a reviewer can find each concern from file names alone.
-- DoD-6: The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits.
-- DoD-7: Both environments are destroyed and the bucket is retained, confirmed from the cloud side.
+- DoD-5: The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits.
+- DoD-6: Both environments are destroyed and the bucket is retained, confirmed from the cloud side.
 
 ## Definition-of-done self-assessment
 

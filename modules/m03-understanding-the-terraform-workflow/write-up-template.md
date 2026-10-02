@@ -44,8 +44,7 @@ Pick 2–3 ideas from this stage and explain each one in your own words, as if t
 - Declarative versus imperative infrastructure — what it means that Terraform describes desired state
 - Anatomy of a resource — type, name, arguments and attributes
 - The core workflow — initialise, plan, apply, destroy
-- What a plan shows — reading the action for each resource
-- In-place updates versus replacement
+- What a plan shows — reading the action for each resource, In-place updates versus replacement
 - Plan review as a habit — what to check before approving
 - Destroying what you created
 

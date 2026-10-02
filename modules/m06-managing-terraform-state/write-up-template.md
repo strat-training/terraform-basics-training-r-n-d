@@ -41,13 +41,10 @@ Write this as a guide someone could actually follow to build this stage from scr
 
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-- What state records and what Terraform uses it for
-- Secrets and state — what lands in state and who can read it
-- Keeping a secret out of state — ephemeral values and write-only arguments, where the provider supports them
-- Inspecting state, read-only
-- Drift — how it arises and how Terraform detects it
-- Reconciling drift — deciding whether the code or the real world wins
-- Why state is never edited by hand
+- Understanding and inspecting Terraform state (read-only)
+- Secrets and state — what lands in state and who can read it and keeping a secret out of state
+- Infrastructure drift: detection, causes, and reconciliation
+- The golden rule: why state is never edited by hand
 
 ## What tripped me up
 

@@ -5,7 +5,7 @@
 | Stage | 4 of 12 |
 | Cloud | AWS |
 | Builds on | M03 |
-| Cost | Some networking resources bill by the hour (see scope 7). Look up what each resource in your plan bills before you apply, and destroy everything at the end of the stage. |
+| Cost | Some networking resources bill by the hour. Look up what each resource in your plan bills before you apply, and destroy everything at the end of the stage. |
 | Leaves behind | Nothing. Destroy everything. |
 
 ## Objective
@@ -21,8 +21,6 @@ Provision a small AWS network and use it to understand how Terraform works out w
 3. Repeating a resource — the two mechanisms Terraform offers
 4. Data sources — reading information that already exists, and how it differs from a resource
 5. A VPC, subnets in more than one availability zone, and the routing a public tier needs
-6. Public versus private subnets — what makes a subnet public
-7. Cost awareness — why some networking resources bill by the hour
 
 ### Out of scope
 
@@ -48,8 +46,7 @@ Provision a small AWS network and use it to understand how Terraform works out w
 1. Where in your configuration did you rely on Terraform to infer ordering, and was there anywhere you felt you had to state it explicitly? Why?
 2. What are the trade-offs between the two ways of repeating a resource, and why does the course want one preferred?
 3. What happens to your existing subnets if you later add or remove one from the set you are repeating over?
-4. What distinguishes a public subnet from a private one in AWS, and how would you prove which is which?
-5. What is the difference between a resource and a data source in what Terraform manages, and what happens to each when you destroy?
+4. What is the difference between a resource and a data source in what Terraform manages, and what happens to each when you destroy?
 
 ## Definition of done
 

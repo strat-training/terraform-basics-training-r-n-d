@@ -1,6 +1,6 @@
 # M08 — Terraform for Multi-Environment Deployments — Tasks
 
-**Objective:** Deploy two environments — dev and prod — from one configuration with separate state, laid out, named and tagged so consistently that anyone can tell which environment a resource belongs to at a glance. Be able to say when you would use workspaces or a directory per environment instead.
+**Objective:** Deploy two environments — dev and prod — from one configuration with separate state, named and tagged so consistently that anyone can tell which environment a resource belongs to at a glance. Be able to say when you would use workspaces or a directory per environment instead.
 
 > There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
@@ -15,11 +15,10 @@
 - [ ] Work on: One configuration, many environments — what is shared and what must be separate
 - [ ] Work on: Per-environment input values
 - [ ] Work on: Per-environment backend settings and separate state keys in the shared bucket
-- [ ] Work on: Blast radius — what separate state does and does not protect
-- [ ] Work on: The standard file layout for a root configuration
-- [ ] Work on: A naming convention and required tags applied through provider defaults
+- [ ] Work on: Managing blast radius through state separation
+- [ ] Work on: Enforcing naming conventions and default provider tags
 - [ ] Work on: Switching between environments safely
-- [ ] Work on: Other ways to separate environments — a directory per environment, and workspaces — and when each fits (explained, not used)
+- [ ] Work on: Alternative isolation methods: directories vs workspaces (theory)
 - [ ] Have ready: One configuration deployed as both dev and prod with separate state
 - [ ] Have ready: a note comparing three ways to separate environments
 
@@ -29,9 +28,8 @@
 - [ ] Confirm DoD-2: Both environments produce clean plans (output for each). Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-3: Environment-specific inputs differ between the two environments and live outside the main configuration files. Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-4: Every resource follows the naming convention and carries the required tags (shown from the plan, state or cloud side). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: The file layout follows the standard root-configuration layout; a reviewer can find each concern from file names alone. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: Both environments are destroyed and the bucket is retained, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Both environments are destroyed and the bucket is retained, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

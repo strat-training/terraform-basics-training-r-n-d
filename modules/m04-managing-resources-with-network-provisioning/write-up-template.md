@@ -20,7 +20,6 @@ One entry per open design question in the brief, then one for where you spent th
 - Where in your configuration did you rely on Terraform to infer ordering, and was there anywhere you felt you had to state it explicitly? Why?
 - What are the trade-offs between the two ways of repeating a resource, and why does the course want one preferred?
 - What happens to your existing subnets if you later add or remove one from the set you are repeating over?
-- What distinguishes a public subnet from a private one in AWS, and how would you prove which is which?
 - What is the difference between a resource and a data source in what Terraform manages, and what happens to each when you destroy?
 - Where did you spend the most time, and why?
 
@@ -46,8 +45,6 @@ Pick 2–3 ideas from this stage and explain each one in your own words, as if t
 - Repeating a resource — the two mechanisms Terraform offers
 - Data sources — reading information that already exists, and how it differs from a resource
 - A VPC, subnets in more than one availability zone, and the routing a public tier needs
-- Public versus private subnets — what makes a subnet public
-- Cost awareness — why some networking resources bill by the hour
 
 ## What tripped me up
 

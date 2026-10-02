@@ -12,13 +12,10 @@
 
 ## Build
 
-- [ ] Work on: What state records and what Terraform uses it for
-- [ ] Work on: Secrets and state — what lands in state and who can read it
-- [ ] Work on: Keeping a secret out of state — ephemeral values and write-only arguments, where the provider supports them
-- [ ] Work on: Inspecting state, read-only
-- [ ] Work on: Drift — how it arises and how Terraform detects it
-- [ ] Work on: Reconciling drift — deciding whether the code or the real world wins
-- [ ] Work on: Why state is never edited by hand
+- [ ] Work on: Understanding and inspecting Terraform state (read-only)
+- [ ] Work on: Secrets and state — what lands in state and who can read it and keeping a secret out of state
+- [ ] Work on: Infrastructure drift: detection, causes, and reconciliation
+- [ ] Work on: The golden rule: why state is never edited by hand
 - [ ] Have ready: A small configuration taken through an out-of-band change and back to a clean plan
 - [ ] Have ready: your written answers to the stage's questions
 

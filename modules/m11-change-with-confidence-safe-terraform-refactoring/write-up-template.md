@@ -41,16 +41,11 @@ Write this as a guide someone could actually follow to build this stage from scr
 
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-- Why refactoring must never mean destroy-and-recreate
-- Renaming or re-addressing a resource without replacing it
-- Adopting an existing, unmanaged resource into Terraform
-- Tidying generated configuration
-- Ceasing to manage a resource without destroying it
-- Verifying every refactor with a plan
-- Reading a saved plan as JSON with `jq` — checking the action on every resource mechanically
-- Targeted operations — an emergency tool, never routine
-- Reading legacy guidance that relies on imperative state commands
-- When an apply goes wrong — a partial apply, a failed destroy, and reading provider errors
+- Refactoring principles: renaming and removing resources without destruction
+- Adopting existing, unmanaged resources into Terraform
+- Verifying refactors mechanically: reading plans as JSON with `jq`
+- Emergency recovery: handling partial applies and failed destroys
+- Advanced troubleshooting: targeted operations and legacy state commands
 
 ## What tripped me up
 
@@ -69,7 +64,7 @@ Show the evidence for every item in the definition of done in `brief.md`, one by
 - DoD-7: Your write-up lists every command you ran against state and what each one did.
 - DoD-8: Your note on legacy imperative commands says when you will meet them and what the declarative equivalent is.
 - DoD-9: You have caused an apply to stop part-way, captured the error and what state holds afterwards, and brought the configuration back to a clean plan without editing state by hand (output pasted).
-- DoD-10: Your write-up explains how to read a provider error, and what to do after a failed destroy.
+- DoD-10: Your write-up explains what to do after a failed destroy.
 - DoD-11: No billable resource is left behind; only the M07 bucket remains.
 
 ## Definition-of-done self-assessment

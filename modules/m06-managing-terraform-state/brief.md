@@ -16,13 +16,10 @@ Understand what Terraform's state is, why it must be treated as sensitive, and h
 
 ### In scope (in the order to tackle)
 
-1. What state records and what Terraform uses it for
-2. Secrets and state — what lands in state and who can read it
-3. Keeping a secret out of state — ephemeral values and write-only arguments, where the provider supports them
-4. Inspecting state, read-only
-5. Drift — how it arises and how Terraform detects it
-6. Reconciling drift — deciding whether the code or the real world wins
-7. Why state is never edited by hand
+1. Understanding and inspecting Terraform state (read-only)
+2. Secrets and state — what lands in state and who can read it and keeping a secret out of state
+3. Infrastructure drift: detection, causes, and reconciliation
+4. The golden rule: why state is never edited by hand
 
 ### Out of scope
 

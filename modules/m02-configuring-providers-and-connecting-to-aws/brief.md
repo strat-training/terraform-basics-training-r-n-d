@@ -18,12 +18,10 @@ Sign in to the AWS sandbox with the access you were given, and know at any momen
 
 1. Authenticating to AWS (IAM Identity Center) and verifying Terraform identity
 2. Keeping static access keys off disk and out of the repository
-3. What a provider is and how Terraform finds and installs one, checking Provider version
-4. Version constraints — for Terraform itself and for each provider
-5. The dependency lock file — what it records and why it is committed
-6. Using more than one provider in a single configuration
-7. Provider configuration — how a provider obtains its credentials, and provider-level default tags
-8. Upgrading a pinned version deliberately
+3. What a provider is and how Terraform finds and installs one
+4. Provider concepts, credential configuration, and default tags
+5. Dependency management: version constraints, lock files, and safe upgrades
+6. Using and inspecting multiple providers in a single configuration
 
 ### Out of scope
 

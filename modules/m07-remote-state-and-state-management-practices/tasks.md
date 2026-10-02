@@ -13,13 +13,9 @@
 ## Build
 
 - [ ] Work on: Why state moves to a remote backend, and what locking prevents
-- [ ] Work on: The bootstrapping problem — where the state bucket itself comes from
-- [ ] Work on: Protecting the bucket — versioning, encryption at rest, blocked public access, restricted access
+- [ ] Work on: Bootstrapping, securing, and managing the lifecycle of the state bucket
 - [ ] Work on: Configuring the backend and migrating existing local state into it
-- [ ] Work on: Native S3 state locking, and why DynamoDB-based locking is no longer taught
-- [ ] Work on: Proving that locking works
-- [ ] Work on: A bucket that outlives its stage — lifecycle and eventual retirement
-- [ ] Work on: A lock left behind — what it means, what to check, and recovering safely
+- [ ] Work on: Proving that native locking works and recovering abandoned locks
 - [ ] Have ready: A protected S3 state bucket and a configuration that uses it as its remote backend
 - [ ] Have ready: locking demonstrated
 

@@ -25,7 +25,6 @@ Turn a hard-wired configuration into a parameterised one with typed, described a
 7. Sensitive input variables — marking them and getting their values into Terraform without committing them
 8. Output values — what to expose and how to mark an output sensitive
 9. What marking a value sensitive does and does not protect
-10. Reading validation errors as feedback
 
 ### Out of scope
 
@@ -53,12 +52,11 @@ Turn a hard-wired configuration into a parameterised one with typed, described a
 1. Which rules deserve plan-time validation, and which are better left for AWS to reject at apply time?
 2. Which inputs should have defaults and which should be required — what is the risk of each?
 3. Where does a typed variable stop being enough?
-4. What makes a validation error message useful to someone who did not write the rule?
-5. If several sources can supply the same variable, why might a team still allow only one source per variable, and how would you enforce that?
-6. How should a sensitive value reach Terraform, and what are the risks of each way you tried?
-7. What does marking a value sensitive hide, and where can it still be seen?
-8. Which outputs are worth exposing at all, and who is the audience for each?
-9. When is a local value clearer than repeating an expression, and when does it hide too much?
+4. If several sources can supply the same variable, why might a team still allow only one source per variable, and how would you enforce that?
+5. How should a sensitive value reach Terraform, and what are the risks of each way you tried?
+6. What does marking a value sensitive hide, and where can it still be seen?
+7. Which outputs are worth exposing at all, and who is the audience for each?
+8. When is a local value clearer than repeating an expression, and when does it hide too much?
 
 ## Definition of done
 
@@ -79,4 +77,4 @@ Turn a hard-wired configuration into a parameterised one with typed, described a
 
 - Typed, validated inputs
 - fmt and validate
-- Not in the current 14-practice list: value precedence, and handling sensitive inputs and outputs
+- Value precedence, and handling sensitive inputs and outputs

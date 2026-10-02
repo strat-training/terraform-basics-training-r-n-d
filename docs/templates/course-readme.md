@@ -98,29 +98,31 @@ These apply to every stage brief, <first> to <last>. A brief repeats only what i
 
 ## What review looks for
 
-Your trainer reviews what you built and what you wrote together, and rates each criterion below. <The capstone has its own rubric.>
+Your trainer reviews what you built and what you wrote together, against one rubric. <The capstone has its own rubric.>
 
-### The <stage word> you built
+<!-- Keep the points adding up to 100 (or change the pass mark below to match your total). Keep one table for the build and the write-up together. -->
 
-| Criterion | Excellent | Satisfactory | Needs work |
-| --- | --- | --- | --- |
-| Deliverable | Everything the brief names is there and works as described. A reviewer can run it from a clean start and get what your write-up says | The deliverable is mostly there, or it works only after a fix you made during review | Parts of the deliverable are missing, or it does not run |
-| Definition of done | Every item is met, and each one is shown with real evidence — pasted output or a screenshot, trimmed to the relevant lines and redacted | Every item is addressed, but some evidence is a claim or is hard to follow | An item is unmet, or has no evidence |
-| <Subject> quality | <It is clear and well organised, follows the brief's constraints, and the checks the stage requires pass> | <It works but is untidy, or breaks one constraint, which you noted and fixed> | <It is hard to follow or breaks a constraint> |
-| Security and clean-up | <No stored credentials. Everything the brief says to destroy is gone, confirmed from the provider's side> | One slip, which you caught and fixed | <A stored credential, or a resource left running> |
-| Cost | You looked up what each resource bills before you applied, and your estimate is in the write-up | The estimate was made after applying, or is incomplete | The cost was never considered |
-| Understanding | You explain any part of your build and your write-up when the trainer asks, without re-reading it | You explain most of it and need prompting on the rest | You cannot explain work you submitted |
+| Criterion | Graded on | Points | Excellent | Satisfactory | Needs work |
+| --- | --- | --- | --- | --- | --- |
+| Deliverable | Build | <20> | Everything the brief names is there and works as described. A reviewer can run it from a clean start and get what your write-up says | The deliverable is mostly there, or it works only after a fix you made during review | Parts of the deliverable are missing, or it does not run |
+| Definition of done | Build and write-up | <15> | Every item is met, and each one is shown in the write-up with real evidence — pasted output or a screenshot, trimmed to the relevant lines and redacted | Every item is addressed, but some evidence is a claim or is hard to follow | An item is unmet, or has no evidence |
+| <Subject> quality | Build | <10> | <Clear and well organised, follows the brief's constraints, and the checks the stage requires pass> | <It works but is untidy, or breaks one constraint, which you noted and fixed> | <It is hard to follow or breaks a constraint> |
+| Security, clean-up and cost | Build | <10> | <No stored credentials. Everything the brief says to destroy is gone, confirmed from the provider's side. You looked up what each resource bills before you applied, and your estimate is in the write-up> | <One slip, which you caught and fixed, or the cost estimate was made after applying> | <A stored credential, a resource left running, or the cost was never considered> |
+| Design decisions | Write-up | <10> | Every open design question has a reasoned answer that says what you considered, what you chose and what you gave up, and the answers match what you built | Questions are answered, but the reasons are thin or the trade-off is missing | A question is unanswered, or an answer only restates what you built |
+| How to build it | Write-up | <15> | Someone else could follow it from a clean start and end up with your build; you have followed it yourself and it works | It mostly works, with gaps or steps that assume knowledge the reader may not have | It is a summary of what you did rather than a guide, or it was never followed through |
+| Concepts | Write-up | <5> | Two or three ideas in your own words, each with an example from your own build | Explained correctly, but generic or close to the documentation's wording | Missing, or wrong |
+| What tripped me up | Write-up | <5> | Real obstacles with the exact error text, the cause and the fix. These entries become the course's common-errors list | Obstacles listed without the error text or the cause | Empty, or only polished successes |
+| AI collaboration log | Write-up | <5> | Specific: which tools, concrete examples, a suggestion that was wrong and how you caught it, and what you wrote yourself — or one line saying none was used | Generic, or no corrected suggestion | Missing |
+| Understanding | Build and write-up | <5> | You explain any part of your build and your write-up when the trainer asks, without re-reading it | You explain most of it and need prompting on the rest | You cannot explain work you submitted |
 
-### The write-up that teaches it
+### How a stage is graded
 
-| Criterion | Excellent | Satisfactory | Needs work |
-| --- | --- | --- | --- |
-| Design decisions | Every open design question has a reasoned answer that says what you considered, what you chose and what you gave up, and the answers match what you built | Questions are answered, but the reasons are thin or the trade-off is missing | A question is unanswered, or an answer only restates what you built |
-| How to build it | Someone else could follow it from a clean start and end up with your build; you have followed it yourself and it works | It mostly works, with gaps or steps that assume knowledge the reader may not have | It is a summary of what you did rather than a guide, or it was never followed through |
-| Concepts | Two or three ideas in your own words, each with an example from your own build | Explained correctly, but generic or close to the documentation's wording | Missing, or wrong |
-| What tripped me up | Real obstacles with the exact error text, the cause and the fix. These entries become the course's common-errors list | Obstacles listed without the error text or the cause | Empty, or only polished successes |
-| AI collaboration log | Specific: which tools, concrete examples, a suggestion that was wrong and how you caught it, and what you wrote yourself — or one line saying none was used | Generic, or no corrected suggestion | Missing |
+1. Your trainer runs your build from a clean start and reads your write-up.
+2. Each criterion is scored from 0 to its points. Excellent is <80%> or more of the points, Satisfactory is <50% to 79%>, and Needs work is under <50%>.
+3. The scores are added up to a total out of <100>.
+4. The stage is **accepted** when the total is <70> or more and both of these are true: <the deliverable works and every item in the definition of done is met and evidenced>; and <the safety conditions that always fail a stage, such as a stored credential or a resource left running>.
+5. Otherwise the stage goes back to you with the criteria to fix, and you revise it before starting the next one.
 
-**Accepted** means the deliverable works, every item in the definition of done is met and evidenced, and no criterion is Needs work. Otherwise the stage goes back for revision before the next one starts. A write-up that is Excellent on "How to build it" and on "What tripped me up", for a build that is Excellent on "Deliverable", is a candidate for the content library.
+A stage that scores <90> or more is a candidate for the content library.
 
-<One line saying how the capstone's build and write-up are reviewed and what else it is marked against.>
+<One line saying how the capstone's build and write-up are marked and what else it is checked against.>

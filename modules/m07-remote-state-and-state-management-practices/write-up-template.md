@@ -41,13 +41,9 @@ Write this as a guide someone could actually follow to build this stage from scr
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
 - Why state moves to a remote backend, and what locking prevents
-- The bootstrapping problem — where the state bucket itself comes from
-- Protecting the bucket — versioning, encryption at rest, blocked public access, restricted access
+- Bootstrapping, securing, and managing the lifecycle of the state bucket
 - Configuring the backend and migrating existing local state into it
-- Native S3 state locking, and why DynamoDB-based locking is no longer taught
-- Proving that locking works
-- A bucket that outlives its stage — lifecycle and eventual retirement
-- A lock left behind — what it means, what to check, and recovering safely
+- Proving that native locking works and recovering abandoned locks
 
 ## What tripped me up
 
