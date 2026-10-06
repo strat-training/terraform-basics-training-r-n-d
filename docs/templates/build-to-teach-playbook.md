@@ -71,7 +71,8 @@ Answer the questions it raises in the chat. Reorder, rename, add and drop stages
 Create one folder per stage under modules/, named m<NN>-<descriptive-title>, and write each stage's brief.md
 from docs/templates/brief.md. The brief is the trainer's handoff only: objective, scope in the order to
 tackle, out of scope, stack constraints, a named deliverable, open design questions, an observable
-definition of done with stable IDs, and a Cost row. No lesson content, no steps, no code, no solutions.
+definition of done with stable IDs, written around the trainee's training module (the build plus the
+write-up that teaches it), and a Cost row. No lesson content, no steps, no code, no solutions.
 The stages are: <STAGE_LIST>. These rules apply to every stage and are stated once in the README, so do
 not repeat them in the briefs: <RULES_FOR_EVERY_STAGE>.
 

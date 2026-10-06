@@ -53,15 +53,14 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: A state object for your configuration exists in the bucket (listing pasted).
-- DoD-2: Versioning is enabled on the bucket (shown from the cloud side).
-- DoD-3: Encryption at rest is enabled and public access is fully blocked (shown from the cloud side).
-- DoD-4: The backend configuration enables native locking and no DynamoDB table is used or created.
-- DoD-5: A plan after migrating local state shows no changes — nothing was recreated.
-- DoD-6: With one operation in progress, a second is refused with a lock error (the error output pasted).
-- DoD-7: A lock has been left behind deliberately, and you recovered without losing or corrupting state (the error and the recovery output pasted).
-- DoD-8: The bucket is retained and everything else is destroyed, confirmed from the cloud side.
-- DoD-9: No static keys and no state file contents are committed to version control.
+- DoD-1: Your training module shows a state object for your configuration in the bucket (listing pasted).
+- DoD-2: Your training module shows versioning and encryption at rest enabled and public access fully blocked on the bucket (shown from the cloud side).
+- DoD-3: Your training module shows a backend configuration that enables native locking, with no DynamoDB table used or created.
+- DoD-4: Your training module shows a plan after migrating local state with no changes — nothing was recreated.
+- DoD-5: Your training module shows a second operation refused with a lock error while one is in progress (the error output pasted).
+- DoD-6: Your training module shows a lock left behind deliberately and your recovery without losing or corrupting state (the error and the recovery output pasted).
+- DoD-7: A learner following your training module ends with the bucket retained and everything else destroyed, confirmed from the cloud side.
+- DoD-8: Your training module shows no static keys and no state file contents committed to version control.
 
 ## Definition-of-done self-assessment
 

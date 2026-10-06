@@ -52,12 +52,14 @@ See that the core Terraform workflow carries over to GCP and Azure while provide
 
 ## Definition of done
 
-- [ ] **DoD-1** Both configurations pass formatting and validation checks.
-- [ ] **DoD-2** Both configurations plan successfully and the plan output includes an identity output for each cloud (output pasted).
-- [ ] **DoD-3** Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your write-up records why that was not possible.
-- [ ] **DoD-4** No secrets or keys exist in the repository or on disk (the scan you ran is in your evidence).
-- [ ] **DoD-5** Neither configuration creates a resource (the plan shows nothing to add).
-- [ ] **DoD-6** Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
+Your training module — the build plus the write-up that teaches it — is done when each of these is true.
+
+- [ ] **DoD-1** Your training module shows both configurations passing formatting and validation checks.
+- [ ] **DoD-2** Your training module shows both configurations planning successfully, with the plan output including an identity output for each cloud (output pasted).
+- [ ] **DoD-3** Your training module shows each configuration targeting the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or records why that was not possible.
+- [ ] **DoD-4** Your training module shows no secrets or keys in the repository or on disk (the scan you ran is in your evidence).
+- [ ] **DoD-5** Your training module shows neither configuration creating a resource (the plan shows nothing to add).
+- [ ] **DoD-6** Your training module closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
 
 ## Best practices this stage demonstrates
 

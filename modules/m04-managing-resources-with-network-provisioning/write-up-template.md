@@ -54,13 +54,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: Formatting and validation checks pass with no errors.
-- DoD-2: The plan contains the VPC, subnets in at least two availability zones, and the routing for the public tier (resource addresses shown from the plan output or its JSON form).
-- DoD-3: Subnets in more than one availability zone are created by repeating one resource block rather than writing each one out (a reviewer reads the configuration).
-- DoD-4: At least one value the configuration needs about the account or region is read with a data source rather than hard-coded (a reviewer reads the configuration).
-- DoD-5: No NAT gateway appears in the plan or in state.
-- DoD-6: Your note names the implicit dependencies in your configuration and where each one comes from.
-- DoD-7: Everything is destroyed, confirmed from the cloud side.
+- DoD-1: Your training module shows formatting and validation checks passing with no errors.
+- DoD-2: Your training module shows a plan that contains the VPC, subnets in at least two availability zones, and the routing for the public tier (resource addresses shown from the plan output or its JSON form).
+- DoD-3: Your training module shows subnets in more than one availability zone created by repeating one resource block rather than writing each one out (a reviewer reads the configuration).
+- DoD-4: Your training module shows at least one value the configuration needs about the account or region read with a data source rather than hard-coded (a reviewer reads the configuration).
+- DoD-5: Your training module shows no NAT gateway in the plan or in state.
+- DoD-6: Your training module's note names the implicit dependencies in your configuration and where each one comes from.
+- DoD-7: A learner following your training module ends with everything destroyed, confirmed from the cloud side.
 
 ## Definition-of-done self-assessment
 

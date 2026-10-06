@@ -27,18 +27,14 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Formatting and validation checks pass with no errors. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: An invalid network address range is rejected at plan time with your validation message and nothing is planned for creation (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: Both sets of values produce clean, error-free plans (output for each). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: The main configuration file contains no hard-coded region, network address range or name prefix. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: Every variable has a type and a description. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: At least one value is derived once as a local value and used in more than one place (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: Your precedence record has one isolated experiment for each source — defaults, `terraform.tfvars`, `*.auto.tfvars`, `-var`, `-var-file` and environment variables — and each shows the single source supplying the variable and the value Terraform used (plan output per experiment). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-8: After the isolated experiments you combined sources deliberately, and your record states the order in which sources win, supported by your combined-run evidence. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-9: At least one sensitive input is marked sensitive, its value reaches Terraform without appearing in any committed file, and the plan output does not display it (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-10: At least one output is marked sensitive, and your evidence shows what is displayed for it. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-11: Your write-up states what marking a value sensitive does and does not protect, supported by what you observed using placeholder values only. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-12: Everything created is destroyed, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: Your training module shows formatting and validation checks passing with no errors, and both sets of values producing clean, error-free plans (output for each). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Your training module shows an invalid network address range rejected at plan time with your validation message and nothing planned for creation (output pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Your training module's main configuration file contains no hard-coded region, network address range or name prefix, and every variable has a type and a description. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Your training module shows at least one value derived once as a local value and used in more than one place (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: Your training module's precedence record has one isolated experiment for each source — defaults, `terraform.tfvars`, `*.auto.tfvars`, `-var`, `-var-file` and environment variables — each showing the single source supplying the variable and the value Terraform used (plan output per experiment), followed by a deliberate combined run that states the order in which sources win, supported by your combined-run evidence. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Your training module shows at least one sensitive input marked sensitive, its value reaching Terraform without appearing in any committed file and the plan output not displaying it, and at least one output marked sensitive, with what is displayed for it (output pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: Your training module states what marking a value sensitive does and does not protect, supported by what you observed using placeholder values only. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-8: A learner following your training module ends with everything created destroyed, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

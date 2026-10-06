@@ -13,19 +13,19 @@ Every topic each training stage covers, in the order the stage tackles it, so yo
 | Stage | Title | Scope items | Design questions | Done checks | Tasks | Builds on |
 | --- | --- | --- | --- | --- | --- | --- |
 | M01 | Getting Started with Terraform | 7 | 5 | 8 | 30 | Nothing |
-| M02 | Configuring Providers and Connecting to AWS | 6 | 5 | 9 | 30 | M01 |
+| M02 | Configuring Providers and Connecting to AWS | 6 | 5 | 8 | 29 | M01 |
 | M03 | Understanding the Terraform Workflow | 6 | 5 | 6 | 27 | M02 |
 | M04 | Managing Resources with Network Provisioning | 5 | 4 | 7 | 26 | M03 |
-| M05 | Defining Variables, Inputs and Outputs in Terraform | 9 | 8 | 12 | 37 | M04 (you may reuse that work) |
+| M05 | Defining Variables, Inputs and Outputs in Terraform | 9 | 8 | 8 | 33 | M04 (you may reuse that work) |
 | M06 | Managing Terraform State | 4 | 5 | 8 | 27 | M03 |
-| M07 | Remote State and State Management Practices | 4 | 4 | 9 | 28 | M06 |
+| M07 | Remote State and State Management Practices | 4 | 4 | 8 | 27 | M06 |
 | M08 | Terraform for Multi-Environment Deployments | 7 | 5 | 6 | 28 | M05, M07 |
-| M09 | Advanced Terraform Configuration | 8 | 7 | 11 | 34 | M04, M05, M06 |
-| M10 | Designing Reusable Terraform Modules | 12 | 8 | 12 | 39 | M05, M06, M07, M08, M09 |
-| M11 | Change with Confidence: Safe Terraform Refactoring | 5 | 5 | 11 | 31 | M03, M06, M07, M10 |
+| M09 | Advanced Terraform Configuration | 8 | 7 | 8 | 31 | M04, M05, M06 |
+| M10 | Designing Reusable Terraform Modules | 12 | 8 | 8 | 35 | M05, M06, M07, M08, M09 |
+| M11 | Change with Confidence: Safe Terraform Refactoring | 5 | 5 | 8 | 28 | M03, M06, M07, M10 |
 | M12 | Going Multi-Cloud with Terraform | 5 | 2 | 6 | 25 | M01, M02 |
 
-The twelve stages generate 362 tasks between them. The capstone has its own checklist and is not listed here.
+The twelve stages generate 346 tasks between them. The capstone has its own checklist and is not listed here.
 
 ## M01 — Getting Started with Terraform
 
@@ -53,7 +53,7 @@ The twelve stages generate 362 tasks between them. The capstone has its own chec
 **Theme:** Sign in to AWS, no static keys; providers, version constraints, lock file (plan only)  
 **Builds on:** M01 · **Leaves behind:** Nothing. This stage plans only; it creates no resources.
 
-**If every topic is kept:** 30 tasks — Setup 3, Build 8 (6 topics and 2 deliverable components), Verify 9, Write-up 10.
+**If every topic is kept:** 29 tasks — Setup 3, Build 8 (6 topics and 2 deliverable components), Verify 8, Write-up 10.
 
 **Topics**
 
@@ -112,7 +112,7 @@ The twelve stages generate 362 tasks between them. The capstone has its own chec
 **Theme:** Typed, validated inputs; value precedence; locals; sensitive inputs and outputs  
 **Builds on:** M04 (you may reuse that work) · **Leaves behind:** Nothing. Destroy everything.
 
-**If every topic is kept:** 37 tasks — Setup 3, Build 12 (9 topics and 3 deliverable components), Verify 12, Write-up 10.
+**If every topic is kept:** 33 tasks — Setup 3, Build 12 (9 topics and 3 deliverable components), Verify 8, Write-up 10.
 
 **Topics**
 
@@ -153,7 +153,7 @@ The twelve stages generate 362 tasks between them. The capstone has its own chec
 **Theme:** S3 backend, native locking, recovering a lock left behind  
 **Builds on:** M06 · **Leaves behind:** **The state bucket** — the only thing kept. Everything else is destroyed.
 
-**If every topic is kept:** 28 tasks — Setup 3, Build 6 (4 topics and 2 deliverable components), Verify 9, Write-up 10.
+**If every topic is kept:** 27 tasks — Setup 3, Build 6 (4 topics and 2 deliverable components), Verify 8, Write-up 10.
 
 **Topics**
 
@@ -192,7 +192,7 @@ The twelve stages generate 362 tasks between them. The capstone has its own chec
 **Theme:** `for_each` in depth, dynamic blocks, conditions, `for` expressions, data sources, dependency and lifecycle controls  
 **Builds on:** M04, M05, M06 · **Leaves behind:** Nothing except the M07 state bucket. Destroy everything else.
 
-**If every topic is kept:** 34 tasks — Setup 3, Build 10 (8 topics and 2 deliverable components), Verify 11, Write-up 10.
+**If every topic is kept:** 31 tasks — Setup 3, Build 10 (8 topics and 2 deliverable components), Verify 8, Write-up 10.
 
 **Topics**
 
@@ -214,7 +214,7 @@ The twelve stages generate 362 tasks between them. The capstone has its own chec
 **Theme:** Reusable modules: structure, naming, comments, interfaces, consuming published modules  
 **Builds on:** M05, M06, M07, M08, M09 · **Leaves behind:** Nothing except the M07 state bucket. Destroy everything else.
 
-**If every topic is kept:** 39 tasks — Setup 3, Build 14 (12 topics and 2 deliverable components), Verify 12, Write-up 10.
+**If every topic is kept:** 35 tasks — Setup 3, Build 14 (12 topics and 2 deliverable components), Verify 8, Write-up 10.
 
 **Topics**
 
@@ -240,7 +240,7 @@ The twelve stages generate 362 tasks between them. The capstone has its own chec
 **Theme:** Rename, adopt, stop managing — no destroys; reading plans as JSON; recovering from a failed apply  
 **Builds on:** M03, M06, M07, M10 · **Leaves behind:** Nothing except the M07 state bucket.
 
-**If every topic is kept:** 31 tasks — Setup 3, Build 7 (5 topics and 2 deliverable components), Verify 11, Write-up 10.
+**If every topic is kept:** 28 tasks — Setup 3, Build 7 (5 topics and 2 deliverable components), Verify 8, Write-up 10.
 
 **Topics**
 

@@ -60,11 +60,17 @@ choice and its cost. Never answer one anywhere else in the brief.
 
 ## Definition of done
 
-<!-- Observable. Each item is a check someone else can verify from evidence. IDs are stable. -->
+<!--
+Centre it on the trainee's training module: the build plus the write-up that teaches it. Phrase each item as
+what the training module shows, states or lets a learner do, so the definition of done is also the outline of
+what the module must contain. Each item is observable: someone else can verify it from evidence. IDs are stable.
+-->
 
-- [ ] **DoD-1** <observable result> (<evidence: output pasted, screenshot, plan summary>).
-- [ ] **DoD-2** <observable result> (<evidence>).
-- [ ] **DoD-3** Your write-up <observable claim about the write-up>.
+Your training module — the build plus the write-up that teaches it — is done when each of these is true.
+
+- [ ] **DoD-1** Your training module shows <observable result> (<evidence: output pasted, screenshot, plan summary>).
+- [ ] **DoD-2** Your training module explains <observable claim about the write-up>.
+- [ ] **DoD-3** A learner following your training module ends with <observable end state> (<how it is confirmed>).
 
 ## Best practices this stage demonstrates
 

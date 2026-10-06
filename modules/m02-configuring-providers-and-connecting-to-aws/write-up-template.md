@@ -56,15 +56,14 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: An authenticated AWS sandbox session exists and a caller-identity query returns the sandbox identity (output pasted, account details redacted as the trainer directs).
-- DoD-2: No static access keys are present in your AWS configuration on disk or in your repository; your evidence shows the scan you ran and what it looked for.
-- DoD-3: The configuration declares a required Terraform version and, for every provider it uses, a source and a version constraint.
-- DoD-4: The lock file exists and is committed to version control (it appears in your commit).
-- DoD-5: The provider listing for the configuration shows both `aws` and `random` (output pasted).
-- DoD-6: Formatting and validation checks pass with no errors (output pasted).
-- DoD-7: Default tags are configured on the AWS provider and the plan shows them on at least one taggable resource the configuration would create (plan excerpt).
-- DoD-8: One deliberate version change is shown with its effect on the lock file (before and after).
-- DoD-9: No resources exist in the sandbox as a result of this stage, confirmed from the cloud side.
+- DoD-1: Your training module shows an authenticated AWS sandbox session and a caller-identity query that returns the sandbox identity (output pasted, account details redacted as the trainer directs).
+- DoD-2: Your training module shows that no static access keys are present in your AWS configuration on disk or in your repository, with the scan you ran and what it looked for.
+- DoD-3: Your training module shows a configuration that declares a required Terraform version and, for every provider it uses, a source and a version constraint.
+- DoD-4: Your training module shows the lock file existing and committed to version control (it appears in your commit), and one deliberate version change with its effect on the lock file (before and after).
+- DoD-5: Your training module shows the provider listing for the configuration with both `aws` and `random` (output pasted).
+- DoD-6: Your training module shows formatting and validation checks passing with no errors (output pasted).
+- DoD-7: Your training module shows default tags configured on the AWS provider and the plan showing them on at least one taggable resource the configuration would create (plan excerpt).
+- DoD-8: A learner following your training module ends with no resources in the sandbox as a result of this stage, confirmed from the cloud side.
 
 ## Definition-of-done self-assessment
 

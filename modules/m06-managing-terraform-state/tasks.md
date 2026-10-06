@@ -21,14 +21,14 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: The final plan shows no changes (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: The out-of-band change was detected by Terraform, not just noticed by you — the plan output from before reconciliation is captured. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: The write-up records which side you let win (code or real world) and why. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: Your evidence shows what state holds for a sensitive value, captured without exposing a real credential. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: A secret reaches a resource through a write-only argument, and your evidence shows it is absent from state (output pasted, without exposing a real credential). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: Your trainer confirms your written answers are correct on review. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: State files are excluded from version control (the ignore rule and a clean commit history show it). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-8: Everything created is destroyed, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: Your training module shows the final plan with no changes (output pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Your training module shows the out-of-band change detected by Terraform, not just noticed by you, with the plan output from before reconciliation captured. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Your training module records which side you let win (code or real world) and why. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Your training module shows what state holds for a sensitive value, captured without exposing a real credential. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: Your training module shows a secret reaching a resource through a write-only argument and absent from state (output pasted, without exposing a real credential). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Your trainer confirms the written answers in your training module are correct on review. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: Your training module shows state files excluded from version control (the ignore rule and a clean commit history show it). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-8: A learner following your training module ends with everything created destroyed, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

@@ -50,17 +50,16 @@ Rename, adopt and stop managing resources without destroying anything, by changi
 
 ## Definition of done
 
-- [ ] **DoD-1** After each of the three refactors, a saved plan shows zero destroys and zero replacements (three plan summaries pasted).
-- [ ] **DoD-2** At least one of the three plan checks reads the saved plan's JSON form with `jq` and reports the action on every resource (output pasted).
-- [ ] **DoD-3** The renamed resource keeps its real-world identity (its cloud-side identifier is unchanged).
-- [ ] **DoD-4** The adopted resource is in state and described by configuration, and a plan after adoption shows no changes.
-- [ ] **DoD-5** The stop-managing resource still exists in AWS afterwards and Terraform no longer tracks it.
-- [ ] **DoD-6** Each refactor is visible as a reviewable change in configuration (the diff is in your evidence).
-- [ ] **DoD-7** Your write-up lists every command you ran against state and what each one did.
-- [ ] **DoD-8** Your note on legacy imperative commands says when you will meet them and what the declarative equivalent is.
-- [ ] **DoD-9** You have caused an apply to stop part-way, captured the error and what state holds afterwards, and brought the configuration back to a clean plan without editing state by hand (output pasted).
-- [ ] **DoD-10** Your write-up explains what to do after a failed destroy.
-- [ ] **DoD-11** No billable resource is left behind; only the M07 bucket remains.
+Your training module — the build plus the write-up that teaches it — is done when each of these is true.
+
+- [ ] **DoD-1** Your training module shows, after each of the three refactors, a saved plan with zero destroys and zero replacements (three plan summaries pasted), with at least one of the three checks reading the saved plan's JSON form with `jq` and reporting the action on every resource (output pasted).
+- [ ] **DoD-2** Your training module shows the renamed resource keeping its real-world identity (its cloud-side identifier is unchanged).
+- [ ] **DoD-3** Your training module shows the adopted resource in state and described by configuration, with a plan after adoption showing no changes.
+- [ ] **DoD-4** Your training module shows the stop-managing resource still existing in AWS afterwards and no longer tracked by Terraform.
+- [ ] **DoD-5** Your training module shows each refactor as a reviewable change in configuration (the diff is in your evidence), and lists every command you ran against state and what each one did.
+- [ ] **DoD-6** Your training module's note on legacy imperative commands says when you will meet them and what the declarative equivalent is.
+- [ ] **DoD-7** Your training module shows an apply you caused to stop part-way, the error and what state holds afterwards, and the configuration brought back to a clean plan without editing state by hand (output pasted), and explains what to do after a failed destroy.
+- [ ] **DoD-8** A learner following your training module ends with no billable resource left behind; only the M07 bucket remains.
 
 ## Best practices this stage demonstrates
 

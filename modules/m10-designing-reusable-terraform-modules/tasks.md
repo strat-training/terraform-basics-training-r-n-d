@@ -29,18 +29,14 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Formatting and validation checks pass for both the module and the root configuration. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: The module has a documented interface: every input has a type and a description, inputs that can take a bad value are validated, and every output has a description (a reviewer reads the module). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: The module follows the standard module layout; a reviewer can find what they need from file names alone. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: The names of the module's inputs, outputs and internal resources follow one convention, which your write-up states. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: Your write-up states which comment syntax you chose, what you chose to comment, and why (a reviewer reads the module). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: The module is called at least twice with different inputs and both calls produce clean plans (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: Your write-up states what the module assumes about provider configuration and where it takes its region, account and environment name from (a reviewer reads the module). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-8: Resource addresses for the separate calls show distinct module paths (state listing pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-9: Resources created through the module still follow M08's naming convention and carry the required tags (shown from the plan, state or cloud side). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-10: The write-up contains a review of one published module — its source, pinned version, inputs and outputs, and what you checked before trusting it. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-11: The decision note says what you put in the module, what you left out, and a case where you would not write a module. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-12: Everything is destroyed except the M07 bucket, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: Your training module shows formatting and validation checks passing for both the Terraform module and the root configuration. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Your training module shows a Terraform module with a documented interface and the standard module layout: every input has a type and a description, inputs that can take a bad value are validated, every output has a description, and a reviewer can find what they need from file names alone (a reviewer reads the Terraform module). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Your training module states the one convention that the names of the Terraform module's inputs, outputs and internal resources follow, and which comment syntax you chose, what you chose to comment, and why (a reviewer reads the Terraform module). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Your training module shows the Terraform module called at least twice with different inputs, both calls producing clean plans (output pasted) and the separate calls having distinct module paths in their resource addresses (state listing pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: Your training module states what the Terraform module assumes about provider configuration and where it takes its region, account and environment name from (a reviewer reads the Terraform module). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Your training module shows resources created through the Terraform module still following M08's naming convention and carrying the required tags (shown from the plan, state or cloud side). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: Your training module contains a review of one published module — its source, pinned version, inputs and outputs, and what you checked before trusting it — and a decision note that says what you put in the Terraform module, what you left out, and a case where you would not write a module. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-8: A learner following your training module ends with everything destroyed except the M07 bucket, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

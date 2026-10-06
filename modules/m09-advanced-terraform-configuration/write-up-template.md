@@ -60,17 +60,14 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: Formatting and validation checks pass with no errors.
-- DoD-2: At least one resource is repeated from a structured input — a map, or a collection derived from one — and your write-up justifies the keys you chose.
-- DoD-3: At least one resource has repeated nested blocks generated from the same structured input, and the plan shows the expected number of them (plan excerpt).
-- DoD-4: Adding an entry, removing an entry and changing a key in the input each produce a plan you have captured, and your write-up says exactly what each plan would do to the real infrastructure.
-- DoD-5: Derived values are defined once and used in more than one place, and no expression is duplicated across files (a reviewer reads the configuration).
-- DoD-6: At least one conditional changes what the configuration creates or sets, and the plan is shown for both outcomes of the condition (two plan excerpts).
-- DoD-7: A data source supplies a value the configuration uses, and no equivalent value is hard-coded (a reviewer reads the configuration).
-- DoD-8: Every explicit dependency in the configuration is justified in the write-up; if there are none, the write-up says why a reference was always enough.
-- DoD-9: Every lifecycle setting you used is justified in the write-up, and its effect is shown from a plan or a deliberate attempt that it affects (output pasted).
-- DoD-10: At least one precondition or postcondition is in place, and you have deliberately triggered it and captured the failure message (output pasted).
-- DoD-11: Everything is destroyed except the M07 bucket, confirmed from the cloud side.
+- DoD-1: Your training module shows formatting and validation checks passing with no errors.
+- DoD-2: Your training module shows at least one resource repeated, and at least one resource with repeated nested blocks, generated from a structured input — a map, or a collection derived from one. It justifies the keys you chose, shows a plan with the expected number of nested blocks (plan excerpt), and shows adding an entry, removing an entry and changing a key, each with a captured plan and exactly what it would do to the real infrastructure.
+- DoD-3: Your training module shows derived values defined once and used in more than one place, with no expression duplicated across files (a reviewer reads the configuration).
+- DoD-4: Your training module shows at least one conditional that changes what the configuration creates or sets, with the plan shown for both outcomes of the condition (two plan excerpts).
+- DoD-5: Your training module shows a data source supplying a value the configuration uses, with no equivalent value hard-coded (a reviewer reads the configuration).
+- DoD-6: Your training module justifies every explicit dependency in the configuration (or says why a reference was always enough) and every lifecycle setting you used, and shows each lifecycle setting's effect from a plan or a deliberate attempt that it affects (output pasted).
+- DoD-7: Your training module shows at least one precondition or postcondition in place that you deliberately triggered, with the failure message captured (output pasted).
+- DoD-8: A learner following your training module ends with everything destroyed except the M07 bucket, confirmed from the cloud side.
 
 ## Definition-of-done self-assessment
 

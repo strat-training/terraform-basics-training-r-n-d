@@ -52,12 +52,12 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: Both configurations pass formatting and validation checks.
-- DoD-2: Both configurations plan successfully and the plan output includes an identity output for each cloud (output pasted).
-- DoD-3: Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your write-up records why that was not possible.
-- DoD-4: No secrets or keys exist in the repository or on disk (the scan you ran is in your evidence).
-- DoD-5: Neither configuration creates a resource (the plan shows nothing to add).
-- DoD-6: Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
+- DoD-1: Your training module shows both configurations passing formatting and validation checks.
+- DoD-2: Your training module shows both configurations planning successfully, with the plan output including an identity output for each cloud (output pasted).
+- DoD-3: Your training module shows each configuration targeting the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or records why that was not possible.
+- DoD-4: Your training module shows no secrets or keys in the repository or on disk (the scan you ran is in your evidence).
+- DoD-5: Your training module shows neither configuration creating a resource (the plan shows nothing to add).
+- DoD-6: Your training module closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
 
 ## Definition-of-done self-assessment
 
