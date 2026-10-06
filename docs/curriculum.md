@@ -22,7 +22,7 @@ Every topic each training stage covers, in the order the stage tackles it, so yo
 | M08 | Change with Confidence: Safe Terraform Refactoring | 5 | 5 | 7 | 27 | M01, M02, M07 |
 | M09 | Going Multi-Cloud with Terraform | 5 | 5 | 7 | 26 | M01 |
 
-The twelve stages generate 259 tasks between them. The capstone has its own checklist and is not listed here.
+The nine stages generate 259 tasks between them. The capstone has its own checklist and is not listed here.
 
 ## M01 — Getting Started with Terraform
 
