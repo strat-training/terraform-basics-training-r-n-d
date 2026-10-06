@@ -24,12 +24,12 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Your training module shows two state objects in the bucket under different keys (listing pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: Your training module shows both environments producing clean plans (output for each). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: Your training module shows environment-specific inputs that differ between the two environments and live outside the main configuration files. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: Your training module shows every resource following the naming convention and carrying the required tags (shown from the plan, state or cloud side). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: Your training module includes the comparison note covering a directory per environment, workspaces, and the per-environment files you used, saying when each fits. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: A learner following your training module ends with both environments destroyed and the bucket retained, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: Your write-up shows two state objects in the bucket under different keys (listing pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Your write-up shows both environments producing clean plans, with the output for each, not one plan reported as covering both. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: The environment-specific inputs differ between your two environments and live outside the main configuration files. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Every resource follows the naming convention and carries the required tags, shown from the plan, the state or the cloud side, not from your code. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: Your comparison note covers a directory per environment, workspaces and the per-environment files you used, and says when each fits. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: A learner following your training module ends with both environments destroyed and the bucket retained, confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

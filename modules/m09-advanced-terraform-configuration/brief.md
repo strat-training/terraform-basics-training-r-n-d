@@ -59,14 +59,14 @@ Use Terraform's more advanced language features to describe infrastructure from 
 
 Your training module — the build plus the write-up that teaches it — is done when each of these is true.
 
-- [ ] **DoD-1** Your training module shows formatting and validation checks passing with no errors.
-- [ ] **DoD-2** Your training module shows at least one resource repeated, and at least one resource with repeated nested blocks, generated from a structured input — a map, or a collection derived from one. It justifies the keys you chose, shows a plan with the expected number of nested blocks (plan excerpt), and shows adding an entry, removing an entry and changing a key, each with a captured plan and exactly what it would do to the real infrastructure.
-- [ ] **DoD-3** Your training module shows derived values defined once and used in more than one place, with no expression duplicated across files (a reviewer reads the configuration).
-- [ ] **DoD-4** Your training module shows at least one conditional that changes what the configuration creates or sets, with the plan shown for both outcomes of the condition (two plan excerpts).
-- [ ] **DoD-5** Your training module shows a data source supplying a value the configuration uses, with no equivalent value hard-coded (a reviewer reads the configuration).
-- [ ] **DoD-6** Your training module justifies every explicit dependency in the configuration (or says why a reference was always enough) and every lifecycle setting you used, and shows each lifecycle setting's effect from a plan or a deliberate attempt that it affects (output pasted).
-- [ ] **DoD-7** Your training module shows at least one precondition or postcondition in place that you deliberately triggered, with the failure message captured (output pasted).
-- [ ] **DoD-8** A learner following your training module ends with everything destroyed except the M07 bucket, confirmed from the cloud side.
+- [ ] **DoD-1** Your write-up shows formatting and validation passing with no errors, as pasted output.
+- [ ] **DoD-2** Your write-up shows at least one resource repeated, and at least one resource with repeated nested blocks, generated from a structured input — a map, or a collection derived from one — and justifies the keys you chose. It shows a plan with the expected number of nested blocks (plan excerpt), and adding an entry, removing an entry and changing a key, each with its captured plan and exactly what it would do to the real infrastructure, not what you expect it to do.
+- [ ] **DoD-3** Derived values are defined once and used in more than one place, with no expression duplicated across files (a reviewer reads the configuration).
+- [ ] **DoD-4** Your write-up shows at least one conditional that changes what your configuration creates or sets, with the plan for both outcomes (two plan excerpts), not only the outcome you expected.
+- [ ] **DoD-5** A data source supplies a value your configuration uses, and no equivalent value is hard-coded (a reviewer reads the configuration).
+- [ ] **DoD-6** Every explicit dependency and every lifecycle setting in your configuration is justified in your write-up (or it says why a reference was always enough), and each lifecycle setting's effect is shown from a plan or a deliberate attempt that it affects (output pasted), not assumed from its name.
+- [ ] **DoD-7** At least one precondition or postcondition is in place and you deliberately triggered it, with the real failure message captured (output pasted).
+- [ ] **DoD-8** A learner following your training module ends with everything destroyed except the M07 bucket, confirmed from the cloud side, not only from Terraform's output.
 
 ## Best practices this stage demonstrates
 

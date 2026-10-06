@@ -21,13 +21,13 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Your training module shows formatting and validation checks passing with no errors. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: Your training module shows a plan that contains the VPC, subnets in at least two availability zones, and the routing for the public tier (resource addresses shown from the plan output or its JSON form). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: Your training module shows subnets in more than one availability zone created by repeating one resource block rather than writing each one out (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: Your training module shows at least one value the configuration needs about the account or region read with a data source rather than hard-coded (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: Your training module shows no NAT gateway in the plan or in state. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: Your training module's note names the implicit dependencies in your configuration and where each one comes from. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: A learner following your training module ends with everything destroyed, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: Your write-up shows formatting and validation passing with no errors, as pasted output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Your write-up shows a plan that contains the VPC, subnets in at least two availability zones, and the routing for the public tier, with resource addresses taken from the plan output or its JSON form, not from your code. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Your configuration creates the subnets in more than one availability zone by repeating one resource block, not by writing each one out (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: At least one value your configuration needs about the account or region is read with a data source, not hard-coded (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: Your write-up shows that no NAT gateway appears in the plan or in state, from real output, not from the absence of one in your code. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Your note names the implicit dependencies in your own configuration and where each one comes from, not a general definition of an implicit dependency. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: A learner following your training module ends with everything destroyed, confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

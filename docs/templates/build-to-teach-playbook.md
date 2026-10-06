@@ -72,7 +72,8 @@ Create one folder per stage under modules/, named m<NN>-<descriptive-title>, and
 from docs/templates/brief.md. The brief is the trainer's handoff only: objective, scope in the order to
 tackle, out of scope, stack constraints, a named deliverable, open design questions, an observable
 definition of done with stable IDs, written around the trainee's training module (the build plus the
-write-up that teaches it), and a Cost row. No lesson content, no steps, no code, no solutions.
+write-up that teaches it) in the pattern of docs/templates/brief.md (an artifact, a specific observable
+result, and a "not the weaker substitute" contrast), and a Cost row. No lesson content, no steps, no code, no solutions.
 The stages are: <STAGE_LIST>. These rules apply to every stage and are stated once in the README, so do
 not repeat them in the briefs: <RULES_FOR_EVERY_STAGE>.
 

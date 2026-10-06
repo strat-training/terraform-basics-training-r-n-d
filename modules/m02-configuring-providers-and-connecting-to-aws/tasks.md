@@ -23,14 +23,14 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Your training module shows an authenticated AWS sandbox session and a caller-identity query that returns the sandbox identity (output pasted, account details redacted as the trainer directs). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: Your training module shows that no static access keys are present in your AWS configuration on disk or in your repository, with the scan you ran and what it looked for. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: Your training module shows a configuration that declares a required Terraform version and, for every provider it uses, a source and a version constraint. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: Your training module shows the lock file existing and committed to version control (it appears in your commit), and one deliberate version change with its effect on the lock file (before and after). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: Your training module shows the provider listing for the configuration with both `aws` and `random` (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: Your training module shows formatting and validation checks passing with no errors (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: Your training module shows default tags configured on the AWS provider and the plan showing them on at least one taggable resource the configuration would create (plan excerpt). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-8: A learner following your training module ends with no resources in the sandbox as a result of this stage, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: Your write-up shows a caller-identity query that returns the sandbox identity from your own signed-in session (output pasted, account details redacted as the trainer directs), not the identity you assumed you had. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Your write-up shows the scan you ran for static access keys on disk and in your repository, and what it looked for, not a statement that there are none. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Your configuration declares a required Terraform version and, for every provider it uses, a source and a version constraint, not a provider left unconstrained. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Your write-up shows the lock file committed (it appears in your commit) and one deliberate version change with the lock file before and after, not a description of what a version change would do. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: Your write-up shows the provider listing for your configuration with both `aws` and `random`, as real output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Your write-up shows formatting and validation passing with no errors, as pasted output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: Your write-up shows default tags configured on the AWS provider and appearing in the plan on at least one taggable resource the configuration would create (plan excerpt), not tags you only set in the code. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-8: A learner following your training module ends with no resources in the sandbox as a result of this stage, confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

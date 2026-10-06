@@ -54,12 +54,12 @@ See that the core Terraform workflow carries over to GCP and Azure while provide
 
 Your training module — the build plus the write-up that teaches it — is done when each of these is true.
 
-- [ ] **DoD-1** Your training module shows both configurations passing formatting and validation checks.
-- [ ] **DoD-2** Your training module shows both configurations planning successfully, with the plan output including an identity output for each cloud (output pasted).
-- [ ] **DoD-3** Your training module shows each configuration targeting the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or records why that was not possible.
-- [ ] **DoD-4** Your training module shows no secrets or keys in the repository or on disk (the scan you ran is in your evidence).
-- [ ] **DoD-5** Your training module shows neither configuration creating a resource (the plan shows nothing to add).
-- [ ] **DoD-6** Your training module closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for.
+- [ ] **DoD-1** Your write-up shows both configurations passing formatting and validation checks, as pasted output.
+- [ ] **DoD-2** Your write-up shows both configurations planning successfully, with an identity output for each cloud (output pasted), not the identity you expected.
+- [ ] **DoD-3** Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your write-up records why that was not possible.
+- [ ] **DoD-4** Your write-up shows the scan that found no secrets or keys in your repository or on disk, and what it looked for, not a statement that there are none.
+- [ ] **DoD-5** Your write-up shows neither configuration creating a resource: the plan shows nothing to add.
+- [ ] **DoD-6** Your write-up closes with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for, in your own words.
 
 ## Best practices this stage demonstrates
 

@@ -22,13 +22,13 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Your training module shows, after each of the three refactors, a saved plan with zero destroys and zero replacements (three plan summaries pasted), with at least one of the three checks reading the saved plan's JSON form with `jq` and reporting the action on every resource (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: Your training module shows the renamed resource keeping its real-world identity (its cloud-side identifier is unchanged). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: Your training module shows the adopted resource in state and described by configuration, with a plan after adoption showing no changes. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: Your training module shows the stop-managing resource still existing in AWS afterwards and no longer tracked by Terraform. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: Your training module shows each refactor as a reviewable change in configuration (the diff is in your evidence), and lists every command you ran against state and what each one did. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: Your training module's note on legacy imperative commands says when you will meet them and what the declarative equivalent is. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: Your training module shows an apply you caused to stop part-way, the error and what state holds afterwards, and the configuration brought back to a clean plan without editing state by hand (output pasted), and explains what to do after a failed destroy. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: After each of the three refactors, your write-up shows a saved plan with zero destroys and zero replacements (three plan summaries pasted), and at least one check reads the saved plan's JSON form with `jq` and reports the action on every resource (output pasted), not a plan read by eye. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Your write-up shows the renamed resource keeping its real-world identity: its cloud-side identifier is unchanged. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Your write-up shows the adopted resource in state and described by configuration, and a plan after adoption with no changes. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Your write-up shows the stop-managing resource still existing in AWS afterwards and no longer tracked by Terraform. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: Each refactor is a reviewable change in configuration (the diff is in your evidence), and your write-up lists every command you ran against state and what each one did, not only the ones that changed something. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Your note on legacy imperative commands says when you will meet them and what the declarative equivalent is. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: Your write-up shows an apply you caused to stop part-way, the error and what state holds afterwards, and the configuration brought back to a clean plan without editing state by hand (output pasted), and explains what to do after a failed destroy. Capture the evidence under “Checkpoint evidence”.
 - [ ] Confirm DoD-8: A learner following your training module ends with no billable resource left behind; only the M07 bucket remains. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up

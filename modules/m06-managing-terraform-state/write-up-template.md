@@ -54,14 +54,14 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: Your training module shows the final plan with no changes (output pasted).
-- DoD-2: Your training module shows the out-of-band change detected by Terraform, not just noticed by you, with the plan output from before reconciliation captured.
-- DoD-3: Your training module records which side you let win (code or real world) and why.
-- DoD-4: Your training module shows what state holds for a sensitive value, captured without exposing a real credential.
-- DoD-5: Your training module shows a secret reaching a resource through a write-only argument and absent from state (output pasted, without exposing a real credential).
-- DoD-6: Your trainer confirms the written answers in your training module are correct on review.
-- DoD-7: Your training module shows state files excluded from version control (the ignore rule and a clean commit history show it).
-- DoD-8: A learner following your training module ends with everything created destroyed, confirmed from the cloud side.
+- DoD-1: Your write-up shows the final plan with no changes, as pasted output.
+- DoD-2: Your write-up shows the out-of-band change detected by Terraform, not just noticed by you, with the plan output from before reconciliation captured.
+- DoD-3: Your write-up records which side you let win, code or real world, and why, not only what you did.
+- DoD-4: Your write-up shows what state holds for a sensitive value, captured from your own state without exposing a real credential.
+- DoD-5: Your write-up shows a secret reaching a resource through a write-only argument and absent from state (output pasted, without exposing a real credential), not a claim taken from the provider's documentation.
+- DoD-6: Your trainer confirms the written answers in your write-up are correct on review.
+- DoD-7: Your write-up shows state files excluded from version control by the ignore rule and a clean commit history, not by intent.
+- DoD-8: A learner following your training module ends with everything created destroyed, confirmed from the cloud side, not only from Terraform's output.
 
 ## Definition-of-done self-assessment
 

@@ -23,12 +23,12 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Your training module shows formatting and validation checks passing with no errors. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: Your training module shows the same apply run twice without changing the configuration, with both outputs pasted and the difference between them explained in terms of desired state. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: Your training module identifies the type, name, arguments and attributes of your resource, and shows an attribute whose value you did not set. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: Your training module shows at least one in-place change and at least one forced replacement, with the plan output for each captured before it was applied. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: Your training module's plan-review note classifies every change you made as in-place or replacement, and your trainer confirms each classification on review. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: A learner following your training module ends with the resource gone after destroy — confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: Your write-up shows formatting and validation passing with no errors, as pasted output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Your write-up shows the same apply run twice on an unchanged configuration, with both outputs pasted, and explains the difference between them in terms of desired state, not as “it did nothing the second time”. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Your write-up identifies the type, name, arguments and attributes of your own resource and shows an attribute whose value you did not set, from real output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Your write-up shows at least one in-place change and at least one forced replacement, each with the plan output captured before it was applied, not afterwards. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: Every change in your plan-review note is classified as in-place or replacement, and your trainer confirms each classification on review. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: A learner following your training module ends with the resource gone after destroy, confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

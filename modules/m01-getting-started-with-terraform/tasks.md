@@ -24,14 +24,14 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Your training module shows Terraform at the pinned version (1.11 or later) running on macOS and on Windows (version output pasted for each). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: Your training module shows Visual Studio Code with the Terraform extension installed on both systems, with the editor flagging a deliberately introduced error in a configuration (screenshot for each). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: Your training module shows the AWS, Google Cloud and Azure command-line tools, Git, `jq` and `curl` running on both systems (version output pasted for each). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: Your training module shows a version manager switching between two Terraform versions on each system where one works; where none does, it says so (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: Your training module shows formatting and validation checks passing on a configuration that creates nothing, on both systems (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: Your training module's steps for any operating system you do not own are verified on a second machine or by a second person, or are marked unverified. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: Your training module takes a first-time learner on either operating system to DoD-1 through DoD-3 unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-8: Your training module explains, in your own words, what infrastructure as code is and what Terraform adds to it. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: Your write-up shows the actual Terraform version on macOS and on Windows, taken from the version output of each machine at the pinned version (1.11 or later), not the version you expected to have installed. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Your write-up includes a screenshot from each system of Visual Studio Code with the Terraform extension flagging an error you introduced on purpose, not a screenshot of the extension's install page. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: Every tool in your write-up — the AWS, Google Cloud and Azure command-line tools, Git, `jq` and `curl` — is backed by its real version output from each system, not by a list copied from installation instructions. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Your write-up shows a version manager switching between two Terraform versions on each system where one works, with the output of the switch; where none works, it says so and says what you tried. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: Your write-up shows formatting and validation passing on a configuration that creates nothing, on both systems, as pasted output, not as a description from memory. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Every step for an operating system you do not own is verified on a second machine or by a second person, or is marked unverified in your write-up, not assumed to work. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: A learner following your training module on either operating system reaches a working, verified toolchain without asking you anything, because you followed it yourself from a clean state. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-8: You can answer, unprompted, “what is infrastructure as code, and what does Terraform add to it?” in your own words, and your write-up gives the same answer, not a definition copied from documentation — this doubles as your self-check before M02. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 
