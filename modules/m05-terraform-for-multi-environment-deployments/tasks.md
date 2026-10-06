@@ -1,6 +1,6 @@
-# M03 — Understanding the Terraform Workflow — Tasks
+# M05 — Terraform for Multi-Environment Deployments — Tasks
 
-**Objective:** By the end of this stage, you can explain why Terraform describes the desired state of infrastructure instead of scripting steps, and predict from a plan whether a change updates a resource in place or replaces it — using your own plans as the evidence, not a diagram from a slide. You run the core workflow end to end on a real EC2 t3.micro instance and read the plan before every apply.
+**Objective:** By the end of this stage, you can deploy dev and prod from one configuration with separate state, named and tagged so consistently that anyone can tell which environment a resource belongs to at a glance — using your own two environments as the evidence, not a diagram. You can say when you would use workspaces or a directory per environment instead.
 
 > There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
@@ -8,28 +8,29 @@
 
 - [ ] Read `brief.md` from top to bottom, including its stack constraints, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Check its “Still open / ask your trainer” list, and ask the trainer about anything unclear before you build.
 - [ ] Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched.
-- [ ] Confirm that each stage named under "Builds on" in the brief (M02) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
+- [ ] Confirm that each stage named under "Builds on" in the brief (M04) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
 
 ## Build
 
-- [ ] Work on: Declarative versus imperative infrastructure
-- [ ] Work on: Anatomy of a resource
-- [ ] Work on: The core workflow
-- [ ] Work on: What a plan shows
-- [ ] Work on: Plan review as a habit
-- [ ] Work on: Destroying what you created
-- [ ] Have ready: A configuration managing one EC2 t3.micro instance, taken through create, in-place change, forced replacement and destroy
-- [ ] Have ready: a written plan-review note
+- [ ] Work on: One configuration, many environments
+- [ ] Work on: Per-environment input values
+- [ ] Work on: Per-environment backend settings and separate state keys in the shared bucket
+- [ ] Work on: Managing blast radius through state separation
+- [ ] Work on: Enforcing naming conventions and default provider tags
+- [ ] Work on: Switching between environments safely
+- [ ] Work on: Alternative isolation methods: directories vs workspaces (theory)
+- [ ] Have ready: One configuration deployed as both dev and prod with separate state
+- [ ] Have ready: a note comparing three ways to separate environments
 
 ## Verify
 
-- [ ] Confirm DoD-01: Formatting and validation pass with no errors, shown as pasted output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-02: Your notes show the same apply run twice on an unchanged configuration, with both outputs pasted, and explain the difference in terms of desired state, not as “it did nothing the second time”. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-03: Your notes identify the type, name, arguments and attributes of your own resource and show an attribute whose value you did not set, from real output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-04: You made at least one in-place change and at least one forced replacement, and the plan output for each was captured before it was applied, not afterwards. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-05: Your plan-review note classifies every change you made as in-place or replacement, and your trainer confirms each classification on review. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-06: After destroy the instance is gone (shown as terminated), confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-07: Your write-up takes a first-time learner to an EC2 t3.micro instance taken through create, in-place change, forced replacement and destroy unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-01: Two state objects exist in the bucket under different keys (listing pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-02: Both environments produce clean plans, with the output for each, not one plan reported as covering both. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-03: Environment-specific inputs differ between your two environments and live outside the main configuration files. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-04: Every resource follows the naming convention and carries the required tags, shown from the plan, the state or the cloud side, not from your code. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-05: Your comparison note covers a directory per environment, workspaces and the per-environment files you used, and says when each fits. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-06: Both environments are destroyed and the bucket is retained, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-07: Your write-up takes a first-time learner to one configuration deployed as dev and prod with separate state unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

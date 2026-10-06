@@ -1,6 +1,6 @@
-# M03 — Understanding the Terraform Workflow — Tasks
+# M11 — Going Multi-Cloud with Terraform — Tasks
 
-**Objective:** By the end of this stage, you can explain why Terraform describes the desired state of infrastructure instead of scripting steps, and predict from a plan whether a change updates a resource in place or replaces it — using your own plans as the evidence, not a diagram from a slide. You run the core workflow end to end on a real EC2 t3.micro instance and read the plan before every apply.
+**Objective:** By the end of this stage, you can sign in to GCP and Azure with short-lived logins, make the project or subscription explicit, and prove each provider works with a read-only check — using your own identity output as the evidence, not the identity you expected. You can see that the core Terraform workflow carries over to GCP and Azure while provider setup does not.
 
 > There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
@@ -8,28 +8,26 @@
 
 - [ ] Read `brief.md` from top to bottom, including its stack constraints, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Check its “Still open / ask your trainer” list, and ask the trainer about anything unclear before you build.
 - [ ] Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched.
-- [ ] Confirm that each stage named under "Builds on" in the brief (M02) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
+- [ ] Confirm that each stage named under "Builds on" in the brief (M01, M02) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
 
 ## Build
 
-- [ ] Work on: Declarative versus imperative infrastructure
-- [ ] Work on: Anatomy of a resource
-- [ ] Work on: The core workflow
-- [ ] Work on: What a plan shows
-- [ ] Work on: Plan review as a habit
-- [ ] Work on: Destroying what you created
-- [ ] Have ready: A configuration managing one EC2 t3.micro instance, taken through create, in-place change, forced replacement and destroy
-- [ ] Have ready: a written plan-review note
+- [ ] Work on: Confirming access to the GCP and Azure sandboxes
+- [ ] Work on: GCP — Application Default Credentials sign-in, project selection, provider configuration
+- [ ] Work on: Azure — CLI sign-in, subscription selection, provider configuration
+- [ ] Work on: State management across clouds: `gcs` and `azurerm` backends
+- [ ] Work on: Where this course stops
+- [ ] Have ready: Two small Terraform configurations, one per cloud, each authenticating with a short-lived login and outputting the identity it runs as
 
 ## Verify
 
-- [ ] Confirm DoD-01: Formatting and validation pass with no errors, shown as pasted output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-02: Your notes show the same apply run twice on an unchanged configuration, with both outputs pasted, and explain the difference in terms of desired state, not as “it did nothing the second time”. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-03: Your notes identify the type, name, arguments and attributes of your own resource and show an attribute whose value you did not set, from real output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-04: You made at least one in-place change and at least one forced replacement, and the plan output for each was captured before it was applied, not afterwards. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-05: Your plan-review note classifies every change you made as in-place or replacement, and your trainer confirms each classification on review. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-06: After destroy the instance is gone (shown as terminated), confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-07: Your write-up takes a first-time learner to an EC2 t3.micro instance taken through create, in-place change, forced replacement and destroy unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-01: Both configurations pass formatting and validation checks, shown as pasted output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-02: Both configurations plan successfully, and the plan output includes an identity output for each cloud (output pasted), not the identity you expected. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-03: Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your notes record why that was not possible. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-04: No secrets or keys exist in the repository or on disk, and the scan you ran is in your evidence, not a statement that there are none. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-05: Neither configuration creates a resource: the plan shows nothing to add. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-06: Your notes close with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-07: Your write-up takes a first-time learner to a working sign-in and a successful plan for GCP and for Azure unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

@@ -1,14 +1,4 @@
-# <Stage ID> — <Stage title> — Write-up
-
-<!--
-TEMPLATE: stage write-up. Copy to modules/<stage-folder>/write-up-template.md and replace every
-<placeholder>. Delete these comments when you are done. The trainee copies the result to write-up.md
-and fills in the copy, so the file in the stage folder stays blank for the next cohort.
-
-Generate the lists from the stage's brief, word for word: the research prompts under "Why it's
-built this way", the scope topic titles under "Concepts worth explaining", and the definition-of-done bullets
-under "Checkpoint evidence". The other six sections are the same in every stage.
--->
+# M06 — Managing Resources with Network Provisioning — Write-up
 
 > This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
 
@@ -27,8 +17,11 @@ Describe the deliverable named in the brief: what it is, what it does, how it is
 
 One entry per research prompt in the brief's scope, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-- <research prompt 1, from the brief>
-- <research prompt 2, from the brief>
+- Where in your configuration you relied on Terraform to infer ordering.
+- Whether there was anywhere you had to state an ordering explicitly, and why.
+- The trade-offs between the two ways of repeating a resource and why the course wants one preferred, and what happens to your existing subnets if you later add or remove one from the set you are repeating over.
+- The difference between a resource and a data source in what Terraform manages, and what happens to each when you destroy.
+- What the routing for a public tier needs, and how you would see it in the plan.
 - Where did you spend the most time, and why?
 
 ## AI collaboration log
@@ -42,14 +35,17 @@ If you used AI tools, be specific, not a vague "I used AI to help write some cod
 
 ## How to build it (teach it to the next engineer)
 
-Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader is new to Terraform and to this course.
+Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
 
 ## Concepts worth explaining
 
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-- <scope topic title 1, from the brief>
-- <scope topic title 2, from the brief>
+- Resource references and the dependency graph Terraform builds from them
+- Implicit versus explicit dependencies
+- Repeating a resource
+- Data sources
+- A VPC, subnets in more than one availability zone, and the routing a public tier needs
 
 ## What tripped me up
 
@@ -59,8 +55,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-01: <definition-of-done bullet 1, from the brief>
-- DoD-02: <definition-of-done bullet 2, from the brief>
+- DoD-01: Formatting and validation pass with no errors, and the plan contains the VPC, subnets in at least two availability zones, and the routing for the public tier, with resource addresses taken from the plan output or its JSON form, not from your code.
+- DoD-02: Subnets in more than one availability zone are created by repeating one resource block, not by writing each one out (a reviewer reads the configuration).
+- DoD-03: At least one value your configuration needs about the account or region is read with a data source, not hard-coded (a reviewer reads the configuration).
+- DoD-04: No NAT gateway appears in the plan or in state, shown from real output, not from the absence of one in your code.
+- DoD-05: Your note names the implicit dependencies in your own configuration and where each one comes from, not a general definition of an implicit dependency.
+- DoD-06: Everything is destroyed, confirmed from the cloud side, not only from Terraform's output.
+- DoD-07: Your write-up takes a first-time learner to the same small AWS network unaided — verified by you following it end to end from a clean state.
 
 ## Definition-of-done self-assessment
 

@@ -1,7 +1,7 @@
 # <Capstone title> Brief
 
 <!--
-TEMPLATE: capstone brief. Copy to modules/capstone/brief.md and replace every <placeholder>. Delete
+TEMPLATE: capstone brief. Copy to modules/m12-capstone/brief.md and replace every <placeholder>. Delete
 these comments when you are done. This is NOT the stage brief template: a capstone is assessed
 against a rubric and a presentation, and it carries an explicit policy on AI-assisted work.
 

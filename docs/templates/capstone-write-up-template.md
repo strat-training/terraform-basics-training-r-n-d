@@ -1,7 +1,7 @@
 # <Capstone title> Write-up
 
 <!--
-TEMPLATE: capstone write-up. Copy to modules/capstone/write-up-template.md and replace every
+TEMPLATE: capstone write-up. Copy to modules/m12-capstone/write-up-template.md and replace every
 <placeholder>. Delete these comments when you are done. The trainee copies the result to write-up.md
 in their capstone repository and fills in the copy.
 

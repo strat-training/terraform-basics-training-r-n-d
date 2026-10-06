@@ -15,13 +15,15 @@ Describe the deliverable named in the brief: what it is, what it does, how it is
 
 ## Why it's built this way (key decisions)
 
-One entry per open design question in the brief, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
+One entry per research prompt in the brief's scope, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-- Which install method would you choose for each tool on each operating system, and what does each choice cost in maintenance and support?
-- Which parts of the toolchain must be identical for every learner, which can vary, and what does each choice cost in support?
-- What fails differently on Windows than on macOS, and how will a learner tell a broken install from a misconfigured one?
-- How will a learner know the toolchain is correct, rather than merely present?
-- What problem does Terraform solve that a script or the cloud console does not, and where would you not use it?
+- What problem Terraform solves that a script or the cloud console does not, and where you would not use it.
+- Which install method fits each tool on each operating system, and what each choice costs in maintenance and support.
+- Which parts of the toolchain must be identical for every learner, which can vary, and what each choice costs in support.
+- What the extension adds to the editor, and how you can tell it is doing its job rather than merely installed.
+- What fails differently on Windows than on macOS, and how a learner can tell a broken install from a misconfigured one.
+- How a learner will know the toolchain is correct, rather than merely present.
+- Where OpenTofu and Terraform differ, if you choose to cover it.
 - Where did you spend the most time, and why?
 
 ## AI collaboration log
@@ -41,13 +43,13 @@ Write this as a guide someone could actually follow to build this stage from scr
 
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-- What Terraform is — infrastructure as code, and the problem Terraform solves
-- The core toolchain — AWS/GCP/Azure CLIs, Git, jq, curl, and their purposes
+- What Terraform is
+- The core toolchain
 - Installing Terraform (macOS/Windows) and managing versions
 - Configuring Visual Studio Code for Terraform work
 - A shell that can run the labs' shell scripts on Windows
-- Verifying the toolchain end to end — versions, and formatting and validation of a configuration that creates nothing
-- OpenTofu differences — optional; you decide whether to include it
+- Verifying the toolchain end to end
+- OpenTofu differences
 
 ## What tripped me up
 
@@ -57,13 +59,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: Terraform at the pinned version (1.11 or later), the AWS, Google Cloud and Azure command-line tools, Git, `jq` and `curl` run on macOS and on Windows (version output pasted for each).
-- DoD-2: Visual Studio Code with the Terraform extension is installed on both systems, and the editor flags a deliberately introduced error in a configuration (screenshot for each).
-- DoD-3: A version manager switches between two Terraform versions on each system where one works; where none does, the write-up says so (output pasted).
-- DoD-4: Formatting and validation checks pass on a configuration that creates nothing, on both systems (output pasted).
-- DoD-5: The steps for any operating system you do not own are verified on a second machine or by a second person, or are marked unverified in the write-up.
-- DoD-6: Your write-up takes a first-time learner on either operating system to DoD-1 and DoD-2 unaided — verified by you following it end to end from a clean state.
-- DoD-7: Your write-up explains, in your own words, what infrastructure as code is and what Terraform adds to it.
+- DoD-01: Your notes name the actual Terraform version on macOS and on Windows, at the pinned version (1.11 or later), and show the real version output of the AWS, Google Cloud and Azure command-line tools, Git, `jq` and `curl` on each system, not the versions you expected to have installed.
+- DoD-02: Visual Studio Code with the Terraform extension is installed on both systems, and a screenshot from each shows the editor flagging an error you introduced on purpose, not the extension's install page.
+- DoD-03: A version manager switches between two Terraform versions on each system where one works, with the output of the switch pasted; where none works, your notes say so, not that it was skipped.
+- DoD-04: Formatting and validation pass on a configuration that creates nothing, on both systems, with the output pasted, not described from memory.
+- DoD-05: Every step for an operating system you do not own is verified on a second machine or by a second person, or is marked unverified, not assumed to work.
+- DoD-06: Your write-up takes a first-time learner on either operating system to a working toolchain unaided — verified by you following it end to end from a clean state.
+- DoD-07: You can answer, unprompted, “what is infrastructure as code, and what does Terraform add to it?” in your own words, not with a definition copied from documentation.
 
 ## Definition-of-done self-assessment
 

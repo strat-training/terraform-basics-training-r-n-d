@@ -1,4 +1,4 @@
-# M03 — Understanding the Terraform Workflow — Write-up
+# M10 — Change with Confidence: Safe Terraform Refactoring — Write-up
 
 > This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
 
@@ -17,12 +17,11 @@ Describe the deliverable named in the brief: what it is, what it does, how it is
 
 One entry per research prompt in the brief's scope, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-- How describing the desired state differs from scripting the steps, and what that changes about running the same configuration twice.
-- Which parts of a resource you set and which Terraform reports back, found in your own resource.
-- What each of the four commands changes, and what it leaves alone.
-- How you can tell from the plan alone that a change will destroy something, which changes to your resource are made in place and which force replacement and how sure you are, and what a replacement costs when the resource holds data or other resources depend on it.
-- What you would do if a plan showed a destroy you did not expect.
-- How you confirm from the cloud side that the instance is gone.
+- How you can tell, before applying, that a refactor will not touch real infrastructure, and what is responsible for a resource that stops being managed and how you avoid orphaning cost.
+- What the generated configuration got wrong or left out, and how you decided what to keep.
+- What the action on every resource looks like in a saved plan's JSON form.
+- How you recover when an apply stops part-way, and what you check before you run it again.
+- Why the course prefers changes that appear in a plan over commands that edit state, and when you might still see those commands.
 - Where did you spend the most time, and why?
 
 ## AI collaboration log
@@ -42,12 +41,11 @@ Write this as a guide someone could actually follow to build this stage from scr
 
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-- Declarative versus imperative infrastructure
-- Anatomy of a resource
-- The core workflow
-- What a plan shows
-- Plan review as a habit
-- Destroying what you created
+- Refactoring principles: renaming and removing resources without destruction
+- Adopting existing, unmanaged resources into Terraform
+- Verifying refactors mechanically: reading plans as JSON with `jq`
+- Emergency recovery: handling partial applies and failed destroys
+- Advanced troubleshooting: targeted operations and legacy state commands
 
 ## What tripped me up
 
@@ -57,13 +55,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-01: Formatting and validation pass with no errors, shown as pasted output.
-- DoD-02: Your notes show the same apply run twice on an unchanged configuration, with both outputs pasted, and explain the difference in terms of desired state, not as “it did nothing the second time”.
-- DoD-03: Your notes identify the type, name, arguments and attributes of your own resource and show an attribute whose value you did not set, from real output.
-- DoD-04: You made at least one in-place change and at least one forced replacement, and the plan output for each was captured before it was applied, not afterwards.
-- DoD-05: Your plan-review note classifies every change you made as in-place or replacement, and your trainer confirms each classification on review.
-- DoD-06: After destroy the instance is gone (shown as terminated), confirmed from the cloud side, not only from Terraform's output.
-- DoD-07: Your write-up takes a first-time learner to an EC2 t3.micro instance taken through create, in-place change, forced replacement and destroy unaided — verified by you following it end to end from a clean state.
+- DoD-01: After each of the three refactors, a saved plan shows zero destroys and zero replacements (three plan summaries pasted), and at least one of the three checks reads the saved plan's JSON form with `jq` and reports the action on every resource (output pasted), not a plan read by eye.
+- DoD-02: The renamed resource keeps its real-world identity (its cloud-side identifier is unchanged); the adopted resource is in state and described by configuration, and a plan after adoption shows no changes; the stop-managing resource still exists in AWS afterwards and Terraform no longer tracks it.
+- DoD-03: Each refactor is a reviewable change in configuration (the diff is in your evidence), and your notes list every command you ran against state and what each one did, not only the ones that changed something.
+- DoD-04: Your note on legacy imperative commands says when you will meet them and what the declarative equivalent is.
+- DoD-05: You caused an apply to stop part-way, captured the error and what state holds afterwards, and brought the configuration back to a clean plan without editing state by hand (output pasted); your notes also say what to do after a failed destroy.
+- DoD-06: No billable resource is left behind, and only the M04 bucket remains.
+- DoD-07: Your write-up takes a first-time learner to a rename, an adoption and a stop-managing with no destroys unaided — verified by you following it end to end from a clean state.
 
 ## Definition-of-done self-assessment
 

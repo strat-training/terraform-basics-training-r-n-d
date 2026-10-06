@@ -24,13 +24,13 @@ A note on words: <a term the course uses in two senses, and which sense this REA
 | Path | What it holds |
 | --- | --- |
 | `modules/` | The <n> stage folders (<first>–<last>), each with a brief, a checklist and a write-up template |
-| `modules/capstone/` | The capstone, with its own brief, checklist and write-up template |
+| `modules/m12-capstone/` | The capstone, with its own brief, checklist and write-up template |
 
 The other folders are trainer material. You do not need them to do the stages.
 
 ## How a stage works
 
-1. **Your trainer hands you the brief.** Each stage's `brief.md` says what to build and how you will know it is done: objective, scope, stack constraints, the named deliverable, open design questions and a definition of done. It contains no lesson, no steps, no code and no solutions. How to build it is yours to work out.
+1. **Your trainer hands you the brief.** Each stage's `brief.md` says what to build and how you will know it is done: objective, scope, stack constraints, the named deliverable, a lab, a definition of done, and what to confirm with your trainer before you start. It contains no lesson, no steps, no code and no solutions. How to build it is yours to work out.
 2. **You build and write up the stage together.** Copy `write-up-template.md` to `write-up.md` in the stage folder and fill it in *while* you build, not after the build works. The "how to build it" section is the teaching content, so write it for someone who will follow it with no trainer to ask.
 3. **Your trainer reviews both together.** When you reach the definition of done, set Status to "In review". Your trainer reviews the working system and the write-up side by side. The question is not only "does it work?" but "could someone else learn from this?"
 4. **You revise.** Fix what the review finds, in both the build and the write-up, before starting the next stage.
@@ -45,7 +45,7 @@ Review happens at the end of every stage, not just at the end of the course. A w
 | `brief.md` | Your trainer | What to build and how you will know it is done. Do not edit it. |
 | `write-up-template.md` | Your trainer | A blank template. Leave it untouched so the next cohort starts clean. |
 | `write-up.md` | You | Your copy of the template, filled in as you build. |
-| `tasks.md` | Your trainer | An ordered checklist for the stage, one task per scope item, question, check and write-up section. You tick the boxes; it holds no answers and no steps. |
+| `tasks.md` | Your trainer | An ordered checklist for the stage, one task per scope topic, deliverable component, check and write-up section. You tick the boxes; it holds no answers and no steps. |
 
 <Where your own work lives and how to link it, for example "Your code lives outside this repository, in your own <host> repository. Link it from the header of your write-up." Add that the capstone folder has the same three files.>
 
@@ -92,7 +92,7 @@ These apply to every stage brief, <first> to <last>. A brief repeats only what i
 
 - **<Rule.>** <What it means for you.>
 - **Destroy at the end of every stage.** <What is kept, until when.> <Keep resources small and cheap.>
-- **Know what it costs before you apply.** Each brief has a Cost row. Look up what each resource in your plan bills and estimate the hourly cost before you apply. <How the estimate is evidence.>
+- **Know what it costs before you apply.** Each brief's stack constraints say what the stage may bill. Look up what each resource in your plan bills and estimate the hourly cost before you apply. <How the estimate is evidence.>
 - **Pin everything and commit the lock file.** <The checks that must pass before you call a stage done.>
 - **<Rule.>** <What it means for you.>
 
@@ -106,7 +106,7 @@ Your trainer reviews what you built and what you wrote together, against one rub
 | --- | --- | --- | --- | --- | --- |
 | Deliverable and definition of done | Build and write-up | <25> | Everything the brief names is there and works as described, and a reviewer can run it from a clean start and get what your write-up says. Every definition-of-done item is met and shown in the write-up with real evidence — pasted output or a screenshot, trimmed to the relevant lines and redacted | The deliverable is mostly there, or it works only after a fix you made during review. Every item is addressed, but some evidence is a claim or is hard to follow | Parts of the deliverable are missing, or it does not run. An item is unmet, or has no evidence |
 | <Subject> quality, security and cost | Build | <20> | <Clear and well organised, follows the brief's constraints, and the checks the stage requires pass. No stored credentials. Everything the brief says to destroy is gone, confirmed from the provider's side. You looked up what each resource bills before you applied, and your estimate is in the write-up> | <It works but is untidy, or has one slip against the constraints or the safety rules, which you caught and fixed. Or the cost estimate was made after applying> | <It is hard to follow or breaks a constraint. Or there is a stored credential or a resource left running, or the cost was never considered> |
-| Design decisions | Write-up | <15> | Every open design question has a reasoned answer that says what you considered, what you chose and what you gave up, and the answers match what you built | Questions are answered, but the reasons are thin or the trade-off is missing | A question is unanswered, or an answer only restates what you built |
+| Design decisions | Write-up | <15> | Every research prompt in the brief has a reasoned answer that says what you considered, what you chose and what you gave up, and the answers match what you built | Questions are answered, but the reasons are thin or the trade-off is missing | A question is unanswered, or an answer only restates what you built |
 | How to build it | Write-up | <20> | Someone else could follow it from a clean start and end up with your build; you have followed it yourself and it works | It mostly works, with gaps or steps that assume knowledge the reader may not have | It is a summary of what you did rather than a guide, or it was never followed through |
 | Concepts, obstacles and AI log | Write-up | <10> | Two or three concepts in your own words, each with an example from your own build. "What tripped me up" lists real obstacles with the exact error text, the cause and the fix; these entries become the course's common-errors list. The AI log is specific: which tools, concrete examples, a suggestion that was wrong and how you caught it, and what you wrote yourself — or one line saying none was used | Concepts are correct but generic or close to the documentation's wording, or the obstacles are listed without the error text or the cause, or the AI log is generic or has no corrected suggestion | A section is missing or wrong, the obstacles are only polished successes, or there is no AI log |
 | Understanding | Build and write-up | <10> | You explain any part of your build and your write-up when the trainer asks, without re-reading it | You explain most of it and need prompting on the rest | You cannot explain work you submitted |

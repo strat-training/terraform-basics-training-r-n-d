@@ -1,6 +1,6 @@
-# M03 — Understanding the Terraform Workflow — Tasks
+# M06 — Managing Resources with Network Provisioning — Tasks
 
-**Objective:** By the end of this stage, you can explain why Terraform describes the desired state of infrastructure instead of scripting steps, and predict from a plan whether a change updates a resource in place or replaces it — using your own plans as the evidence, not a diagram from a slide. You run the core workflow end to end on a real EC2 t3.micro instance and read the plan before every apply.
+**Objective:** By the end of this stage, you can explain how Terraform works out what depends on what, create several similar resources without writing each one out by hand, and read information that already exists instead of hard-coding it — using the small AWS network you built as the evidence, not a diagram.
 
 > There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
@@ -8,28 +8,26 @@
 
 - [ ] Read `brief.md` from top to bottom, including its stack constraints, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Check its “Still open / ask your trainer” list, and ask the trainer about anything unclear before you build.
 - [ ] Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched.
-- [ ] Confirm that each stage named under "Builds on" in the brief (M02) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
+- [ ] Confirm that each stage named under "Builds on" in the brief (M03) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
 
 ## Build
 
-- [ ] Work on: Declarative versus imperative infrastructure
-- [ ] Work on: Anatomy of a resource
-- [ ] Work on: The core workflow
-- [ ] Work on: What a plan shows
-- [ ] Work on: Plan review as a habit
-- [ ] Work on: Destroying what you created
-- [ ] Have ready: A configuration managing one EC2 t3.micro instance, taken through create, in-place change, forced replacement and destroy
-- [ ] Have ready: a written plan-review note
+- [ ] Work on: Resource references and the dependency graph Terraform builds from them
+- [ ] Work on: Implicit versus explicit dependencies
+- [ ] Work on: Repeating a resource
+- [ ] Work on: Data sources
+- [ ] Work on: A VPC, subnets in more than one availability zone, and the routing a public tier needs
+- [ ] Have ready: A small AWS network configuration — one VPC with public and private subnets across more than one availability zone and the routing the public tier needs — with no NAT gateway
 
 ## Verify
 
-- [ ] Confirm DoD-01: Formatting and validation pass with no errors, shown as pasted output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-02: Your notes show the same apply run twice on an unchanged configuration, with both outputs pasted, and explain the difference in terms of desired state, not as “it did nothing the second time”. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-03: Your notes identify the type, name, arguments and attributes of your own resource and show an attribute whose value you did not set, from real output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-04: You made at least one in-place change and at least one forced replacement, and the plan output for each was captured before it was applied, not afterwards. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-05: Your plan-review note classifies every change you made as in-place or replacement, and your trainer confirms each classification on review. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-06: After destroy the instance is gone (shown as terminated), confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-07: Your write-up takes a first-time learner to an EC2 t3.micro instance taken through create, in-place change, forced replacement and destroy unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-01: Formatting and validation pass with no errors, and the plan contains the VPC, subnets in at least two availability zones, and the routing for the public tier, with resource addresses taken from the plan output or its JSON form, not from your code. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-02: Subnets in more than one availability zone are created by repeating one resource block, not by writing each one out (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-03: At least one value your configuration needs about the account or region is read with a data source, not hard-coded (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-04: No NAT gateway appears in the plan or in state, shown from real output, not from the absence of one in your code. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-05: Your note names the implicit dependencies in your own configuration and where each one comes from, not a general definition of an implicit dependency. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-06: Everything is destroyed, confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-07: Your write-up takes a first-time learner to the same small AWS network unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

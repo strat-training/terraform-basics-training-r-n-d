@@ -4,7 +4,7 @@ Reads a Build-to-Teach stage's `brief.md` and `write-up-template.md` and writes 
 
 Follows the same EVALUATE → PLAN → APPLY → VALIDATE cycle as `/evaluate` `/plan` `/apply` `/validate`, self-contained in this one command (the same shape `/dev-tasks-planner` uses). **Stop at the end of EVALUATE and PLAN and wait for explicit approval before continuing** — do not run straight through to APPLY, unless the invoking prompt explicitly waives the pause (see "Unattended runs").
 
-This command covers stage briefs, which have the numbered sections listed under Prerequisites. The capstone brief has its own capstone-shaped template (`docs/templates/capstone-brief.md`); write the capstone's `tasks.md` by hand from `docs/templates/capstone-tasks.md`.
+This command covers stage briefs, which have the sections listed under Prerequisites. The capstone brief has its own capstone-shaped template (`docs/templates/capstone-brief.md`); write the capstone's `tasks.md` by hand from `docs/templates/capstone-tasks.md`.
 
 ## Arguments
 
@@ -18,14 +18,14 @@ One stage per invocation. To cover many stages, run one forked subagent per stag
 
 ### Unattended runs
 
-The invoking prompt may also (a) name a precedent `tasks.md` to match the shape of, (b) name stage-specific sensitivities — open questions needing extra care, treated as additions to the leak rules below, and (c) say to run without pausing. If it says the request itself is the approval, still print the EVALUATE SUMMARY and the PLAN, then continue without waiting. Otherwise pause at both gates.
+The invoking prompt may also (a) name a precedent `tasks.md` to match the shape of, (b) name stage-specific sensitivities — research prompts needing extra care, treated as additions to the leak rules below, and (c) say to run without pausing. If it says the request itself is the approval, still print the EVALUATE SUMMARY and the PLAN, then continue without waiting. Otherwise pause at both gates.
 
 ## Prerequisites — MANDATORY, check before doing anything else
 
 Verify each with `ls` and a real read, not an assumption.
 
 1. `<stage-folder>/brief.md` and `<stage-folder>/write-up-template.md` both exist.
-2. The brief has, non-empty: an objective, a numbered in-scope list, a named deliverable, numbered open design questions, and a definition of done made of checkbox items with IDs. The template has `##` section headings, each opening with a plain-text paragraph.
+2. The brief has, non-empty: a header line with "Builds on", an objective, a scope of bold-titled topics each ending in a "Research:" prompt, stack constraints, a named deliverable, and a definition of done made of bullets, each labelled DoD-01, DoD-02 and so on. The template has `##` section headings, each opening with a plain-text paragraph.
 3. `re-plan` only: `<stage-folder>/tasks.md` exists.
 
 **If any check fails, STOP.** Do not guess the missing piece and do not write a brief or template here:
@@ -53,7 +53,7 @@ The brief hands the trainee a problem on purpose. `tasks.md` keeps them moving t
 
 Allowed: the brief's and template's own words, verbatim; pointing at a brief section by name; the verbs *work on, have ready, confirm, capture*.
 
-**Frames plus verbatim text.** To make this checkable, every task is one of the fixed frames in APPLY with only text lifted verbatim from the brief or template filling its blanks. "Verbatim" means the same words and punctuation; markdown emphasis markers (`**`) may be dropped. The frames are the only free text in the file. If a task seems to need a clarifying phrase of your own, that phrase is the leak — leave it out. If a verbatim line in the brief would itself resolve an open question, do not paraphrase around it and do not edit the brief: restate it exactly as written and report it under "Brief issues" for the trainer.
+**Frames plus verbatim text.** To make this checkable, every task is one of the fixed frames in APPLY with only text lifted verbatim from the brief or template filling its blanks. "Verbatim" means the same words and punctuation; markdown emphasis markers (`**`) may be dropped. The frames are the only free text in the file. If a task seems to need a clarifying phrase of your own, that phrase is the leak — leave it out. If a verbatim line in the brief would itself resolve a research prompt, do not paraphrase around it and do not edit the brief: restate it exactly as written and report it under "Brief issues" for the trainer.
 
 ---
 
@@ -69,18 +69,18 @@ Read each of these end to end, not by grep:
 Build the **source inventory**, which everything later is checked against:
 
 - **Objective** — the paragraph under "Objective", text exact.
-- **Scope items** — the numbered list under "In scope", in order, text exact.
-- **Open design questions** — numbered, text exact.
+- **Scope items** — the bold topic title of each bullet under "Scope", in order, text exact.
+- **Research prompts** — the "Research:" text at the end of each scope bullet, in order, text exact.
 - **Deliverable components** — the Deliverable text split at its own joins ("and", "plus", ", with"), each piece kept in the brief's words. If a split is ambiguous, prefer fewer, larger components and show the split in PLAN for approval.
-- **Definition-of-done checks** — each ID with its text exact.
+- **Definition-of-done checks** — each bullet, text exact, under the DoD-01, DoD-02 label the brief gives it.
 - **Write-up sections** — each `##` heading in the template, with the template's own guidance for it: the first two sentences of the plain-text paragraph that opens the section.
-- **Builds on** and the stack constraints — used for the Setup tasks only.
+- **Builds on** (from the header line) and the stack constraints — used for the Setup tasks only.
 
-Then the **sensitivity pass**. For each open question, write one line saying what the trainee must reach on their own: the option chosen, the name of the mechanism, the reason. This list is for you and the trainer; it never goes into `tasks.md`. Add any caller-supplied sensitivities.
+Then the **sensitivity pass**. For each research prompt, write one line saying what the trainee must reach on their own: the option chosen, the name of the mechanism, the reason. This list is for you and the trainer; it never goes into `tasks.md`. Add any caller-supplied sensitivities.
 
 Finally check the brief and template themselves, and report — do not fix — what you find:
 
-- Does any scope item, constraint or definition-of-done line already resolve an open question?
+- Does any scope item, constraint or definition-of-done line already resolve a research prompt?
 - Does each definition-of-done item appear in the template's "Checkpoint evidence" section, one for one?
 - Is any scope item a step rather than a topic?
 
@@ -90,9 +90,9 @@ Finally check the brief and template themselves, and report — do not fix — w
 EVALUATE SUMMARY
 ────────────────
 Stage:        <folder> — <brief title>   (mode: new | re-plan)
-Source items: scope <n> · open questions <n> · deliverable components <n> · DoD checks <n> · write-up sections <n>
+Source items: scope <n> · research prompts <n> · deliverable components <n> · DoD checks <n> · write-up sections <n>
 Shape:        <named precedent, or "default shape from this command">
-Sensitive:    <per open question: what the trainee must reach alone — never copied into tasks.md>
+Sensitive:    <per research prompt: what the trainee must reach alone — never copied into tasks.md>
 Caller notes: <stage-specific sensitivities from the invoking prompt, or "none">
 Brief issues: <self-resolving lines, missing evidence entries, step-like scope items — or "none">
 Existing:     <re-plan only: tasks ticked / carried over / invalidated>
@@ -119,7 +119,7 @@ Rules, all mandatory:
 
 - **One task per source item.** No merging, no splitting, no extra tasks, no task without a source item.
 - **Source order.** Tasks follow the order of the brief and the template.
-- **Open design questions are not tasks.** The trainee answers them in the write-up's "Why it's built this way" section, which has a task of its own, so the checklist stays short. Each question must still appear in the write-up template, and the leak checks still treat every question as sensitive.
+- **Research prompts are not tasks.** The trainee answers them in the write-up's "Why it's built this way" section, which has a task of its own, so the checklist stays short. Each prompt must still appear in the write-up template, and the leak checks still treat every prompt as sensitive.
 - **`re-plan` carry-over.** Keep a task ticked only if its source text is word-for-word unchanged. Changed and new items come back unticked; items no longer in the brief are dropped. List all three in PLAN.
 
 ### Output — PLAN blueprint
@@ -129,7 +129,7 @@ PLAN
 ────
 File:      <stage-folder>/tasks.md — <new | full rewrite>
 Sections:  Setup 3 · Build <n> (scope <a> · components <b>) · Verify <n> · Write-up <n> (sections <m> + closing review)
-Coverage:  every scope item, component, DoD check and write-up section → one task, in source order; every question → the write-up template
+Coverage:  every scope item, component, DoD check and write-up section → one task, in source order; every research prompt → the write-up template
 Split:     <the deliverable split into components, in the brief's words>
 Frames:    <the frames from APPLY that will be used, unmodified>
 Leak watch: <per sensitive question, the temptations to avoid — by category, not by answer>
@@ -157,18 +157,18 @@ Use this structure verbatim. Angle brackets are the only blanks; each is filled 
 
 ## Setup
 
-- [ ] Read `brief.md` from top to bottom, including its cost, stack constraints and out-of-scope list, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Ask the trainer about anything unclear before you build.
+- [ ] Read `brief.md` from top to bottom, including its stack constraints, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Check its “Still open / ask your trainer” list, and ask the trainer about anything unclear before you build.
 - [ ] Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched.
 - [ ] Confirm that each stage named under "Builds on" in the brief (<Builds on value>) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
 
 ## Build
 
-- [ ] Work on: <scope item n>
+- [ ] Work on: <scope topic title n>
 - [ ] Have ready: <deliverable component n>
 
 ## Verify
 
-- [ ] Confirm <DoD-n>: <DoD text> Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm <DoD-nn>: <DoD text> Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 
@@ -178,7 +178,7 @@ Use this structure verbatim. Angle brackets are the only blanks; each is filled 
 
 Frame notes:
 
-- **Setup, third task** — when "Builds on" is "Nothing", drop everything from "that each stage" to "has been accepted, and that you have", leaving: "Confirm that you have the access and tools the brief's stack constraints require. Raise anything missing with the trainer before you build."
+- **Setup, third task** — when "Builds on" is "Nothing" or "— (course entry point)", drop everything from "that each stage" to "has been accepted, and that you have", leaving: "Confirm that you have the access and tools the brief's stack constraints require. Raise anything missing with the trainer before you build."
 - **Write-up tasks** — use the template's own guidance for that section, verbatim, shortened to its first two sentences if longer. If the section has no opening paragraph, end the task after the heading, with a full stop.
 - **Task lines** are single lines that begin exactly `- [ ] ` (a carried-over task in `re-plan` begins `- [x] `). No nested checkboxes, so `grep -c '^\- \[ \]'` counts tasks.
 - Do not add a "Done when", a hint line, an estimate, a sub-bullet or a note to any task.
@@ -228,7 +228,7 @@ A flag in your own wording: remove it. A flag inside verbatim brief text: leave 
 
 Not a script. Read `tasks.md` top to bottom as the trainee would, with the EVALUATE sensitivity list beside it, and answer each of these in writing:
 
-- **Cross-leaks:** for each open question, scan every other task — Work on, Have ready, Confirm and Under — for wording that would answer it. A scope item or DoD line that names the very mechanism, approach or reason a question asks the trainee to reach is a leak even though no task states it.
+- **Cross-leaks:** for each research prompt, scan every other task — Work on, Have ready, Confirm and Under — for wording that would answer it. A scope item or DoD line that names the very mechanism, approach or reason a prompt asks the trainee to reach is a leak even though no task states it.
 - **Topics, not steps:** is every "Work on" task still a topic, or has any become an instruction?
 - **No stowaways:** is every sentence in the file either a frame or verbatim brief or template text?
 

@@ -1,14 +1,4 @@
-# <Stage ID> — <Stage title> — Write-up
-
-<!--
-TEMPLATE: stage write-up. Copy to modules/<stage-folder>/write-up-template.md and replace every
-<placeholder>. Delete these comments when you are done. The trainee copies the result to write-up.md
-and fills in the copy, so the file in the stage folder stays blank for the next cohort.
-
-Generate the lists from the stage's brief, word for word: the research prompts under "Why it's
-built this way", the scope topic titles under "Concepts worth explaining", and the definition-of-done bullets
-under "Checkpoint evidence". The other six sections are the same in every stage.
--->
+# M05 — Terraform for Multi-Environment Deployments — Write-up
 
 > This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
 
@@ -27,8 +17,13 @@ Describe the deliverable named in the brief: what it is, what it does, how it is
 
 One entry per research prompt in the brief's scope, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-- <research prompt 1, from the brief>
-- <research prompt 2, from the brief>
+- What makes it easy to apply one environment's values to the other's state, and what you will do to make that harder.
+- Which inputs are the same in both environments and which must differ.
+- How you would notice if both environments ended up in the same state.
+- What separate state does and does not protect.
+- Which tags a clean-up or cost report would need beyond `Environment`, and why.
+- How you would notice that you are in the wrong environment.
+- When workspaces would be the right tool and what you give up by not using them here, when a directory per environment would be the right tool and what you give up by not using it, and in what ways keeping both environments in one account misrepresents real practice.
 - Where did you spend the most time, and why?
 
 ## AI collaboration log
@@ -42,14 +37,19 @@ If you used AI tools, be specific, not a vague "I used AI to help write some cod
 
 ## How to build it (teach it to the next engineer)
 
-Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader is new to Terraform and to this course.
+Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
 
 ## Concepts worth explaining
 
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-- <scope topic title 1, from the brief>
-- <scope topic title 2, from the brief>
+- One configuration, many environments
+- Per-environment input values
+- Per-environment backend settings and separate state keys in the shared bucket
+- Managing blast radius through state separation
+- Enforcing naming conventions and default provider tags
+- Switching between environments safely
+- Alternative isolation methods: directories vs workspaces (theory)
 
 ## What tripped me up
 
@@ -59,8 +59,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-01: <definition-of-done bullet 1, from the brief>
-- DoD-02: <definition-of-done bullet 2, from the brief>
+- DoD-01: Two state objects exist in the bucket under different keys (listing pasted).
+- DoD-02: Both environments produce clean plans, with the output for each, not one plan reported as covering both.
+- DoD-03: Environment-specific inputs differ between your two environments and live outside the main configuration files.
+- DoD-04: Every resource follows the naming convention and carries the required tags, shown from the plan, the state or the cloud side, not from your code.
+- DoD-05: Your comparison note covers a directory per environment, workspaces and the per-environment files you used, and says when each fits.
+- DoD-06: Both environments are destroyed and the bucket is retained, confirmed from the cloud side.
+- DoD-07: Your write-up takes a first-time learner to one configuration deployed as dev and prod with separate state unaided — verified by you following it end to end from a clean state.
 
 ## Definition-of-done self-assessment
 

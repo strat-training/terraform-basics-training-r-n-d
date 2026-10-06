@@ -15,13 +15,14 @@ Describe the deliverable named in the brief: what it is, what it does, how it is
 
 ## Why it's built this way (key decisions)
 
-One entry per open design question in the brief, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
+One entry per research prompt in the brief's scope, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-- How does the AWS provider decide which credentials to use, and how would you prove which identity a plan is using?
-- What is the difference between a version constraint you declare and what the lock file records, and why does the course want both?
-- How loose or tight should a provider constraint be, and who carries the risk of each choice?
-- Why set tags at the provider rather than on each resource, and what would make you tag a resource individually anyway?
-- What should a reviewer look for in a merge request that changes the lock file?
+- How the AWS provider decides which credentials to use, and how you would prove which identity a plan is using.
+- What a scan for static keys has to look at, and what it can miss.
+- What Terraform downloads when you initialise, and what a version bump would change.
+- Why tags are set at the provider rather than on each resource, and what would make you tag a resource individually anyway.
+- The difference between a version constraint you declare and what the lock file records, how loose or tight a provider constraint should be and who carries the risk of each choice, and what a reviewer should look for in a merge request that changes the lock file.
+- What the provider listing tells you that the configuration does not.
 - Where did you spend the most time, and why?
 
 ## AI collaboration log
@@ -56,13 +57,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: An authenticated AWS sandbox session exists and a caller-identity query returns the sandbox identity (output pasted, account details redacted as the trainer directs).
-- DoD-2: No static access keys are present in your AWS configuration on disk or in your repository; your evidence shows the scan you ran and what it looked for.
-- DoD-3: The configuration declares a required Terraform version and, for every provider it uses, a source and a version constraint, and the provider listing shows both `aws` and `random` (output pasted).
-- DoD-4: The lock file exists and is committed to version control (it appears in your commit), and one deliberate version change is shown with its effect on the lock file (before and after).
-- DoD-5: Formatting and validation checks pass with no errors (output pasted), and default tags are configured on the AWS provider and the plan shows them on at least one taggable resource the configuration would create (plan excerpt).
-- DoD-6: No resources exist in the sandbox as a result of this stage, confirmed from the cloud side.
-- DoD-7: Your write-up takes a first-time learner to a signed-in sandbox session and a pinned, plan-only configuration unaided — verified by you following it end to end from a clean state.
+- DoD-01: Your notes show a caller-identity query that returns the sandbox identity from your own signed-in session (output pasted, account details redacted as the trainer directs), not the identity you assumed you had.
+- DoD-02: Your notes show the scan you ran for static access keys on disk and in your repository, and what it looked for, not a statement that there are none.
+- DoD-03: Your configuration declares a required Terraform version and, for every provider it uses, a source and a version constraint, and the provider listing shows both `aws` and `random` (output pasted), not providers left to float.
+- DoD-04: The lock file is committed (it appears in your commit), and your notes show one deliberate version change with the lock file before and after, not a description of what a version change would do.
+- DoD-05: Formatting and validation pass with no errors, and the plan shows default tags on at least one taggable resource the configuration would create (plan excerpt), not tags you only set in the code.
+- DoD-06: Your notes show that no resources exist in the sandbox as a result of this stage, confirmed from the cloud side, not from Terraform's output.
+- DoD-07: Your write-up takes a first-time learner to a signed-in sandbox session and a pinned, plan-only configuration unaided — verified by you following it end to end from a clean state.
 
 ## Definition-of-done self-assessment
 

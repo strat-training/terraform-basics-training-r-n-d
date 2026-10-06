@@ -10,7 +10,7 @@ This playbook is the prompt sequence that produced this repository, with what th
 README.md                        — the trainee's guide: how a stage works, the stages, the capstone, the rules, how review works
 modules/
   m01-<stage-title>/
-    brief.md                     — your handoff: objective, scope, constraints, deliverable, questions, definition of done
+    brief.md                     — your handoff, in the structure of brief-sample.md: objective, scope with research prompts, constraints, deliverable, definition of done
     write-up-template.md         — blank; the trainee fills in a copy as they build
     tasks.md                     — a generated checklist that restates the brief and answers nothing
   m02-<stage-title>/ …
@@ -26,10 +26,10 @@ knowledge/retros/                — findings worth keeping
 
 ## The ideas it rests on
 
-- **A brief hands over a problem, never a solution.** Objective, scope, constraints, a named deliverable, open design questions and an observable definition of done. No lesson, no steps, no code.
+- **A brief hands over a problem, never a solution.** Objective, scope with research prompts, constraints, a named deliverable and an observable definition of done. No lesson, no steps, no code.
 - **Build and write-up are one piece of work.** The trainee writes each stage up while building it, and you review both together, stage by stage.
 - **Stages teach the subject. The capstone is separate.** Never shape a stage around what the capstone will need, and never let the capstone change a stage.
-- **Nothing in a task or a brief may answer an open question.** A line that states the outcome a question asks the trainee to reason out is a leak, even if it looks like an ordinary requirement.
+- **Nothing in a task or a brief may answer a research prompt.** A line that states the outcome a prompt asks the trainee to find out is a leak, even if it looks like an ordinary requirement.
 - **Trainees see a trainee's course.** Their README and `modules/` speak to "you", and carry no design-document citations, no maintenance notes and no "draft" flags. Trainer material lives under `docs/`.
 - **Cost is part of the lesson.** Every stage says what it may bill, and the capstone can make cost a constraint.
 
@@ -69,15 +69,18 @@ Answer the questions it raises in the chat. Reorder, rename, add and drop stages
 
 ```
 Create one folder per stage under modules/, named m<NN>-<descriptive-title>, and write each stage's brief.md
-from docs/templates/brief.md. The brief is the trainer's handoff only: objective, scope in the order to
-tackle, out of scope, stack constraints, a named deliverable, open design questions, an observable
-definition of done of seven items or fewer with stable IDs, including one that takes a first-time learner
-through the write-up unaided, and a Cost row. No lesson content, no steps, no code, no solutions.
-The stages are: <STAGE_LIST>. These rules apply to every stage and are stated once in the README, so do
+from docs/templates/brief.md, in the structure and tone of docs/templates/brief-sample.md: a header line with
+the stage, what it builds on and what it feeds into; an objective that starts "By the end of this stage, you
+can ..." and names the evidence the trainee must use; a scope of bold-titled topics, each ending in a "Research:"
+prompt that says what to find out and never the answer; stack constraints (including what the stage may bill
+and what is destroyed); a named deliverable; a lab (a goal, hands-on work drawn only from the scope, what the trainee builds and captures, and clean-up); a definition of done of seven bullets or fewer labelled DoD-01, DoD-02 and so on, each an observable
+result with a "not the weaker substitute" contrast, ending with one that takes a first-time learner through the
+write-up unaided; best practices the stage demonstrates; and a "Still open / ask your trainer" list. No lesson
+content, no steps, no code, no solutions. The stages are: <STAGE_LIST>. These rules apply to every stage and are stated once in the README, so do
 not repeat them in the briefs: <RULES_FOR_EVERY_STAGE>.
 
-When all the briefs are written, check each one: does any scope item, constraint or definition-of-done line
-state the outcome an open design question asks the trainee to reason out? List every such line.
+When all the briefs are written, check each one: does any scope description, constraint or definition-of-done bullet
+state the outcome a research prompt asks the trainee to find out? List every such line.
 ```
 
 Reword the lines it finds before moving on. These are the briefs that answer their own questions; each one reaches the trainee as an instruction.
@@ -86,7 +89,7 @@ Reword the lines it finds before moving on. These are the briefs that answer the
 
 ```
 For every stage, write write-up-template.md from docs/templates/write-up-template.md. Copy the stage's open
-design questions, scope items and definition-of-done items from its brief word for word into the sections
+research prompts, scope topic titles and definition-of-done bullets from its brief word for word into the sections
 that list them. Keep the other sections exactly as the template has them.
 ```
 
@@ -104,13 +107,13 @@ Copy `docs/templates/trainee-task-planner.md` into `.claude/commands/` in the ne
 
 Advance through the gates it stops at. Then generate the rest.
 
-**Placeholders:** `<STAGE_FOLDER>`, `<PRECEDENT_TASKS_FILE>` (a generated `tasks.md` to match), `<STAGE_SENSITIVITY>` (optional: an open question in this brief that no task may answer)
+**Placeholders:** `<STAGE_FOLDER>`, `<PRECEDENT_TASKS_FILE>` (a generated `tasks.md` to match), `<STAGE_SENSITIVITY>` (optional: a research prompt in this brief that no task may answer)
 
 ```
 Run `/trainee-task-planner <STAGE_FOLDER>` end to end — evaluate, plan, apply, validate, with no pausing for
 approval (this request is the approval). Match <PRECEDENT_TASKS_FILE>: same sections, same task
 granularity, same closing task. Tasks must never leak answers: no code, no name the brief does not use, no
-design choice that resolves a question the brief leaves open. <STAGE_SENSITIVITY>
+design choice that resolves a research prompt the brief leaves open. <STAGE_SENSITIVITY>
 
 Write <STAGE_FOLDER>/tasks.md, then run the full coverage check against this stage's brief and write-up
 template, fix any gap, and re-check until clean. Report in under 200 words: task count and section
@@ -130,7 +133,7 @@ The capstone is its own project. Decide first what is fixed and what is the trai
 **Placeholders:** `<WHAT_IS_FIXED>`, `<WHAT_IS_THE_TRAINEES>`, `<CONSTRAINTS>`, `<COST_LIMITS>`, `<RUBRIC_CRITERIA_AND_POINTS>`, `<PASS_MARK>`
 
 ```
-Write modules/capstone/brief.md from docs/templates/capstone-brief.md, then write-up-template.md from
+Write modules/m12-capstone/brief.md from docs/templates/capstone-brief.md, then write-up-template.md from
 docs/templates/capstone-write-up-template.md and tasks.md from docs/templates/capstone-tasks.md. Fixed for
 everyone: <WHAT_IS_FIXED>. The trainee's own design decisions, all collected in one section called "Your
 design decisions": <WHAT_IS_THE_TRAINEES>. Constraints: <CONSTRAINTS>. Cost challenge: <COST_LIMITS>.
@@ -176,7 +179,7 @@ The criteria it should check:
 
 ## Prompt 8 — Spot-check the riskiest stages
 
-No prompt needed: read the generated files yourself. For any stage whose brief leaves a genuinely open design question, read its `tasks.md` directly rather than trusting an agent's report. Record any pattern you find in `knowledge/retros/`, so the next course avoids it.
+No prompt needed: read the generated files yourself. For any stage whose brief leaves a genuinely open research prompt, read its `tasks.md` directly rather than trusting an agent's report. Record any pattern you find in `knowledge/retros/`, so the next course avoids it.
 
 ## Prompt 9 — Change a stage later
 
@@ -187,7 +190,7 @@ A stage's `tasks.md` and write-up template are generated from its brief. Change 
 ```
 Update <STAGE_FOLDER>/brief.md to <CHANGE>. Then update write-up-template.md so its lists still match the
 brief word for word, and run `/trainee-task-planner re-plan <STAGE_FOLDER>` as a full rewrite of tasks.md.
-Check the new brief for lines that answer its own open questions.
+Check the new brief for lines that answer its own research prompts.
 ```
 
 ## Prompt 10 — Add a stage
@@ -205,7 +208,7 @@ to the Stages table in README.md and say what it builds on and what it leaves be
 - **State a rule once.** Put course-wide rules in the README and have each brief link to them, so a change is made in one place.
 - **Prefer a narrow change.** When asked to remove something, remove that thing and fix its direct consequences. Do not restore or rewrite broad areas.
 - **Regenerate, don't patch.** Checklists and write-up lists come from the brief; editing them by hand makes them drift.
-- **Check numbering after every removal.** Definition-of-done IDs, scope items and question numbers are referenced by the generated files.
+- **Check numbering after every removal.** Definition-of-done bullets, scope topics and research prompts are numbered or copied into the generated files.
 - **Run commands from the repository root.** Some tools write output into whichever folder they run from.
 
 ## Minimum assets to start a new course

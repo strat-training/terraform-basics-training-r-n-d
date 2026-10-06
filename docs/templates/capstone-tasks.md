@@ -1,7 +1,7 @@
 # <Capstone title> Tasks
 
 <!--
-TEMPLATE: capstone checklist. Copy to modules/capstone/tasks.md and replace every <placeholder>.
+TEMPLATE: capstone checklist. Copy to modules/m12-capstone/tasks.md and replace every <placeholder>.
 Delete these comments when you are done. Write the capstone's checklist by hand from this shape:
 /trainee-task-planner covers stage briefs only, because a capstone brief has no numbered scope list.
 

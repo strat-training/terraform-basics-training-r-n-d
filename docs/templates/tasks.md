@@ -16,18 +16,18 @@ holds code, a name the brief does not use, a design choice, a hint or an explana
 
 ## Setup
 
-- [ ] Read `brief.md` from top to bottom, including its cost, stack constraints and out-of-scope list, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Ask the trainer about anything unclear before you build.
+- [ ] Read `brief.md` from top to bottom, including its stack constraints, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Check its “Still open / ask your trainer” list, and ask the trainer about anything unclear before you build.
 - [ ] Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched.
 - [ ] Confirm that each stage named under "Builds on" in the brief (<Builds on value>) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
 
 ## Build
 
-- [ ] Work on: <scope item, verbatim — one task per scope item, in the brief's order>
+- [ ] Work on: <scope topic title, verbatim — one task per scope bullet, in the brief's order>
 - [ ] Have ready: <deliverable component, verbatim — one task per component>
 
 ## Verify
 
-- [ ] Confirm <DoD-n>: <definition-of-done text, verbatim> Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm <DoD-nn>: <definition-of-done bullet, verbatim, with the label the brief gives it> Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 
