@@ -24,7 +24,7 @@ A note on words: <a term the course uses in two senses, and which sense this REA
 | Path | What it holds |
 | --- | --- |
 | `modules/` | The <n> stage folders (<first>–<last>), each with a brief, a checklist and a write-up template |
-| `modules/m12-capstone/` | The capstone, with its own brief, checklist and write-up template |
+| `modules/m10-capstone/` | The capstone, with its own brief, checklist and write-up template |
 
 The other folders are trainer material. You do not need them to do the stages.
 

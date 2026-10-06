@@ -1,6 +1,6 @@
 # M05 — Terraform for Multi-Environment Deployments Brief
 
-**Stage:** 5 of 11 · **Builds on:** M04 · **Feeds into:** M09
+**Stage:** 5 of 9 · **Builds on:** M02, M04 · **Feeds into:** M07
 
 ## Objective
 
@@ -21,12 +21,12 @@ You work from your own two environments, not a worked example. Find out, and wri
 ## Stack constraints
 
 - Everything under [Rules for every stage](../../README.md#rules-for-every-stage) applies.
-- You use one configuration, with a variable-definition file and a backend-configuration file per environment, and state lives in the bucket from M04 under a distinct key per environment.
+- You use one configuration, with a variable-definition file and a backend-configuration file per environment, and state lives in the bucket from M02 under a distinct key per environment.
 - Resource names follow `<app>-<env>-<resource>`, and provider-level default tags include `Environment`.
 - Both environments live in the same sandbox account, and your notes must say that real teams usually separate accounts.
 - Two environments mean twice the resources, so keep them small and cheap, look up what each resource bills before you apply, and destroy both environments at the end.
 - Workspaces and a directory per environment are explained in your comparison note, not built.
-- Separate accounts, Terragrunt and other wrapper tools, and reusable modules (M09) are out of scope.
+- Separate accounts, Terragrunt and other wrapper tools, and reusable modules (M07) are out of scope.
 
 ## Deliverable
 
@@ -36,7 +36,14 @@ You work from your own two environments, not a worked example. Find out, and wri
 
 **Goal.** Deploy dev and prod from one configuration with separate state, named and tagged consistently.
 
-**You do, in the sandbox.** Set per-environment inputs and backend settings, apply each environment, name and tag everything through the convention, switch between environments carefully, and write up how other ways of separating environments compare.
+**You do, in the sandbox.**
+
+1. Take one small configuration (the network from M03, or a single `aws_ssm_parameter`) and add `dev.tfvars` and `prod.tfvars` with different values.
+2. Add `dev.s3.tfbackend` and `prod.s3.tfbackend` files that point at the bucket from M02, each with its own state `key`.
+3. Name every resource `<app>-<env>-<resource>` and set `default_tags` in the provider block, including `Environment`.
+4. For dev, run `terraform init -backend-config=dev.s3.tfbackend -reconfigure` and `terraform apply -var-file=dev.tfvars`; then do the same for prod.
+5. List the bucket to see the two state objects, and run `terraform plan` for each environment to check it is clean.
+6. Write your comparison note on workspaces, a directory per environment and the per-environment files you used.
 
 **You build and capture.** The one configuration deployed twice is your deliverable. Capture two state objects, a clean plan for each environment, the names and tags, and your comparison note.
 

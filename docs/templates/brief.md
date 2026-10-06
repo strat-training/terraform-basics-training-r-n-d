@@ -44,14 +44,19 @@ You work from your own <system, sandbox or configuration>, not a worked example.
 ## Lab
 
 <!--
-The hands-on part of the stage. Draw every action from the scope above and add nothing the scope does not cover,
-and describe it by outcome, never by steps: no commands, no code, no answers to the research prompts. It should
-produce the stage's deliverable and the evidence the trainee needs for the write-up.
+The hands-on part of the stage. Draw every action from the scope above and add nothing the scope does not cover.
+Write "You do" as a short numbered list, one simple step per line, each naming the file or the command, the way
+the first stage's lab does. Keep it super simple: the smallest resource and the fewest steps that cover the scope,
+and no answers to the research prompts. It should produce the stage's deliverable and the evidence the trainee
+needs for the write-up.
 -->
 
 **Goal.** <one sentence: what the trainee gets working or finds out>
 
-**You do, in the sandbox.** <the hands-on work, as actions drawn from the scope>
+**You do, in the sandbox.**
+
+1. <one simple step, naming the file or command>
+2. <the next step>
 
 **You build and capture.** <the part of the deliverable the lab produces, and the evidence it gives the write-up>
 

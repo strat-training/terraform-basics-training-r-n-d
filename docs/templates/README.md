@@ -8,9 +8,9 @@ Reusable starting points for new stages and capstones. Copy one into the folder 
 | [brief.md](brief.md) | `modules/<stage-folder>/brief.md` | A stage brief, in the structure and tone of the sample: objective, scope with research prompts, stack constraints, named deliverable, definition of done, best practices, what to confirm with the trainer |
 | [write-up-template.md](write-up-template.md) | `modules/<stage-folder>/write-up-template.md` | The blank write-up for a stage, generated from its brief |
 | [tasks.md](tasks.md) | `modules/<stage-folder>/tasks.md` | The shape of a stage checklist. Generate it with the planner rather than filling it in by hand |
-| [capstone-brief.md](capstone-brief.md) | `modules/m12-capstone/brief.md` | A capstone brief: AI-assisted development policy, requirements, presentation, rubric |
-| [capstone-write-up-template.md](capstone-write-up-template.md) | `modules/m12-capstone/write-up-template.md` | The blank write-up for a capstone |
-| [capstone-tasks.md](capstone-tasks.md) | `modules/m12-capstone/tasks.md` | The shape of a capstone checklist, written by hand |
+| [capstone-brief.md](capstone-brief.md) | `modules/m10-capstone/brief.md` | A capstone brief: AI-assisted development policy, requirements, presentation, rubric |
+| [capstone-write-up-template.md](capstone-write-up-template.md) | `modules/m10-capstone/write-up-template.md` | The blank write-up for a capstone |
+| [capstone-tasks.md](capstone-tasks.md) | `modules/m10-capstone/tasks.md` | The shape of a capstone checklist, written by hand |
 | [course-readme.md](course-readme.md) | `README.md` (repository root) | The trainee-facing course README: how a stage works, the stages, the capstone, the rules and the stage rubric |
 | [trainee-task-planner.md](trainee-task-planner.md) | `.claude/commands/trainee-task-planner.md` | The `/trainee-task-planner` command, which generates a stage checklist without leaking answers |
 | [build-to-teach-playbook.md](build-to-teach-playbook.md) | — | The step-by-step prompt sequence for building a course repository like this one, for another trainer to reuse |
@@ -36,4 +36,4 @@ Copy `course-readme.md` to the repository root as `README.md` and fill it in. It
 
 ## Adding a capstone
 
-Copy `capstone-brief.md`, `capstone-write-up-template.md` and `capstone-tasks.md` into `modules/m12-capstone/` and fill them in. The capstone is marked against its rubric and confirmed in a presentation, so its checklist is written by hand rather than generated.
+Copy `capstone-brief.md`, `capstone-write-up-template.md` and `capstone-tasks.md` into `modules/m10-capstone/` and fill them in. The capstone is marked against its rubric and confirmed in a presentation, so its checklist is written by hand rather than generated.

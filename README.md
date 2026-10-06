@@ -1,15 +1,15 @@
 # Terraform Concepts & Best Practices — training stages and capstone
 
-This is your Terraform course: eleven training stages in `modules/`, followed by a capstone project. For each stage your trainer gives you a brief. You build the stage and write it up as you go, your trainer reviews both together, you revise, and the finished pair becomes teaching material for the next cohort.
+This is your Terraform course: nine training stages in `modules/`, followed by a capstone project. For each stage your trainer gives you a brief. You build the stage and write it up as you go, your trainer reviews both together, you revise, and the finished pair becomes teaching material for the next cohort.
 
-A note on words: a **module** in this repository is a *training stage*, not a Terraform module. Stage [M09](modules/m09-designing-reusable-terraform-modules/brief.md) is the one that teaches Terraform modules.
+A note on words: a **module** in this repository is a *training stage*, not a Terraform module. Stage [M07](modules/m07-designing-reusable-terraform-modules/brief.md) is the one that teaches Terraform modules.
 
 ## What is in this repository
 
 | Path | What it holds |
 | --- | --- |
-| `modules/` | The eleven stage folders (M01–M11), each with a brief, a checklist and a write-up template |
-| `modules/m12-capstone/` | The capstone, with its own brief, checklist and write-up template |
+| `modules/` | The nine stage folders (M01–M09), each with a brief, a checklist and a write-up template |
+| `modules/m10-capstone/` | The capstone, with its own brief, checklist and write-up template |
 
 The other folders are trainer material. You do not need them to do the stages.
 
@@ -38,31 +38,29 @@ Your Terraform code lives outside this repository, in your own GitLab repository
 
 | Stage | Title | Checklist | Theme | Leaves behind |
 | --- | --- | --- | --- | --- |
-| M01 | [Getting Started with Terraform](modules/m01-getting-started-with-terraform/brief.md) | [tasks](modules/m01-getting-started-with-terraform/tasks.md) | What Terraform is; install and verify Terraform, VS Code and the other lab tools on macOS and Windows | Tools only |
-| M02 | [Configuring Providers and Connecting to AWS](modules/m02-configuring-providers-and-connecting-to-aws/brief.md) | [tasks](modules/m02-configuring-providers-and-connecting-to-aws/tasks.md) | Sign in to AWS, no static keys; providers, version constraints, lock file (plan only) | Nothing |
-| M03 | [Understanding the Terraform Workflow](modules/m03-understanding-the-terraform-workflow/brief.md) | [tasks](modules/m03-understanding-the-terraform-workflow/tasks.md) | Declarative model, resource anatomy; plan, apply, destroy; plan review; in-place vs replace | Nothing |
-| M04 | [Managing Terraform State](modules/m04-managing-terraform-state/brief.md) | [tasks](modules/m04-managing-terraform-state/tasks.md) | What local state is and why it is sensitive; moving it into a protected S3 backend with native locking | **The state bucket** |
+| M01 | [Getting Started with Terraform](modules/m01-getting-started-with-terraform/brief.md) | [tasks](modules/m01-getting-started-with-terraform/tasks.md) | Workstation, sign-in with no static keys, providers and the lock file, then one resource taken through init, plan, apply, update and destroy | Nothing |
+| M02 | [Managing Terraform State](modules/m02-managing-terraform-state/brief.md) | [tasks](modules/m02-managing-terraform-state/tasks.md) | What local state is and why it is sensitive; moving it into a protected S3 backend with native locking | **The state bucket** |
+| M03 | [Managing Resources with Network Provisioning](modules/m03-managing-resources-with-network-provisioning/brief.md) | [tasks](modules/m03-managing-resources-with-network-provisioning/tasks.md) | Dependencies, repetition, data sources, a small VPC | Nothing |
+| M04 | [Defining Variables, Inputs and Outputs in Terraform](modules/m04-defining-variables-inputs-and-outputs-in-terraform/brief.md) | [tasks](modules/m04-defining-variables-inputs-and-outputs-in-terraform/tasks.md) | Typed, validated inputs; value precedence; locals; sensitive inputs and outputs | Nothing |
 | M05 | [Terraform for Multi-Environment Deployments](modules/m05-terraform-for-multi-environment-deployments/brief.md) | [tasks](modules/m05-terraform-for-multi-environment-deployments/tasks.md) | Dev and prod from one configuration; directory vs workspaces vs per-environment files compared | Bucket only |
-| M06 | [Managing Resources with Network Provisioning](modules/m06-managing-resources-with-network-provisioning/brief.md) | [tasks](modules/m06-managing-resources-with-network-provisioning/tasks.md) | Dependencies, repetition, data sources, a small VPC | Nothing |
-| M07 | [Defining Variables, Inputs and Outputs in Terraform](modules/m07-defining-variables-inputs-and-outputs-in-terraform/brief.md) | [tasks](modules/m07-defining-variables-inputs-and-outputs-in-terraform/tasks.md) | Typed, validated inputs; value precedence; locals; sensitive inputs and outputs | Nothing |
-| M08 | [Advanced Terraform Configuration](modules/m08-advanced-terraform-configuration/brief.md) | [tasks](modules/m08-advanced-terraform-configuration/tasks.md) | `for_each` in depth, dynamic blocks, conditions, `for` expressions, data sources, dependency and lifecycle controls | Bucket only |
-| M09 | [Designing Reusable Terraform Modules](modules/m09-designing-reusable-terraform-modules/brief.md) | [tasks](modules/m09-designing-reusable-terraform-modules/tasks.md) | Reusable modules: structure, naming, comments, interfaces, consuming published modules | Bucket only |
-| M10 | [Change with Confidence: Safe Terraform Refactoring](modules/m10-change-with-confidence-safe-terraform-refactoring/brief.md) | [tasks](modules/m10-change-with-confidence-safe-terraform-refactoring/tasks.md) | Rename, adopt, stop managing — no destroys; reading plans as JSON; recovering from a failed apply | Bucket only |
-| M11 | [Going Multi-Cloud with Terraform](modules/m11-going-multi-cloud-with-terraform/brief.md) | [tasks](modules/m11-going-multi-cloud-with-terraform/tasks.md) | GCP and Azure sign-in and provider setup | Nothing |
+| M06 | [Advanced Terraform Configuration](modules/m06-advanced-terraform-configuration/brief.md) | [tasks](modules/m06-advanced-terraform-configuration/tasks.md) | `for_each` in depth, dynamic blocks, conditions, `for` expressions, data sources, dependency and lifecycle controls | Bucket only |
+| M07 | [Designing Reusable Terraform Modules](modules/m07-designing-reusable-terraform-modules/brief.md) | [tasks](modules/m07-designing-reusable-terraform-modules/tasks.md) | Reusable modules: structure, naming, comments, interfaces, consuming published modules | Bucket only |
+| M08 | [Change with Confidence: Safe Terraform Refactoring](modules/m08-change-with-confidence-safe-terraform-refactoring/brief.md) | [tasks](modules/m08-change-with-confidence-safe-terraform-refactoring/tasks.md) | Rename, adopt, stop managing — no destroys; reading plans as JSON; recovering from a failed apply | Bucket only |
+| M09 | [Going Multi-Cloud with Terraform](modules/m09-going-multi-cloud-with-terraform/brief.md) | [tasks](modules/m09-going-multi-cloud-with-terraform/tasks.md) | GCP and Azure sign-in and provider setup | Nothing |
 
-Work the stages in order. Later stages build on earlier ones, and M04's bucket is reused by M05 and M08 to M10 and kept until the capstone ends. M08 comes before modules so that module interfaces can rely on it, and modules come before refactoring so that extracting code into a module is something M10 can then refactor. Folder names are descriptive; the briefs refer to each other by stage ID (M01–M11).
+Work the stages in order. Later stages build on earlier ones, and M02's bucket is reused by M05 and M06 to M08 and kept until the capstone ends. M06 comes before modules so that module interfaces can rely on it, and modules come before refactoring so that extracting code into a module is something M08 can then refactor. Folder names are descriptive; the briefs refer to each other by stage ID (M01–M09).
 
 ## The capstone — a zero-downtime online shop
 
-The capstone follows M11. It is a standalone project that assumes everything the stages teach and does not change them. You design and build a three-tier online shop on AWS (`ap-southeast-1`), release three versions of it to live traffic with zero failed checkouts, roll a bad release back with one change, keep an off-site copy of its inventory in GCP and serve its theme and images from Azure — with no stored key anywhere and inside a cost challenge.
+The capstone follows M09. It is a standalone project that assumes everything the stages teach and does not change them. You design and build a three-tier online shop on AWS (`ap-southeast-1`), release three versions of it to live traffic with zero failed checkouts, roll a bad release back with one change, keep an off-site copy of its inventory in GCP and serve its theme and images from Azure — with no stored key anywhere and inside a cost challenge.
 
 **What is fixed:** the three tiers (web, app and a private database), the blue/green release, the GCP backup and the Azure theme and images, the release stages 0 to 6 and what each must show, and two stacks called `foundation` and `release`. **What is yours:** what the shop sells, what each tier runs on (servers, Fargate or something else), how many resources you use, your network and access, how you achieve zero downtime, how a bad release is detected and rolled back, and how you demonstrate the release. The brief lists all of these in one section, "Your design decisions".
 
 | | |
 | --- | --- |
-| Brief | [modules/m12-capstone/brief.md](modules/m12-capstone/brief.md) |
-| Checklist | [modules/m12-capstone/tasks.md](modules/m12-capstone/tasks.md) |
-| Write-up template | [modules/m12-capstone/write-up-template.md](modules/m12-capstone/write-up-template.md) |
+| Brief | [modules/m10-capstone/brief.md](modules/m10-capstone/brief.md) |
+| Checklist | [modules/m10-capstone/tasks.md](modules/m10-capstone/tasks.md) |
+| Write-up template | [modules/m10-capstone/write-up-template.md](modules/m10-capstone/write-up-template.md) |
 | Constraints | Releases are Terraform only: one change per stage, saved as a plan, no `-target`. No stored keys and no SSH. Two stacks with separate `dev` and `prod` state, and the naming and tags the brief sets |
 | Cost challenge | At most $0.30 an hour while running and under $5 in total, with limits on compute and database size, one NAT gateway and two load balancers. Your own estimate is the evidence |
 | Proofs | Failure proofs, identity and backup proofs, stock checks, a Demo Challenge of five day-2 tasks, and a supplied `check.sh` |
@@ -81,12 +79,12 @@ Each criterion is scored from 0 to its points: Excellent is 80% or more of them,
 
 ## Rules for every stage
 
-These apply to every stage brief, M01 to M11. A brief repeats only what is specific to its stage. The capstone restates its own rules in its brief.
+These apply to every stage brief, M01 to M09. A brief repeats only what is specific to its stage. The capstone restates its own rules in its brief.
 
 - **Terraform CLI, 1.11 or later**, at the exact version in `versions.env`. OpenTofu is an optional topic in M01; you decide whether to include it.
-- **AWS first.** GCP and Azure appear only in M11, as setup and read-only checks.
+- **AWS first.** GCP and Azure appear only in M09, as setup and read-only checks.
 - **Sandbox accounts only, short-lived sign-in only.** Never create, store or commit a static access key, service-account key or client secret.
-- **Destroy at the end of every stage.** The M04 state bucket is the only thing kept, until the capstone ends. Keep resources small and cheap, and use no NAT gateways.
+- **Destroy at the end of every stage.** The M02 state bucket is the only thing kept, until the capstone ends. Keep resources small and cheap, and use no NAT gateways.
 - **Know what it costs before you apply.** Each brief's stack constraints say what the stage may bill. Look up what each resource in your plan bills and estimate the hourly cost before you apply. Billing APIs are not used, so your estimate is your evidence.
 - **Sandbox-compatible tooling only.** No Organizations or service control policies, billing APIs, tag-filtered budgets, paid SaaS or policy-as-code engines. No HCP Terraform, Stacks, Packer, Kubernetes providers or `terraform test`.
 - **Pin everything and commit the lock file.** Formatting and validation checks must pass before you call a stage done.

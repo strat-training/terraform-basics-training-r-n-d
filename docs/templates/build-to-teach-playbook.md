@@ -73,7 +73,7 @@ from docs/templates/brief.md, in the structure and tone of docs/templates/brief-
 the stage, what it builds on and what it feeds into; an objective that starts "By the end of this stage, you
 can ..." and names the evidence the trainee must use; a scope of bold-titled topics, each ending in a "Research:"
 prompt that says what to find out and never the answer; stack constraints (including what the stage may bill
-and what is destroyed); a named deliverable; a lab (a goal, hands-on work drawn only from the scope, what the trainee builds and captures, and clean-up); a definition of done of seven bullets or fewer labelled DoD-01, DoD-02 and so on, each an observable
+and what is destroyed); a named deliverable; a lab (a goal, a short numbered list of simple hands-on steps drawn only from the scope and naming the file or command, what the trainee builds and captures, and clean-up); a definition of done of seven bullets or fewer labelled DoD-01, DoD-02 and so on, each an observable
 result with a "not the weaker substitute" contrast, ending with one that takes a first-time learner through the
 write-up unaided; best practices the stage demonstrates; and a "Still open / ask your trainer" list. No lesson
 content, no steps, no code, no solutions. The stages are: <STAGE_LIST>. These rules apply to every stage and are stated once in the README, so do
@@ -133,7 +133,7 @@ The capstone is its own project. Decide first what is fixed and what is the trai
 **Placeholders:** `<WHAT_IS_FIXED>`, `<WHAT_IS_THE_TRAINEES>`, `<CONSTRAINTS>`, `<COST_LIMITS>`, `<RUBRIC_CRITERIA_AND_POINTS>`, `<PASS_MARK>`
 
 ```
-Write modules/m12-capstone/brief.md from docs/templates/capstone-brief.md, then write-up-template.md from
+Write modules/m10-capstone/brief.md from docs/templates/capstone-brief.md, then write-up-template.md from
 docs/templates/capstone-write-up-template.md and tasks.md from docs/templates/capstone-tasks.md. Fixed for
 everyone: <WHAT_IS_FIXED>. The trainee's own design decisions, all collected in one section called "Your
 design decisions": <WHAT_IS_THE_TRAINEES>. Constraints: <CONSTRAINTS>. Cost challenge: <COST_LIMITS>.

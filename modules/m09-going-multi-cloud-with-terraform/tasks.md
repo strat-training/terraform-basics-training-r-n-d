@@ -1,6 +1,6 @@
-# M05 — Terraform for Multi-Environment Deployments — Tasks
+# M09 — Going Multi-Cloud with Terraform — Tasks
 
-**Objective:** By the end of this stage, you can deploy dev and prod from one configuration with separate state, named and tagged so consistently that anyone can tell which environment a resource belongs to at a glance — using your own two environments as the evidence, not a diagram. You can say when you would use workspaces or a directory per environment instead.
+**Objective:** By the end of this stage, you can sign in to GCP and Azure with short-lived logins, make the project or subscription explicit, and prove each provider works with a read-only check — using your own identity output as the evidence, not the identity you expected. You can see that the core Terraform workflow carries over to GCP and Azure while provider setup does not.
 
 > There is no solutions file for this stage. This checklist guides the work — it doesn't contain it. See `brief.md` for the full requirements, the stack constraints and the definition of done, and fill in `write-up.md` — your copy of `write-up-template.md` — as you go, not after.
 
@@ -8,29 +8,26 @@
 
 - [ ] Read `brief.md` from top to bottom, including its stack constraints, and the rules for every stage in the [README](../../README.md#rules-for-every-stage). Check its “Still open / ask your trainer” list, and ask the trainer about anything unclear before you build.
 - [ ] Copy `write-up-template.md` to `write-up.md` in this folder and fill in the header table. Leave the template itself untouched.
-- [ ] Confirm that each stage named under "Builds on" in the brief (M02, M04) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
+- [ ] Confirm that each stage named under "Builds on" in the brief (M01) has been accepted, and that you have the access and tools its stack constraints require. Raise anything missing with the trainer before you build.
 
 ## Build
 
-- [ ] Work on: One configuration, many environments
-- [ ] Work on: Per-environment input values
-- [ ] Work on: Per-environment backend settings and separate state keys in the shared bucket
-- [ ] Work on: Managing blast radius through state separation
-- [ ] Work on: Enforcing naming conventions and default provider tags
-- [ ] Work on: Switching between environments safely
-- [ ] Work on: Alternative isolation methods: directories vs workspaces (theory)
-- [ ] Have ready: One configuration deployed as both dev and prod with separate state
-- [ ] Have ready: a note comparing three ways to separate environments
+- [ ] Work on: Installing the CLIs and confirming access to the GCP and Azure sandboxes
+- [ ] Work on: GCP — Application Default Credentials sign-in, project selection, provider configuration
+- [ ] Work on: Azure — CLI sign-in, subscription selection, provider configuration
+- [ ] Work on: State management across clouds: `gcs` and `azurerm` backends
+- [ ] Work on: Where this course stops
+- [ ] Have ready: Two small Terraform configurations, one per cloud, each authenticating with a short-lived login and outputting the identity it runs as
 
 ## Verify
 
-- [ ] Confirm DoD-01: Two state objects exist in the bucket under different keys (listing pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-02: Both environments produce clean plans, with the output for each, not one plan reported as covering both. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-03: Environment-specific inputs differ between your two environments and live outside the main configuration files. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-04: Every resource follows the naming convention and carries the required tags, shown from the plan, the state or the cloud side, not from your code. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-05: Your comparison note covers a directory per environment, workspaces and the per-environment files you used, and says when each fits. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-06: Both environments are destroyed and the bucket is retained, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-07: Your write-up takes a first-time learner to one configuration deployed as dev and prod with separate state unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-01: Both configurations pass formatting and validation checks, shown as pasted output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-02: Both configurations plan successfully, and the plan output includes an identity output for each cloud (output pasted), not the identity you expected. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-03: Each configuration targets the intended GCP project or Azure subscription even when the active login points elsewhere (evidence shown), or your notes record why that was not possible. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-04: No secrets or keys exist in the repository or on disk, and the scan you ran is in your evidence, not a statement that there are none. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-05: Neither configuration creates a resource: the plan shows nothing to add. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-06: Your notes close with a short next-steps note that names HCP Terraform and Sentinel and says in one line what each is for. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-07: Your write-up takes a first-time learner to a working sign-in and a successful plan for GCP and for Azure unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

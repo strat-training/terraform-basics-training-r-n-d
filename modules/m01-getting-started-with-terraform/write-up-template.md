@@ -17,13 +17,11 @@ Describe the deliverable named in the brief: what it is, what it does, how it is
 
 One entry per research prompt in the brief's scope, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
 
-- What problem Terraform solves that a script or the cloud console does not, and where you would not use it.
-- Which install method fits each tool on each operating system, and what each choice costs in maintenance and support.
-- Which parts of the toolchain must be identical for every learner, which can vary, and what each choice costs in support.
-- What the extension adds to the editor, and how you can tell it is doing its job rather than merely installed.
-- What fails differently on Windows than on macOS, and how a learner can tell a broken install from a misconfigured one.
-- How a learner will know the toolchain is correct, rather than merely present.
-- Where OpenTofu and Terraform differ, if you choose to cover it.
+- What problem Terraform solves that a script or the cloud console does not and where you would not use it, how describing the desired state differs from scripting the steps, which install method fits each tool on each operating system and what each choice costs in maintenance and support, how a version manager keeps Terraform at the version you pinned, what fails differently on Windows than on macOS, how you prove you are connected to AWS without static keys, and what a scan for static keys has to look at and what it can miss.
+- What Terraform downloads when you initialise and where it puts it, the difference between a version constraint you declare and what the lock file records, how loose or tight a provider constraint should be and who carries the risk of each choice, and what a reviewer should look for in a merge request that changes the lock file.
+- How the AWS provider decides which credentials to use and how you would prove which identity a plan is using, and why tags are set at the provider rather than on each resource and what would make you tag a resource individually anyway.
+- Which parts of a resource you set and which Terraform reports back, what to check in a plan before you approve it, how you can tell from the plan alone what a change will do, and what you would do if a plan showed a destroy you did not expect.
+- Which changes to your resource are made in place and which force replacement and how sure you are, what a replacement costs when the resource holds data or other resources depend on it, and how you confirm from the cloud side that everything is gone.
 - Where did you spend the most time, and why?
 
 ## AI collaboration log
@@ -43,13 +41,11 @@ Write this as a guide someone could actually follow to build this stage from scr
 
 Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
 
-- What Terraform is
-- The core toolchain
-- Installing Terraform (macOS/Windows) and managing versions
-- Configuring Visual Studio Code for Terraform work
-- A shell that can run the labs' shell scripts on Windows
-- Verifying the toolchain end to end
-- OpenTofu differences
+- Step 1 — The workstation (zero code)
+- Step 2 — Dependencies: the `versions.tf` file
+- Step 3 — Configuration: the `providers.tf` file
+- Step 4 — Resources and planning: the `main.tf` file
+- Step 5 — Apply and destroy
 
 ## What tripped me up
 
@@ -59,13 +55,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-01: Your notes name the actual Terraform version on macOS and on Windows, at the pinned version (1.11 or later), and show the real version output of the AWS, Google Cloud and Azure command-line tools, Git, `jq` and `curl` on each system, not the versions you expected to have installed.
-- DoD-02: Visual Studio Code with the Terraform extension is installed on both systems, and a screenshot from each shows the editor flagging an error you introduced on purpose, not the extension's install page.
-- DoD-03: A version manager switches between two Terraform versions on each system where one works, with the output of the switch pasted; where none works, your notes say so, not that it was skipped.
-- DoD-04: Formatting and validation pass on a configuration that creates nothing, on both systems, with the output pasted, not described from memory.
-- DoD-05: Every step for an operating system you do not own is verified on a second machine or by a second person, or is marked unverified, not assumed to work.
-- DoD-06: Your write-up takes a first-time learner on either operating system to a working toolchain unaided — verified by you following it end to end from a clean state.
-- DoD-07: You can answer, unprompted, “what is infrastructure as code, and what does Terraform add to it?” in your own words, not with a definition copied from documentation.
+- DoD-01: Your notes show the actual Terraform version, installed through a version manager and switched between two versions (output pasted), and a caller-identity query from your own signed-in session (output pasted, account details redacted as the trainer directs), not the version or the identity you assumed you had.
+- DoD-02: Your notes show the scan you ran for static access keys on disk and in your repository, and what it looked for, not a statement that there are none.
+- DoD-03: `terraform init` created the `.terraform` folder and the `.terraform.lock.hcl` file from your own `versions.tf`, the lock file is committed (it appears in your commit), and your notes say in your own words what it recorded, not what the documentation says.
+- DoD-04: Formatting and validation pass with no errors on your `providers.tf` and `main.tf`, shown as pasted output, not described from memory.
+- DoD-05: Your plan output is pasted and read: it shows the default tags on your resource, and your plan-review note classifies every change you made as create, in-place update or replacement, and your trainer confirms each classification on review.
+- DoD-06: The plan before your one-attribute change shows an in-place update (output pasted), and after destroy nothing exists in the sandbox, confirmed from the cloud side, not only from Terraform's output.
+- DoD-07: Your write-up takes a first-time learner on either operating system from an empty folder to a destroyed resource unaided — verified by you following it end to end from a clean state.
 
 ## Definition-of-done self-assessment
 
