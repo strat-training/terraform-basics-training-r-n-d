@@ -50,15 +50,13 @@ Provision a small AWS network and use it to understand how Terraform works out w
 
 ## Definition of done
 
-Your training module — the build plus the write-up that teaches it — is done when each of these is true.
-
-- [ ] **DoD-1** Your write-up shows formatting and validation passing with no errors, as pasted output.
-- [ ] **DoD-2** Your write-up shows a plan that contains the VPC, subnets in at least two availability zones, and the routing for the public tier, with resource addresses taken from the plan output or its JSON form, not from your code.
-- [ ] **DoD-3** Your configuration creates the subnets in more than one availability zone by repeating one resource block, not by writing each one out (a reviewer reads the configuration).
-- [ ] **DoD-4** At least one value your configuration needs about the account or region is read with a data source, not hard-coded (a reviewer reads the configuration).
-- [ ] **DoD-5** Your write-up shows that no NAT gateway appears in the plan or in state, from real output, not from the absence of one in your code.
-- [ ] **DoD-6** Your note names the implicit dependencies in your own configuration and where each one comes from, not a general definition of an implicit dependency.
-- [ ] **DoD-7** A learner following your training module ends with everything destroyed, confirmed from the cloud side, not only from Terraform's output.
+- [ ] **DoD-1** Formatting and validation checks pass with no errors, and the plan contains the VPC, subnets in at least two availability zones, and the routing for the public tier (resource addresses shown from the plan output or its JSON form).
+- [ ] **DoD-2** Subnets in more than one availability zone are created by repeating one resource block rather than writing each one out (a reviewer reads the configuration).
+- [ ] **DoD-3** At least one value the configuration needs about the account or region is read with a data source rather than hard-coded (a reviewer reads the configuration).
+- [ ] **DoD-4** No NAT gateway appears in the plan or in state.
+- [ ] **DoD-5** Your note names the implicit dependencies in your configuration and where each one comes from.
+- [ ] **DoD-6** Everything is destroyed, confirmed from the cloud side.
+- [ ] **DoD-7** Your write-up takes a first-time learner to the same small AWS network unaided — verified by you following it end to end from a clean state.
 
 ## Best practices this stage demonstrates
 

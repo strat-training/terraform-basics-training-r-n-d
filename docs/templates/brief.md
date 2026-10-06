@@ -61,23 +61,15 @@ choice and its cost. Never answer one anywhere else in the brief.
 ## Definition of done
 
 <!--
-Centre it on the trainee's training module: the build plus the write-up that teaches it. Write every item in
-one pattern: <the artifact> + <a specific, observable result>, not <the weaker thing people settle for>, with
-real evidence from the trainee's own environment (output, a screenshot, a listing). Examples of the pattern:
-  - Your notes name your system's actual kernel version and distribution, not generic facts copied from documentation.
-  - Every claim in your notes is backed by real output from your own terminal, not paraphrased from memory.
-  - You can answer, unprompted, "<a question from this stage>" using the concepts from this stage.
-Use "Every ..." for a rule that holds throughout, and add a self-check question where a stage ends in one.
-Keep the item "A learner following your training module ends with ..." and keep to eight items or fewer.
-Each item is observable: someone else can verify it from evidence. IDs are stable.
+Observable. Each item is a check someone else can verify from evidence. IDs are stable. Keep to seven items or
+fewer, merging related checks. Keep the first-time-learner item: it is essential, because it is how the write-up
+is proved to teach.
 -->
 
-Your training module — the build plus the write-up that teaches it — is done when each of these is true.
-
-- [ ] **DoD-1** Your write-up shows <a specific observable result>, as real output from your own <machine or account>, not <the weaker substitute> (<evidence: output pasted, screenshot, plan summary>).
-- [ ] **DoD-2** Every <claim or step> in your write-up is backed by <real evidence>, not <paraphrased from memory>.
-- [ ] **DoD-3** A learner following your training module ends with <observable end state>, confirmed from <where>, not only from <the weaker check>.
-- [ ] **DoD-4** You can answer, unprompted, “<a question from this stage>” using the concepts from this stage, and your write-up gives the same answer.
+- [ ] **DoD-1** <observable result> (<evidence: output pasted, screenshot, plan summary>).
+- [ ] **DoD-2** <observable result> (<evidence>).
+- [ ] **DoD-3** Your write-up <observable claim about the write-up>.
+- [ ] **DoD-4** Your write-up takes a first-time learner to <the named deliverable's end state> unaided — verified by you following it end to end from a clean state.
 
 ## Best practices this stage demonstrates
 

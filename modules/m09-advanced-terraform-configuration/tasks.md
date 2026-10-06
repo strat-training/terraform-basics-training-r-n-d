@@ -25,14 +25,13 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Your write-up shows formatting and validation passing with no errors, as pasted output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: Your write-up shows at least one resource repeated, and at least one resource with repeated nested blocks, generated from a structured input — a map, or a collection derived from one — and justifies the keys you chose. It shows a plan with the expected number of nested blocks (plan excerpt), and adding an entry, removing an entry and changing a key, each with its captured plan and exactly what it would do to the real infrastructure, not what you expect it to do. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: Derived values are defined once and used in more than one place, with no expression duplicated across files (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: Your write-up shows at least one conditional that changes what your configuration creates or sets, with the plan for both outcomes (two plan excerpts), not only the outcome you expected. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: A data source supplies a value your configuration uses, and no equivalent value is hard-coded (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: Every explicit dependency and every lifecycle setting in your configuration is justified in your write-up (or it says why a reference was always enough), and each lifecycle setting's effect is shown from a plan or a deliberate attempt that it affects (output pasted), not assumed from its name. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: At least one precondition or postcondition is in place and you deliberately triggered it, with the real failure message captured (output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-8: A learner following your training module ends with everything destroyed except the M07 bucket, confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: Formatting and validation checks pass with no errors, and derived values are defined once and used in more than one place, with no expression duplicated across files (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: At least one resource is repeated from a structured input — a map, or a collection derived from one — and your write-up justifies the keys you chose; at least one resource has repeated nested blocks generated from the same structured input, and the plan shows the expected number of them (plan excerpt); adding an entry, removing an entry and changing a key in the input each produce a plan you have captured, and your write-up says exactly what each plan would do to the real infrastructure. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: At least one conditional changes what the configuration creates or sets, and the plan is shown for both outcomes of the condition (two plan excerpts); a data source supplies a value the configuration uses, and no equivalent value is hard-coded (a reviewer reads the configuration). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: Every explicit dependency in the configuration is justified in the write-up (if there are none, the write-up says why a reference was always enough), and every lifecycle setting you used is justified, with its effect shown from a plan or a deliberate attempt that it affects (output pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: At least one precondition or postcondition is in place, and you have deliberately triggered it and captured the failure message (output pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Everything is destroyed except the M07 bucket, confirmed from the cloud side. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-7: Your write-up takes a first-time learner to a data-driven configuration like yours unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 

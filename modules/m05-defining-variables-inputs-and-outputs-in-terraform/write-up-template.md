@@ -62,14 +62,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: Your write-up shows formatting and validation passing with no errors and both sets of values producing clean, error-free plans, with the output for each, not one run reported as covering both.
-- DoD-2: Your write-up shows an invalid network address range rejected at plan time with your own validation message and nothing planned for creation (output pasted), not a rule you wrote but never triggered.
-- DoD-3: Your main configuration file contains no hard-coded region, network address range or name prefix, and every variable has a type and a description.
-- DoD-4: At least one value in your configuration is derived once as a local value and used in more than one place (a reviewer reads the configuration), not repeated as the same expression.
-- DoD-5: Your precedence record has one isolated experiment for each source — defaults, `terraform.tfvars`, `*.auto.tfvars`, `-var`, `-var-file` and environment variables — each showing the single source supplying the variable and the value Terraform used (plan output per experiment), followed by a deliberate combined run that states the order in which sources win, backed by that run's output rather than by documentation.
-- DoD-6: At least one sensitive input is marked sensitive, its value reaches Terraform without appearing in any committed file, and the plan output does not display it; at least one output is marked sensitive, and your write-up shows what is displayed for it (output pasted).
-- DoD-7: Your write-up states what marking a value sensitive does and does not protect, backed by what you observed with placeholder values, not by what the documentation says.
-- DoD-8: A learner following your training module ends with everything created destroyed, confirmed from the cloud side, not only from Terraform's output.
+- DoD-1: Formatting and validation checks pass with no errors, and both sets of values produce clean, error-free plans (output for each).
+- DoD-2: Every variable has a type and a description, and an invalid network address range is rejected at plan time with your validation message and nothing is planned for creation (output pasted).
+- DoD-3: The main configuration file contains no hard-coded region, network address range or name prefix, and at least one value is derived once as a local value and used in more than one place (a reviewer reads the configuration).
+- DoD-4: Your precedence record has one isolated experiment for each source — defaults, `terraform.tfvars`, `*.auto.tfvars`, `-var`, `-var-file` and environment variables — and each shows the single source supplying the variable and the value Terraform used (plan output per experiment); after them you combined sources deliberately, and your record states the order in which sources win, supported by your combined-run evidence.
+- DoD-5: At least one sensitive input is marked sensitive, its value reaches Terraform without appearing in any committed file, and the plan output does not display it; at least one output is marked sensitive, and your evidence shows what is displayed for it. Your write-up states what marking a value sensitive does and does not protect, supported by what you observed using placeholder values only.
+- DoD-6: Everything created is destroyed, confirmed from the cloud side.
+- DoD-7: Your write-up takes a first-time learner to a parameterised configuration that plans cleanly with two sets of values unaided — verified by you following it end to end from a clean state.
 
 ## Definition-of-done self-assessment
 

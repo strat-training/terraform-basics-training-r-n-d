@@ -56,12 +56,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: Your write-up shows formatting and validation passing with no errors, as pasted output.
-- DoD-2: Your write-up shows the same apply run twice on an unchanged configuration, with both outputs pasted, and explains the difference between them in terms of desired state, not as “it did nothing the second time”.
-- DoD-3: Your write-up identifies the type, name, arguments and attributes of your own resource and shows an attribute whose value you did not set, from real output.
-- DoD-4: Your write-up shows at least one in-place change and at least one forced replacement, each with the plan output captured before it was applied, not afterwards.
-- DoD-5: Every change in your plan-review note is classified as in-place or replacement, and your trainer confirms each classification on review.
-- DoD-6: A learner following your training module ends with the resource gone after destroy, confirmed from the cloud side, not only from Terraform's output.
+- DoD-1: Formatting and validation checks pass with no errors.
+- DoD-2: You ran the same apply twice without changing the configuration; both outputs are pasted, and the write-up explains the difference between them in terms of desired state.
+- DoD-3: Your write-up identifies the type, name, arguments and attributes of your resource, and shows an attribute whose value you did not set.
+- DoD-4: You made at least one in-place change and at least one forced replacement; the plan output for each was captured before it was applied.
+- DoD-5: Your plan-review note classifies every change you made as in-place or replacement, and your trainer confirms each classification on review.
+- DoD-6: After destroy the resource is gone — confirmed from the cloud side, not only from Terraform's output.
+- DoD-7: Your write-up takes a first-time learner to a resource taken through create, in-place change, forced replacement and destroy unaided — verified by you following it end to end from a clean state.
 
 ## Definition-of-done self-assessment
 

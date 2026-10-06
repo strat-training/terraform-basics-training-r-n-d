@@ -57,12 +57,13 @@ The real obstacles — errors, wrong assumptions, anything that cost you real ti
 
 Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
 
-- DoD-1: Your write-up shows two state objects in the bucket under different keys (listing pasted).
-- DoD-2: Your write-up shows both environments producing clean plans, with the output for each, not one plan reported as covering both.
-- DoD-3: The environment-specific inputs differ between your two environments and live outside the main configuration files.
-- DoD-4: Every resource follows the naming convention and carries the required tags, shown from the plan, the state or the cloud side, not from your code.
-- DoD-5: Your comparison note covers a directory per environment, workspaces and the per-environment files you used, and says when each fits.
-- DoD-6: A learner following your training module ends with both environments destroyed and the bucket retained, confirmed from the cloud side, not only from Terraform's output.
+- DoD-1: Two state objects exist in the bucket under different keys (listing pasted).
+- DoD-2: Both environments produce clean plans (output for each).
+- DoD-3: Environment-specific inputs differ between the two environments and live outside the main configuration files.
+- DoD-4: Every resource follows the naming convention and carries the required tags (shown from the plan, state or cloud side).
+- DoD-5: The comparison note is present and covers a directory per environment, workspaces, and the per-environment files you used, saying when each fits.
+- DoD-6: Both environments are destroyed and the bucket is retained, confirmed from the cloud side.
+- DoD-7: Your write-up takes a first-time learner to one configuration deployed as dev and prod with separate state unaided — verified by you following it end to end from a clean state.
 
 ## Definition-of-done self-assessment
 

@@ -56,16 +56,13 @@ Understand what Terraform is and the problem it solves, then install and verify 
 
 ## Definition of done
 
-Your training module — the build plus the write-up that teaches it — is done when each of these is true.
-
-- [ ] **DoD-1** Your write-up shows the actual Terraform version on macOS and on Windows, taken from the version output of each machine at the pinned version (1.11 or later), not the version you expected to have installed.
-- [ ] **DoD-2** Your write-up includes a screenshot from each system of Visual Studio Code with the Terraform extension flagging an error you introduced on purpose, not a screenshot of the extension's install page.
-- [ ] **DoD-3** Every tool in your write-up — the AWS, Google Cloud and Azure command-line tools, Git, `jq` and `curl` — is backed by its real version output from each system, not by a list copied from installation instructions.
-- [ ] **DoD-4** Your write-up shows a version manager switching between two Terraform versions on each system where one works, with the output of the switch; where none works, it says so and says what you tried.
-- [ ] **DoD-5** Your write-up shows formatting and validation passing on a configuration that creates nothing, on both systems, as pasted output, not as a description from memory.
-- [ ] **DoD-6** Every step for an operating system you do not own is verified on a second machine or by a second person, or is marked unverified in your write-up, not assumed to work.
-- [ ] **DoD-7** A learner following your training module on either operating system reaches a working, verified toolchain without asking you anything, because you followed it yourself from a clean state.
-- [ ] **DoD-8** You can answer, unprompted, “what is infrastructure as code, and what does Terraform add to it?” in your own words, and your write-up gives the same answer, not a definition copied from documentation — this doubles as your self-check before M02.
+- [ ] **DoD-1** Terraform at the pinned version (1.11 or later), the AWS, Google Cloud and Azure command-line tools, Git, `jq` and `curl` run on macOS and on Windows (version output pasted for each).
+- [ ] **DoD-2** Visual Studio Code with the Terraform extension is installed on both systems, and the editor flags a deliberately introduced error in a configuration (screenshot for each).
+- [ ] **DoD-3** A version manager switches between two Terraform versions on each system where one works; where none does, the write-up says so (output pasted).
+- [ ] **DoD-4** Formatting and validation checks pass on a configuration that creates nothing, on both systems (output pasted).
+- [ ] **DoD-5** The steps for any operating system you do not own are verified on a second machine or by a second person, or are marked unverified in the write-up.
+- [ ] **DoD-6** Your write-up takes a first-time learner on either operating system to DoD-1 and DoD-2 unaided — verified by you following it end to end from a clean state.
+- [ ] **DoD-7** Your write-up explains, in your own words, what infrastructure as code is and what Terraform adds to it.
 
 ## Best practices this stage demonstrates
 

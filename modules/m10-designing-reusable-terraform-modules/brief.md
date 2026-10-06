@@ -64,16 +64,13 @@ Package part of a configuration as a reusable Terraform module with a standard s
 
 ## Definition of done
 
-Your training module — the build plus the write-up that teaches it — is done when each of these is true.
-
-- [ ] **DoD-1** Your write-up shows formatting and validation passing for both the Terraform module and the root configuration, as pasted output.
-- [ ] **DoD-2** Your Terraform module has a documented interface and the standard module layout: every input has a type and a description, inputs that can take a bad value are validated, every output has a description, and a reviewer can find what they need from file names alone (a reviewer reads the Terraform module).
-- [ ] **DoD-3** Your write-up states the one convention that the names of the Terraform module's inputs, outputs and internal resources follow, and which comment syntax you chose, what you chose to comment and why (a reviewer checks the Terraform module against what you wrote).
-- [ ] **DoD-4** Your write-up shows the Terraform module called at least twice with different inputs, both calls producing clean plans (output pasted) and the separate calls having distinct module paths in their resource addresses (state listing pasted), not two copies of the same call.
-- [ ] **DoD-5** Your write-up states what the Terraform module assumes about provider configuration and where it takes its region, account and environment name from (a reviewer reads the Terraform module), not that it “just works”.
-- [ ] **DoD-6** Resources created through your Terraform module still follow M08's naming convention and carry the required tags, shown from the plan, state or cloud side.
-- [ ] **DoD-7** Your write-up reviews one published module — its source, pinned version, inputs and outputs, and what you checked before trusting it — and includes a decision note that says what you put in your Terraform module, what you left out, and a case where you would not write a module.
-- [ ] **DoD-8** A learner following your training module ends with everything destroyed except the M07 bucket, confirmed from the cloud side, not only from Terraform's output.
+- [ ] **DoD-1** Formatting and validation checks pass for both the module and the root configuration, and the module is called at least twice with different inputs, both calls produce clean plans (output pasted), and resource addresses for the separate calls show distinct module paths (state listing pasted).
+- [ ] **DoD-2** The module has a documented interface — every input has a type and a description, inputs that can take a bad value are validated, and every output has a description — and follows the standard module layout; a reviewer can find what they need from file names alone (a reviewer reads the module).
+- [ ] **DoD-3** The names of the module's inputs, outputs and internal resources follow one convention, which your write-up states, and your write-up states which comment syntax you chose, what you chose to comment, and why (a reviewer reads the module).
+- [ ] **DoD-4** Your write-up states what the module assumes about provider configuration and where it takes its region, account and environment name from, and resources created through the module still follow M08's naming convention and carry the required tags (shown from the plan, state or cloud side).
+- [ ] **DoD-5** The write-up contains a review of one published module — its source, pinned version, inputs and outputs, and what you checked before trusting it — and a decision note that says what you put in the module, what you left out, and a case where you would not write a module.
+- [ ] **DoD-6** Everything is destroyed except the M07 bucket, confirmed from the cloud side.
+- [ ] **DoD-7** Your write-up takes a first-time learner to a reusable module called twice from a root configuration unaided — verified by you following it end to end from a clean state.
 
 ## Best practices this stage demonstrates
 

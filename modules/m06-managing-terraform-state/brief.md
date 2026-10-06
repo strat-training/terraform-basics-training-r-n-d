@@ -51,16 +51,13 @@ Understand what Terraform's state is, why it must be treated as sensitive, and h
 
 ## Definition of done
 
-Your training module — the build plus the write-up that teaches it — is done when each of these is true.
-
-- [ ] **DoD-1** Your write-up shows the final plan with no changes, as pasted output.
-- [ ] **DoD-2** Your write-up shows the out-of-band change detected by Terraform, not just noticed by you, with the plan output from before reconciliation captured.
-- [ ] **DoD-3** Your write-up records which side you let win, code or real world, and why, not only what you did.
-- [ ] **DoD-4** Your write-up shows what state holds for a sensitive value, captured from your own state without exposing a real credential.
-- [ ] **DoD-5** Your write-up shows a secret reaching a resource through a write-only argument and absent from state (output pasted, without exposing a real credential), not a claim taken from the provider's documentation.
-- [ ] **DoD-6** Your trainer confirms the written answers in your write-up are correct on review.
-- [ ] **DoD-7** Your write-up shows state files excluded from version control by the ignore rule and a clean commit history, not by intent.
-- [ ] **DoD-8** A learner following your training module ends with everything created destroyed, confirmed from the cloud side, not only from Terraform's output.
+- [ ] **DoD-1** The final plan shows no changes (output pasted), and the out-of-band change was detected by Terraform, not just noticed by you — the plan output from before reconciliation is captured.
+- [ ] **DoD-2** The write-up records which side you let win (code or real world) and why.
+- [ ] **DoD-3** Your evidence shows what state holds for a sensitive value, captured without exposing a real credential, and shows a secret reaching a resource through a write-only argument and absent from state (output pasted, without exposing a real credential).
+- [ ] **DoD-4** Your trainer confirms your written answers are correct on review.
+- [ ] **DoD-5** State files are excluded from version control (the ignore rule and a clean commit history show it).
+- [ ] **DoD-6** Everything created is destroyed, confirmed from the cloud side.
+- [ ] **DoD-7** Your write-up takes a first-time learner to an out-of-band change and back to a clean plan unaided — verified by you following it end to end from a clean state.
 
 ## Best practices this stage demonstrates
 

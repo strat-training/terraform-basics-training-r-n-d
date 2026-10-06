@@ -21,14 +21,12 @@
 
 ## Verify
 
-- [ ] Confirm DoD-1: Your write-up shows a state object for your own configuration in the bucket (listing pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-2: Your write-up shows versioning and encryption at rest enabled and public access fully blocked on the bucket, shown from the cloud side, not from your configuration. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-3: Your write-up shows a backend configuration that enables native locking, with no DynamoDB table used or created. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-4: Your write-up shows a plan after migrating local state with no changes, so nothing was recreated. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-5: Your write-up shows a second operation refused with a lock error while one is in progress (the error output pasted), not a description of what locking should do. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-6: Your write-up shows a lock you left behind deliberately and your recovery without losing or corrupting state (the error and the recovery output pasted). Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-7: A learner following your training module ends with the bucket retained and everything else destroyed, confirmed from the cloud side, not only from Terraform's output. Capture the evidence under “Checkpoint evidence”.
-- [ ] Confirm DoD-8: No static keys and no state file contents are committed to version control, shown by your commit history, not assumed. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-1: A state object for your configuration exists in the bucket (listing pasted), and a plan after migrating local state shows no changes — nothing was recreated. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-2: Versioning is enabled on the bucket, encryption at rest is enabled and public access is fully blocked (shown from the cloud side). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-3: The backend configuration enables native locking and no DynamoDB table is used or created. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-4: With one operation in progress, a second is refused with a lock error (the error output pasted), and a lock left behind deliberately was recovered without losing or corrupting state (the error and the recovery output pasted). Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-5: The bucket is retained and everything else is destroyed, confirmed from the cloud side, and no static keys and no state file contents are committed to version control. Capture the evidence under “Checkpoint evidence”.
+- [ ] Confirm DoD-6: Your write-up takes a first-time learner to a protected state bucket used as the remote backend, with locking demonstrated unaided — verified by you following it end to end from a clean state. Capture the evidence under “Checkpoint evidence”.
 
 ## Write-up
 
