@@ -1,28 +1,16 @@
-# M08 — Change with Confidence: Safe Terraform Refactoring — Write-up
+# M08 Write-Up — Change with Confidence: Safe Terraform Refactoring
 
-> This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
-
-| | |
-| --- | --- |
-| Trainee | |
-| Status | Draft <!-- Draft → In review → Revising → Accepted --> |
-| Build location | <!-- your GitLab repository and branch or merge request holding your Terraform code --> |
-| Hours spent | <!-- an honest total --> |
+Fill this in as you go, not after the fact. Write it so a trainee starting this stage next cohort could follow your path on their own. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Never paste credentials, tokens or key material.
 
 ## What I built
 
-Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome.
+The small configuration after its three refactors — a rename, an adoption and a stop-managing — with the saved plans that show no destroys, and your note on legacy state commands (link your repository).
 
 ## Why it's built this way (key decisions)
 
-One entry per research prompt in the brief's scope, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
-
-- How you can tell, before applying, that a refactor will not touch real infrastructure, and what is responsible for a resource that stops being managed and how you avoid orphaning cost.
-- What the generated configuration got wrong or left out, and how you decided what to keep.
-- What the action on every resource looks like in a saved plan's JSON form.
-- How you recover when an apply stops part-way, and what you check before you run it again.
-- Why the course prefers changes that appear in a plan over commands that edit state, and when you might still see those commands.
-- Where did you spend the most time, and why?
+- How can you tell before applying that a refactor will not touch real infrastructure?
+- What is responsible for a resource after you stop managing it, and how do you avoid leaving cost behind?
+- Why does the course prefer changes that appear in a plan over commands that edit state, and when might you still meet those commands?
 
 ## AI collaboration log
 
@@ -35,33 +23,23 @@ If you used AI tools, be specific, not a vague "I used AI to help write some cod
 
 ## How to build it (teach it to the next engineer)
 
-Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
+Write a guide to a rename, an adoption and a stop-managing with no destroys, using your own plans to show the reasoning, not just the blocks and commands.
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
-
-- Refactoring principles: renaming and removing resources without destruction
-- Adopting existing, unmanaged resources into Terraform
-- Verifying refactors mechanically: reading plans as JSON with `jq`
-- Emergency recovery: handling partial applies and failed destroys
-- Advanced troubleshooting: targeted operations and legacy state commands
+Pick 2–3 ideas — refactoring without destroying, adopting existing resources, reading plans as JSON with `jq`, or recovering from a partial apply — and explain each in your own words.
 
 ## What tripped me up
 
-The real obstacles — errors, wrong assumptions, anything that cost you real time. Keep the exact error text; these become the course's common-errors list.
+Anything that didn't behave the way you expected the first time. Keep the exact error text.
 
 ## Checkpoint evidence
 
-Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
+Paste real output, trimmed to the relevant lines and redacted, or link a screenshot. The definition of done in `brief.md` still applies in full.
 
-- DoD-01: After each of the three refactors, a saved plan shows zero destroys and zero replacements (three plan summaries pasted), and at least one of the three checks reads the saved plan's JSON form with `jq` and reports the action on every resource (output pasted), not a plan read by eye.
-- DoD-02: The renamed resource keeps its real-world identity (its cloud-side identifier is unchanged); the adopted resource is in state and described by configuration, and a plan after adoption shows no changes; the stop-managing resource still exists in AWS afterwards and Terraform no longer tracks it.
-- DoD-03: Each refactor is a reviewable change in configuration (the diff is in your evidence), and your notes list every command you ran against state and what each one did, not only the ones that changed something.
-- DoD-04: Your note on legacy imperative commands says when you will meet them and what the declarative equivalent is.
-- DoD-05: You caused an apply to stop part-way, captured the error and what state holds afterwards, and brought the configuration back to a clean plan without editing state by hand (output pasted); your notes also say what to do after a failed destroy.
-- DoD-06: No billable resource is left behind, and only the M02 bucket remains.
-- DoD-07: Your write-up takes a first-time learner to a rename, an adoption and a stop-managing with no destroys unaided — verified by you following it end to end from a clean state.
+- DoD-01: the saved-plan summary after each of the three refactors showing no destroys or replacements, and your `jq` output listing the action on every resource.
+- DoD-02: the output showing the renamed resource kept its identity, the adopted resource plans clean, and the stopped resource still exists in AWS.
+- DoD-03: the diff for each refactor, and your list of every command you ran against state.
 
 ## Definition-of-done self-assessment
 
@@ -69,4 +47,4 @@ Score yourself honestly against every item in the definition of done in `brief.m
 
 ## What I'd do differently
 
-If you started this stage over today, what would you change?
+If you started this stage over, what would you do differently?

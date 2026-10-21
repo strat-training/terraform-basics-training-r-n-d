@@ -1,35 +1,36 @@
-# <Stage ID> — <Stage title> — Write-up
+# <Stage ID> Write-Up — <Stage title>
 
 <!--
 TEMPLATE: stage write-up. Copy to modules/<stage-folder>/write-up-template.md and replace every
 <placeholder>. Delete these comments when you are done. The trainee copies the result to write-up.md
 and fills in the copy, so the file in the stage folder stays blank for the next cohort.
 
-Generate the lists from the stage's brief, word for word: the research prompts under "Why it's
-built this way", the scope topic titles under "Concepts worth explaining", and the definition-of-done bullets
-under "Checkpoint evidence". The other six sections are the same in every stage.
+Keep it short. Generate from the stage's brief:
+- "What I built": one line naming the deliverable and what goes with it (link the repository).
+- "Why it's built this way": three questions or fewer, from the brief's research prompts. Each must
+  tie to a claim in the brief's Objective — something the trainee is meant to be able to explain —
+  so check every Objective claim has a question or a "Concepts" candidate. Merge prompts that are
+  close; drop the rest.
+- "How to build it": one line saying what the guide takes a learner from and to.
+- "Concepts worth explaining": 3 or more candidates, inline, taken from the scope topic titles.
+- "Checkpoint evidence": two or three items, each one piece of real output (or a note, where the
+  brief asks for one) that shows a central claim of the brief's Objective was actually done, naming
+  the DoD id it backs. Pick the outputs that are hardest to fake; do not restate every
+  definition-of-done bullet.
+The other sections are the same in every stage.
 -->
 
-> This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
-
-| | |
-| --- | --- |
-| Trainee | |
-| Status | Draft <!-- Draft → In review → Revising → Accepted --> |
-| Build location | <!-- your GitLab repository and branch or merge request holding your Terraform code --> |
-| Hours spent | <!-- an honest total --> |
+Fill this in as you go, not after the fact. Write it so a trainee starting this stage next cohort could follow your path on their own. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Never paste credentials, tokens or key material.
 
 ## What I built
 
-Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome.
+<The deliverable named in the brief, and what goes with it> (link your repository).
 
 ## Why it's built this way (key decisions)
 
-One entry per research prompt in the brief's scope, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
-
-- <research prompt 1, from the brief>
-- <research prompt 2, from the brief>
-- Where did you spend the most time, and why?
+- <research prompt 1, from the brief, as one question>
+- <research prompt 2, from the brief, as one question>
+- <research prompt 3, from the brief, as one question>
 
 ## AI collaboration log
 
@@ -42,25 +43,23 @@ If you used AI tools, be specific, not a vague "I used AI to help write some cod
 
 ## How to build it (teach it to the next engineer)
 
-Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader is new to Terraform and to this course.
+Write a guide <from what to what>, using your own <output> to show the reasoning, not just the commands.
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
-
-- <scope topic title 1, from the brief>
-- <scope topic title 2, from the brief>
+Pick 2–3 ideas — <scope topic 1>, <scope topic 2> or <scope topic 3> — and explain each in your own words.
 
 ## What tripped me up
 
-The real obstacles — errors, wrong assumptions, anything that cost you real time. Keep the exact error text; these become the course's common-errors list.
+Anything that didn't behave the way you expected the first time. Keep the exact error text.
 
 ## Checkpoint evidence
 
-Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
+Paste real output, trimmed to the relevant lines and redacted, or link a screenshot. The definition of done in `brief.md` still applies in full.
 
-- DoD-01: <definition-of-done bullet 1, from the brief>
-- DoD-02: <definition-of-done bullet 2, from the brief>
+- DoD-<nn>: <real output that shows the first key activity was done>
+- DoD-<nn>: <real output that shows the next key activity was done>
+- DoD-<nn>: <real output that shows the clean-up or last key activity was done>
 
 ## Definition-of-done self-assessment
 
@@ -68,4 +67,4 @@ Score yourself honestly against every item in the definition of done in `brief.m
 
 ## What I'd do differently
 
-If you started this stage over today, what would you change?
+If you started this stage over, what would you do differently?

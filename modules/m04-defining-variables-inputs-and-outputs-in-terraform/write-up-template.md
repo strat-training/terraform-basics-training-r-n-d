@@ -1,32 +1,16 @@
-# M04 — Defining Variables, Inputs and Outputs in Terraform — Write-up
+# M04 Write-Up — Defining Variables, Inputs and Outputs in Terraform
 
-> This write-up is meant to become part of the content library: write it so the next cohort could learn from it, not just as a record of what you did. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Write each section as you build, not after it works. Never paste credentials, tokens or key material anywhere in this file.
-
-| | |
-| --- | --- |
-| Trainee | |
-| Status | Draft <!-- Draft → In review → Revising → Accepted --> |
-| Build location | <!-- your GitLab repository and branch or merge request holding your Terraform code --> |
-| Hours spent | <!-- an honest total --> |
+Fill this in as you go, not after the fact. Write it so a trainee starting this stage next cohort could follow your path on their own. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Never paste credentials, tokens or key material.
 
 ## What I built
 
-Describe the deliverable named in the brief: what it is, what it does, how it is laid out. A diagram is welcome.
+The parameterised AWS configuration with two sets of values that both plan cleanly, your precedence record, and the configuration's sensitive input and output (link your repository).
 
 ## Why it's built this way (key decisions)
 
-One entry per research prompt in the brief's scope, then one for where you spent the most time. Say what you considered, what you chose, why, and what you gave up.
-
-- Which inputs should have defaults and which should be required, and the risk of each.
-- Which rules deserve plan-time validation and which are better left for AWS to reject at apply time, and where a typed variable stops being enough.
-- How each way of supplying a value shows up in a plan.
-- Why a team might still allow only one source per variable, and how you would enforce that.
-- Which values differ between environments and where they live.
-- When a local value is clearer than repeating an expression, and when it hides too much.
-- How a sensitive value should reach Terraform, and the risks of each way you tried.
-- Which outputs are worth exposing at all, and who the audience is for each.
-- What marking a value sensitive hides, and where it can still be seen.
-- Where did you spend the most time, and why?
+- Which values did you turn into inputs, which are required and which have defaults, and which rules did you validate at plan time rather than leave for AWS to reject at apply time?
+- How does each way of supplying a value show up in a plan, and which one wins when you combine them?
+- What does marking a value sensitive hide, and where can it still be seen?
 
 ## AI collaboration log
 
@@ -39,37 +23,23 @@ If you used AI tools, be specific, not a vague "I used AI to help write some cod
 
 ## How to build it (teach it to the next engineer)
 
-Write this as a guide someone could actually follow to build this stage from scratch — the order you tackled things in, and why that order made sense. Assume the reader has completed the earlier stages this one builds on but hasn't built this stage before.
+Write a guide to turning a hard-coded configuration into one that plans cleanly with two sets of values, using your own plan output to show the reasoning, not just the variable blocks.
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas from this stage and explain each one in your own words, as if teaching it for the first time. The scope in the brief lists the candidates.
-
-- Input variables
-- Validation rules enforced at plan time
-- Supplying values
-- Variable value precedence
-- Keeping environment-specific values out of the main configuration
-- Local values
-- Sensitive input variables
-- Output values
-- What marking a value sensitive does and does not protect
+Pick 2–3 ideas — validation, value precedence, local values, or sensitive inputs and outputs — and explain each in your own words.
 
 ## What tripped me up
 
-The real obstacles — errors, wrong assumptions, anything that cost you real time. Keep the exact error text; these become the course's common-errors list.
+Anything that didn't behave the way you expected the first time. Keep the exact error text.
 
 ## Checkpoint evidence
 
-Show the evidence for every item in the definition of done in `brief.md`, one by one. Paste real output trimmed to the relevant lines, or link a screenshot, and redact anything sensitive.
+Paste real output, trimmed to the relevant lines and redacted, or link a screenshot. The definition of done in `brief.md` still applies in full.
 
-- DoD-01: Formatting and validation pass with no errors, and both sets of values produce clean, error-free plans (output for each), not one run reported as covering both.
-- DoD-02: Every variable has a type and a description, and an invalid network address range is rejected at plan time with your validation message and nothing planned for creation (output pasted), not a rule you wrote but never triggered.
-- DoD-03: The main configuration file contains no hard-coded region, network address range or name prefix, and at least one value is derived once as a local value and used in more than one place (a reviewer reads the configuration).
-- DoD-04: Your precedence record has one isolated experiment for each source — defaults, `terraform.tfvars`, `*.auto.tfvars`, `-var`, `-var-file` and environment variables — each showing the single source supplying the variable and the value Terraform used (plan output per experiment); after them you combined sources deliberately, and your record states the order in which sources win, backed by your combined-run evidence, not by the documentation.
-- DoD-05: At least one sensitive input is marked sensitive, its value reaches Terraform without appearing in any committed file, and the plan output does not display it; at least one output is marked sensitive, and your evidence shows what is displayed for it. Your notes state what marking a value sensitive does and does not protect, backed by what you observed with placeholder values only.
-- DoD-06: Everything you created is destroyed, confirmed from the cloud side, not only from Terraform's output.
-- DoD-07: Your write-up takes a first-time learner to a parameterised configuration that plans cleanly with two sets of values unaided — verified by you following it end to end from a clean state.
+- DoD-01 and DoD-02: a clean plan for each of your two sets of values, and the plan rejecting an invalid network address range with your validation message.
+- DoD-04: your precedence record — one plan output per value source, then your combined run.
+- DoD-05: your plan output with a sensitive input, and the output showing what is displayed for your sensitive output.
 
 ## Definition-of-done self-assessment
 
@@ -77,4 +47,4 @@ Score yourself honestly against every item in the definition of done in `brief.m
 
 ## What I'd do differently
 
-If you started this stage over today, what would you change?
+If you started this stage over, what would you do differently?
