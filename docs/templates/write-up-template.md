@@ -7,10 +7,11 @@ and fills in the copy, so the file in the stage folder stays blank for the next 
 
 Keep it short. Generate from the stage's brief:
 - "What I built": one line naming the deliverable and what goes with it (link the repository).
-- "Why it's built this way": three questions or fewer, from the brief's research prompts. Each must
-  tie to a claim in the brief's Objective — something the trainee is meant to be able to explain —
-  so check every Objective claim has a question or a "Concepts" candidate. Merge prompts that are
-  close; drop the rest.
+- "Why it's built this way": up to three of the brief's research prompts, word for word, then
+  "Where did you spend the most time, and why?" every time. Pick the prompts that tie to a claim in
+  the brief's Objective — something the trainee is meant to be able to explain — so check every
+  Objective claim has a prompt or a "Concepts" candidate. Merge only prompts that are close; drop
+  the rest.
 - "How to build it": one line saying what the guide takes a learner from and to.
 - "Concepts worth explaining": 3 or more candidates, inline, taken from the scope topic titles.
 - "Checkpoint evidence": two or three items, each one piece of real output (or a note, where the
@@ -28,9 +29,10 @@ Fill this in as you go, not after the fact. Write it so a trainee starting this 
 
 ## Why it's built this way (key decisions)
 
-- <research prompt 1, from the brief, as one question>
-- <research prompt 2, from the brief, as one question>
-- <research prompt 3, from the brief, as one question>
+- <research prompt 1, from the brief>
+- <research prompt 2, from the brief>
+- <research prompt 3, from the brief>
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

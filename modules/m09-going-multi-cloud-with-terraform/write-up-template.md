@@ -8,9 +8,10 @@ The two small configurations, one for GCP and one for Azure, each signing in wit
 
 ## Why it's built this way (key decisions)
 
-- How do you confirm which project and which subscription you are signed in to?
-- What can go wrong if the ambient login points at a different project or subscription than you intended, and what in your configuration prevents it?
-- What carried over unchanged from the AWS workflow to GCP and Azure, and what did you have to set up differently for each provider?
+- How do you confirm which project and subscription you are signed in to?
+- What goes wrong if the ambient login points at a different project than you intended, and what in your configuration prevents it?
+- What goes wrong if it points at a different subscription, and what in your configuration prevents it?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

@@ -8,9 +8,10 @@ The small AWS network — a VPC, subnets in more than one availability zone, the
 
 ## Why it's built this way (key decisions)
 
-- Where did Terraform work out the order of your resources on its own, and where did you have to state an ordering explicitly?
-- What are the trade-offs between the two ways of repeating a resource, and what happens to your existing subnets if you add or remove one from the set?
-- What is the difference between a resource and a data source in what Terraform manages, and what happens to each on destroy?
+- Where did you rely on Terraform to infer ordering, and where did you have to state it explicitly?
+- What are the trade-offs between the two ways of repeating a resource, and what happens to existing subnets if you add or remove one?
+- How does a resource differ from a data source, and what happens to each on destroy?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

@@ -8,9 +8,10 @@ The protected S3 state bucket and the small configuration whose local state you 
 
 ## Why it's built this way (key decisions)
 
-- What can leak a secret into state, and why does the course treat a state file as sensitive even when the configuration contains no secrets?
-- What did you do to protect the bucket that holds your state, and how narrow could you make access to it without breaking Terraform?
-- What does native locking prevent, and what does it not?
+- What can leak a secret into state, and why is a state file sensitive even when the configuration has no secrets?
+- Who and what needs access to the state bucket, how narrow can you make it, and why is the bucket kept when everything else is destroyed?
+- What does locking prevent, and what does it not?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

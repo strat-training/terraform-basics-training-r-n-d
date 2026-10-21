@@ -8,9 +8,10 @@ The parameterised AWS configuration with two sets of values that both plan clean
 
 ## Why it's built this way (key decisions)
 
-- Which values did you turn into inputs, which are required and which have defaults, and which rules did you validate at plan time rather than leave for AWS to reject at apply time?
-- How does each way of supplying a value show up in a plan, and which one wins when you combine them?
+- Which inputs should have defaults and which should be required, and what is the risk of each?
+- How does each way of supplying a value show up in a plan?
 - What does marking a value sensitive hide, and where can it still be seen?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

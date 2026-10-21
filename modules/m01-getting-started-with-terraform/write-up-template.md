@@ -8,9 +8,10 @@ The workstation you set up, the `versions.tf`, `providers.tf` and `main.tf` file
 
 ## Why it's built this way (key decisions)
 
-- How did you prove you were signed in to AWS without static keys, and what can a scan for static keys miss?
-- How loose or tight did you make the provider version constraint, and what does the lock file record that the constraint does not?
-- How can you tell from a plan whether a change updates a resource in place or replaces it, and what would you do if a plan showed a destroy you did not expect?
+- Why use Terraform instead of a script or the console, and how do you prove you are connected to AWS without static keys?
+- What does the lock file record that your version constraint does not, and how loose or tight should a provider constraint be?
+- Which changes update a resource in place and which force replacement, and how do you confirm from the cloud side that everything is gone?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

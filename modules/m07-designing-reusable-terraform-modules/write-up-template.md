@@ -8,9 +8,10 @@ The reusable AWS module with its documented interface, the root configuration th
 
 ## Why it's built this way (key decisions)
 
-- What belongs inside the module and what stays in the root, and how did you draw that line?
-- Which inputs did you expose and which did you fix, and what does each extra input cost the next person who has to understand the module?
+- What belongs inside the module and what stays in the root, and how did you draw the line?
+- Which inputs did you expose and which did you fix, what does each extra input cost, and what must the outputs tell a caller?
 - How do resource addresses change when something moves into a module, and what would that mean for a configuration that is already deployed?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

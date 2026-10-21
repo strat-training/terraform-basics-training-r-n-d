@@ -5,9 +5,9 @@ TEMPLATE: capstone write-up. Copy to modules/m10-capstone/write-up-template.md a
 <placeholder>. Delete these comments when you are done. The trainee copies the result to write-up.md
 in their capstone repository and fills in the copy.
 
-Keep it short. The nine sections are fixed. Fill in: the three design questions under "Why it's
-built this way" (rows of "Your design decisions" in the brief, merged where they are close, each tied to a claim
-in the brief's Objective), the sandbox examples under "What tripped me up", two or three items under
+Keep it short. The nine sections are fixed. Fill in: up to three design questions under "Why it's
+built this way" (rows of "Your design decisions" in the brief, word for word, each tied to a claim
+in the brief's Objective; the time question stays), the sandbox examples under "What tripped me up", two or three items under
 "Checkpoint evidence", each one piece of real output that shows a key activity from the definition of
 done was done (not a restatement of every bullet), and the criteria count under "Rubric
 self-assessment". The AI collaboration log is the same in every write-up.
@@ -24,6 +24,7 @@ Fill this in as you go, not after the fact. Write it so a trainee starting the c
 - <design question the trainee must answer and defend>
 - <design question the trainee must answer and defend>
 - <design question the trainee must answer and defend>
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

@@ -8,9 +8,10 @@ The shop platform you chose — what it sells, what each tier runs on, what each
 
 ## Why it's built this way (key decisions)
 
-- What does each tier run on and how many resources did you choose — what did you consider and reject, and where did the cost challenge force a trade-off?
-- How does a new version replace the old one without a failed request, and how is a bad release detected and rolled back?
-- How does each credential reach where it is used without being stored anywhere, and what did you do where the sandbox blocked an approach?
+- What does each tier run on, and what did you consider and reject?
+- How does a new version replace the old one without a failed request, and what does that cost compared with the alternatives?
+- How does each App server get its database credential without it passing through your code, variables, state or repository?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

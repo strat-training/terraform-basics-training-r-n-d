@@ -8,9 +8,10 @@ One configuration deployed as both dev and prod with separate state, and your no
 
 ## Why it's built this way (key decisions)
 
-- Which name parts and tags let anyone tell at a glance which environment a resource belongs to, and what else would a clean-up or cost report need?
-- What does separate state protect, what does it not, and what makes it easy to apply one environment's values to the other's state?
+- What does separate state protect, and what does it not?
+- Which tags would a clean-up or cost report need beyond `Environment`, and why?
 - When would workspaces or a directory per environment be the right tool, and what do you give up by not using them here?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

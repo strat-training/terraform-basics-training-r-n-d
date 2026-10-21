@@ -8,9 +8,10 @@ The small configuration after its three refactors — a rename, an adoption and 
 
 ## Why it's built this way (key decisions)
 
-- How can you tell before applying that a refactor will not touch real infrastructure?
-- What is responsible for a resource after you stop managing it, and how do you avoid leaving cost behind?
-- Why does the course prefer changes that appear in a plan over commands that edit state, and when might you still meet those commands?
+- How can you tell before applying that a refactor won't touch real infrastructure, and how do you avoid orphaned cost when you stop managing a resource?
+- What did the generated configuration get wrong or leave out, and how did you decide what to keep?
+- Why prefer changes that appear in a plan over commands that edit state, and when might you still meet those commands?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 

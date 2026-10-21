@@ -8,9 +8,10 @@ The data-driven AWS configuration — resources and nested blocks generated from
 
 ## Why it's built this way (key decisions)
 
-- What should the keys of a repeated resource be, and what happens to the real infrastructure when a key changes?
-- Where did you have to state a dependency explicitly, and what does each lifecycle setting you used cost the next person who changes it?
-- What assumption about real infrastructure did you check with a precondition or postcondition, and what should happen when it fails?
+- When is a condition the wrong tool?
+- What should the keys of a repeated resource be, and what happens to real infrastructure when a key changes?
+- Where did you state a dependency explicitly, and what do lifecycle protections and ignored changes cost the next person who edits it?
+- Where did you spend the most time, and why?
 
 ## AI collaboration log
 
