@@ -6,8 +6,8 @@ TEMPLATE: capstone write-up. Copy to modules/m10-capstone/write-up-template.md a
 in their capstone repository and fills in the copy.
 
 Keep it short. The nine sections are fixed. Fill in: up to three design questions under "Why it's
-built this way" (rows of "Your design decisions" in the brief, word for word, each tied to a claim
-in the brief's Objective; the time question stays), the sandbox examples under "What tripped me up", two or three items under
+built this way" (rows of "Your design decisions" in the brief, each cut down to one or two short
+questions and tied to a claim in the brief's Objective; the time question stays), the sandbox examples under "What tripped me up", two or three items under
 "Checkpoint evidence", each one piece of real output that shows a key activity from the definition of
 done was done (not a restatement of every bullet), and the criteria count under "Rubric
 self-assessment". The AI collaboration log is the same in every write-up.
@@ -41,7 +41,7 @@ Write a guide to building something like your capstone, assuming the reader has 
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas from across the whole course that this capstone made concrete for you, and explain each in your own words.
+Pick 2–3 ideas from across the whole course that this capstone made concrete for you, other than the three design decisions above, and explain each in your own words.
 
 ## What tripped me up
 

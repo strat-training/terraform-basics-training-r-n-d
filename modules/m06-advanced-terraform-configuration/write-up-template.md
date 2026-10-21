@@ -28,7 +28,7 @@ Write a guide to turning a configuration repeated by hand into one driven by str
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas — `for_each` keys, dynamic blocks, `for` expressions, dependencies and lifecycle controls, or preconditions and postconditions — and explain each in your own words.
+Pick 2–3 ideas — built-in functions, `for` and splat expressions, dynamic blocks, or preconditions and postconditions — and explain each in your own words.
 
 ## What tripped me up
 

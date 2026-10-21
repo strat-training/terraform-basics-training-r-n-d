@@ -28,7 +28,7 @@ Write a guide to deploying one configuration as dev and prod with separate state
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas — per-environment values and state keys, limiting blast radius with separate state, naming conventions and default tags, or directories versus workspaces — and explain each in your own words.
+Pick 2–3 ideas — one configuration for many environments, per-environment values and backend settings, or switching between environments safely — and explain each in your own words.
 
 ## What tripped me up
 

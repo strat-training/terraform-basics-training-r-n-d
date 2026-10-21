@@ -28,7 +28,7 @@ Write a guide to turning repeated configuration into a reusable module called tw
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas — what belongs in a module, a module's interface, how modules change resource addresses, or pinned module sources — and explain each in your own words.
+Pick 2–3 ideas — file structure and naming conventions, calling a module more than once, module sources and pinning, consuming a published module, or when a module is the wrong answer — and explain each in your own words.
 
 ## What tripped me up
 

@@ -28,7 +28,7 @@ Write a guide that takes a learner on macOS or Windows from an empty folder to a
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas — declarative versus imperative, providers and the lock file, default tags, or in-place update versus replacement — and explain each in your own words.
+Pick 2–3 ideas — what a provider is, default tags, or the anatomy of a resource — and explain each in your own words.
 
 ## What tripped me up
 

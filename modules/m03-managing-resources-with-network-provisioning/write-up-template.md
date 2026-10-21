@@ -28,7 +28,7 @@ Write a guide to building a small multi-zone network, using your own plan output
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas — the dependency graph, repeating a resource, data sources, or the routing a public tier needs — and explain each in your own words.
+Pick 2–3 ideas — the VPC and subnets across availability zones, the routing a public tier needs, or why there is no NAT gateway — and explain each in your own words.
 
 ## What tripped me up
 

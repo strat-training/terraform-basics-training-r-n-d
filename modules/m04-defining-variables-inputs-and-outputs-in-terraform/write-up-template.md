@@ -28,7 +28,7 @@ Write a guide to turning a hard-coded configuration into one that plans cleanly 
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas — validation, value precedence, local values, or sensitive inputs and outputs — and explain each in your own words.
+Pick 2–3 ideas — validation rules, local values, or output values — and explain each in your own words.
 
 ## What tripped me up
 

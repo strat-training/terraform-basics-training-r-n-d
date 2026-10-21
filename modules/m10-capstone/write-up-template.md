@@ -28,7 +28,7 @@ Write a guide to building something like your capstone, assuming the reader has 
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas from across the whole course that this capstone made concrete for you, and explain each in your own words.
+Pick 2–3 ideas from across the whole course that this capstone made concrete for you, other than the three design decisions above, and explain each in your own words.
 
 ## What tripped me up
 

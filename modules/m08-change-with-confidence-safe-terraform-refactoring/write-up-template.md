@@ -28,7 +28,7 @@ Write a guide to a rename, an adoption and a stop-managing with no destroys, usi
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas — refactoring without destroying, adopting existing resources, reading plans as JSON with `jq`, or recovering from a partial apply — and explain each in your own words.
+Pick 2–3 ideas — reading plans as JSON with `jq`, recovering from a partial apply or a failed destroy, or targeted operations — and explain each in your own words.
 
 ## What tripped me up
 

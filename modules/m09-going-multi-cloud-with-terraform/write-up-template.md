@@ -28,7 +28,7 @@ Write a guide to a working sign-in and a successful plan on GCP and on Azure, us
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas — GCP sign-in and project selection, Azure sign-in and subscription selection, state across clouds, or where this course stops — and explain each in your own words.
+Pick 2–3 ideas — state across clouds, where this course stops, or what carries over from the AWS workflow and what does not — and explain each in your own words.
 
 ## What tripped me up
 

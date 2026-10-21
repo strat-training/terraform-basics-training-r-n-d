@@ -7,13 +7,15 @@ and fills in the copy, so the file in the stage folder stays blank for the next 
 
 Keep it short. Generate from the stage's brief:
 - "What I built": one line naming the deliverable and what goes with it (link the repository).
-- "Why it's built this way": up to three of the brief's research prompts, word for word, then
-  "Where did you spend the most time, and why?" every time. Pick the prompts that tie to a claim in
-  the brief's Objective — something the trainee is meant to be able to explain — so check every
-  Objective claim has a prompt or a "Concepts" candidate. Merge only prompts that are close; drop
-  the rest.
+- "Why it's built this way": up to three of the brief's research prompts, each cut down to one or
+  two short questions, then "Where did you spend the most time, and why?" every time. Pick the
+  prompts that tie to a claim in the brief's Objective — something the trainee is meant to be able
+  to explain — so check every Objective claim has a prompt or a "Concepts" candidate. Merge only
+  prompts that are close; drop the rest.
 - "How to build it": one line saying what the guide takes a learner from and to.
-- "Concepts worth explaining": 3 or more candidates, inline, taken from the scope topic titles.
+- "Concepts worth explaining": 3 or more candidates, inline, taken from the scope topic titles. Use
+  only scope topics that no "Why it's built this way" question already covers, so the two sections
+  never ask about the same thing.
 - "Checkpoint evidence": two or three items, each one piece of real output (or a note, where the
   brief asks for one) that shows a central claim of the brief's Objective was actually done, naming
   the DoD id it backs. Pick the outputs that are hardest to fake; do not restate every

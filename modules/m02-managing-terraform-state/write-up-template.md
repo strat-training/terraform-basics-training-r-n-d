@@ -28,7 +28,7 @@ Write a guide from local state to a protected remote backend with locking demons
 
 ## Concepts worth explaining
 
-Pick 2–3 ideas — what state records, secrets in state, bootstrapping the bucket, migrating local state, or native locking — and explain each in your own words.
+Pick 2–3 ideas — what state records and where it lives, why a team needs a remote backend, or migrating local state without recreating anything — and explain each in your own words.
 
 ## What tripped me up
 
