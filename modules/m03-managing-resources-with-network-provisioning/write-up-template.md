@@ -16,7 +16,7 @@
 *   **DoD-02 and DoD-03:** Your plan or state listing showing the subnets created from one repeated block, and the value your data source read.
     *   *Output/Evidence:* 
 
-## 2. The Rebuilder's Guide
+## 2. How to build it (teach it to the next trainee)
 > Write a quick guide from an empty configuration to a small multi-zone AWS network. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
 
 ## 3. Decisions & Core Concepts

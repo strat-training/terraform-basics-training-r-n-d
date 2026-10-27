@@ -16,7 +16,7 @@
 *   **DoD-06:** The cloud-side query output showing the resource is gone after destroy.
     *   *Output/Evidence:* 
 
-## 2. The Rebuilder's Guide
+## 2. How to build it (teach it to the next trainee)
 > Write a quick guide from an empty folder to a destroyed resource, on macOS or Windows. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
 
 ## 3. Decisions & Core Concepts

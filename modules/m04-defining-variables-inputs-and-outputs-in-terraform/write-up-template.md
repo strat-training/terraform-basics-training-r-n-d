@@ -16,7 +16,7 @@
 *   **DoD-05:** Your plan output with a sensitive input, and the output showing what is displayed for your sensitive output.
     *   *Output/Evidence:* 
 
-## 2. The Rebuilder's Guide
+## 2. How to build it (teach it to the next trainee)
 > Write a quick guide from a hard-coded configuration to one that plans cleanly with two sets of values. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
 
 ## 3. Decisions & Core Concepts

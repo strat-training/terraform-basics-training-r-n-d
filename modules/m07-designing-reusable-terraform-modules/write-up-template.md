@@ -16,7 +16,7 @@
 *   **DoD-05:** Your review of one published module and your decision note on what you put in the module, what you left out, and when you would not write a module.
     *   *Output/Evidence:* 
 
-## 2. The Rebuilder's Guide
+## 2. How to build it (teach it to the next trainee)
 > Write a quick guide from repeated configuration to a reusable module called twice from a root configuration. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
 
 ## 3. Decisions & Core Concepts
