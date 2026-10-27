@@ -1,51 +1,47 @@
 # M07 Write-Up — Designing Reusable Terraform Modules
 
-Fill this in as you go, not after the fact. Write it so a trainee starting this stage next cohort could follow your path on their own. Copy this file to `write-up.md` in this folder and fill in the copy; leave this template untouched. Never paste credentials, tokens or key material.
+> **Instructions for the Trainee:** 
+> Copy this file to `write-up.md` in this folder and fill it in as you go, not at the end. Write it so a trainee starting this stage next cohort could follow your path. Delete all blockquotes (like this one) before submitting. **Never paste credentials, tokens, or key material.**
 
-## What I built
+## 1. Deliverable & Evidence
+> Link your code and provide the exact output proving it works based on the Definition of Done (DoD). Paste real output, trimmed to the relevant lines and redacted, or link a screenshot. 
 
-The reusable AWS module with its documented interface, the root configuration that calls it twice with different inputs, and your decision note (link your repository).
+**Repository:** [Link here]
+**Deliverable:** The reusable AWS module with its documented interface, the root configuration that calls it twice with different inputs, and your decision note.
 
-## Why it's built this way (key decisions)
+*   **DoD-01:** Clean plans for both module calls, and the state listing showing distinct module paths. 
+    *   *Output/Evidence:* 
+*   **DoD-02:** Your module's file listing and its input and output declarations with types and descriptions.
+    *   *Output/Evidence:* 
+*   **DoD-05:** Your review of one published module and your decision note on what you put in the module, what you left out, and when you would not write a module.
+    *   *Output/Evidence:* 
 
-- What belongs inside the module and what stays in the root, and how did you draw the line?
-- Which inputs did you expose and which did you fix, what does each extra input cost, and what must the outputs tell a caller?
-- How do resource addresses change when something moves into a module, and what would that mean for a configuration that is already deployed?
-- Where did you spend the most time, and why?
+## 2. The Rebuilder's Guide
+> Write a quick guide from repeated configuration to a reusable module called twice from a root configuration. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
 
-## AI collaboration log
+## 3. Decisions & Core Concepts
+> This section covers the *why* behind your build and the theory you applied. 
 
-If you used AI tools, be specific, not a vague "I used AI to help write some code". If you used none, say so in one line.
+**Key Decisions**
+*   **What belongs inside the module and what stays in the root, and how did you draw the line?** 
+*   **Which inputs did you expose and which did you fix, what does each extra input cost, and what must the outputs tell a caller?** 
+*   **How do resource addresses change when something moves into a module, and what would that mean for a configuration that is already deployed?** 
 
-- Which AI tool(s) did you use, and for roughly what portion of the work?
-- Give 2–3 concrete examples of what you asked for.
-- At least one moment the tool's first suggestion was wrong, inefficient, or didn't fit your design — what was wrong with it, how you noticed, and what you did instead.
-- What did you accept largely as-is, and what did you rewrite or redesign yourself?
+**Concepts Applied**
+> Pick 2–3 ideas from this list: file structure and naming conventions, calling a module more than once, module sources and pinning, consuming a published module, or when a module is the wrong answer. Explain each in your own words based on how you actually used it in this stage. 
 
-## How to build it (teach it to the next engineer)
+## 4. AI Collaboration Log
+> Be specific. If you used no AI, state that in one line.
 
-Write a guide to turning repeated configuration into a reusable module called twice, using your own plans and state listing to show the reasoning, not just the module block.
+*   **Tools & Scope:** Which AI tool(s) did you use, and for roughly what portion of the work?
+*   **Prompt Examples:** Give 2–3 concrete examples of what you asked for.
+*   **Course Correction:** Describe at least one moment the tool's first suggestion was wrong, inefficient, or didn't fit your design. What was wrong, how did you notice, and what did you do instead?
+*   **Human Intervention:** What did you accept largely as-is, and what did you rewrite or redesign yourself?
 
-## Concepts worth explaining
+## 5. Retrospective & Self-Assessment
+> Reflect on the friction you faced, how you grade your own work, and what you would change. 
 
-Pick 2–3 ideas — file structure and naming conventions, calling a module more than once, module sources and pinning, consuming a published module, or when a module is the wrong answer — and explain each in your own words.
-
-## What tripped me up
-
-Anything that didn't behave the way you expected the first time. Keep the exact error text.
-
-## Checkpoint evidence
-
-Paste real output, trimmed to the relevant lines and redacted, or link a screenshot. The definition of done in `brief.md` still applies in full.
-
-- DoD-01: clean plans for both module calls, and the state listing showing distinct module paths.
-- DoD-02: your module's file listing and its input and output declarations with types and descriptions.
-- DoD-05: your review of one published module and your decision note on what you put in the module, what you left out, and when you would not write a module.
-
-## Definition-of-done self-assessment
-
-Score yourself honestly against every item in the definition of done in `brief.md` before your trainer reviews it: met, partly met or not met, and why. Then rate yourself against each criterion of the stage rubric in the README. Name any part of your own work you would struggle to explain cold, without re-reading it first.
-
-## What I'd do differently
-
-If you started this stage over, what would you do differently?
+*   **Friction Log (What tripped me up):** Where did you spend the most time, and why? What didn't behave the way you expected the first time? (Keep the exact error texts and how you resolved them).
+*   **What I'd do differently:** If you started this stage over today, what is the single biggest change you'd make to your approach?
+*   **DoD Self-Assessment:** Rate yourself honestly against every item in the DoD (Met, Partly Met, Not Met) and the stage rubric.
+*   **Blind Spots:** Name any part of your own work you would struggle to explain cold right now, without re-reading it first.
