@@ -35,7 +35,7 @@
 **Ideas this stage covers:** built-in functions, `for` and splat expressions, dynamic blocks, or preconditions and postconditions.
 
 ## 4. AI Collaboration Log
-> Be specific. If you used no AI, state that in one line.
+> Be specific, and answer each prompt below in as many lines as it needs. Only if you used no AI at all, say so in one line and skip the rest.
 
 *   **Tools & Scope:** Which AI tool(s) did you use, and for roughly what portion of the work?
 *   **Prompt Examples:** Give 2–3 concrete examples of what you asked for.
