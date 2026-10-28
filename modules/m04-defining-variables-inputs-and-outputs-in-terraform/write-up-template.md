@@ -17,7 +17,9 @@
     *   *Output/Evidence:* 
 
 ## 2. How to build it (teach it to the next trainee)
-> Write a quick guide from a hard-coded configuration to one that plans cleanly with two sets of values. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+> Write a quick guide covering the scope below. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+
+**Guide scope:** from a hard-coded configuration to one that plans cleanly with two sets of values
 
 ## 3. Decisions & Core Concepts
 > This section covers the *why* behind your build and the theory you applied. 
@@ -28,7 +30,9 @@
 *   **What does marking a value sensitive hide, and where can it still be seen?** 
 
 **Concepts Applied**
-> Pick 2–3 ideas from this list: validation rules, local values, or output values. Explain each in your own words based on how you actually used it in this stage. 
+> Pick 2–3 of the ideas below. Explain each in your own words based on how you actually used it in this stage. 
+
+**Ideas this stage covers:** validation rules, local values, or output values.
 
 ## 4. AI Collaboration Log
 > Be specific. If you used no AI, state that in one line.

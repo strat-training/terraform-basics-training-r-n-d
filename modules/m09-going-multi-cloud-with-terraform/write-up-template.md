@@ -17,7 +17,9 @@
     *   *Output/Evidence:* 
 
 ## 2. How to build it (teach it to the next trainee)
-> Write a quick guide from installing the two CLIs to a successful plan on GCP and on Azure. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+> Write a quick guide covering the scope below. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+
+**Guide scope:** from installing the two CLIs to a successful plan on GCP and on Azure
 
 ## 3. Decisions & Core Concepts
 > This section covers the *why* behind your build and the theory you applied. 
@@ -28,7 +30,9 @@
 *   **What goes wrong if it points at a different subscription, and what in your configuration prevents it?** 
 
 **Concepts Applied**
-> Pick 2–3 ideas from this list: state across clouds, where this course stops, or what carries over from the AWS workflow and what does not. Explain each in your own words based on how you actually used it in this stage. 
+> Pick 2–3 of the ideas below. Explain each in your own words based on how you actually used it in this stage. 
+
+**Ideas this stage covers:** state across clouds, where this course stops, or what carries over from the AWS workflow and what does not.
 
 ## 4. AI Collaboration Log
 > Be specific. If you used no AI, state that in one line.

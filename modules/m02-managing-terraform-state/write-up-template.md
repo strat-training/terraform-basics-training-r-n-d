@@ -17,7 +17,9 @@
     *   *Output/Evidence:* 
 
 ## 2. How to build it (teach it to the next trainee)
-> Write a quick guide from local state to a protected remote backend with locking demonstrated. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+> Write a quick guide covering the scope below. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+
+**Guide scope:** from local state to a protected remote backend with locking demonstrated
 
 ## 3. Decisions & Core Concepts
 > This section covers the *why* behind your build and the theory you applied. 
@@ -28,7 +30,9 @@
 *   **What does locking prevent, and what does it not?** 
 
 **Concepts Applied**
-> Pick 2–3 ideas from this list: what state records and where it lives, why a team needs a remote backend, or migrating local state without recreating anything. Explain each in your own words based on how you actually used it in this stage. 
+> Pick 2–3 of the ideas below. Explain each in your own words based on how you actually used it in this stage. 
+
+**Ideas this stage covers:** what state records and where it lives, why a team needs a remote backend, or migrating local state without recreating anything.
 
 ## 4. AI Collaboration Log
 > Be specific. If you used no AI, state that in one line.

@@ -10,6 +10,20 @@ VARIABLES TO REPLACE:
 - [GUIDE_SCOPE] (e.g., "from an empty AWS account to a running auto-scaling group")
 - [SCOPE_TOPIC_1/2/3] (3+ candidates for concepts worth explaining)
 - [DOD_ID_1/2/3] and [DOD_EVIDENCE_REQ_1/2/3] (Specific output requests hardest to fake)
+
+RULES FOR FILLING THEM (generate from the stage's brief, and keep it short):
+- Key decisions: up to three of the brief's research prompts, each cut down to one or two short
+  questions. Pick the prompts that tie to a claim in the brief's Objective (something the trainee
+  is meant to be able to explain), and check that every Objective claim has a question or a
+  "Concepts Applied" candidate. Merge only prompts that are close; drop the rest. Do not add a
+  "where did you spend the most time" question: the Friction Log already asks it.
+- Guide scope: one line saying what the guide takes a learner from and to.
+- Concepts: 3 or more candidates, inline, taken from the scope topic titles. Use only scope topics
+  that no key-decision question already covers, so the two sections never ask about the same thing.
+- Evidence: up to three items, each one piece of real output (or a note, where the brief asks for
+  one) that shows a central claim of the brief's Objective was actually done, naming the DoD id it
+  backs. Pick the outputs that are hardest to fake; do not restate every definition-of-done bullet.
+Everything else is the same in every stage.
 -->
 
 # [STAGE_ID] Write-Up — [STAGE_TITLE]
@@ -31,7 +45,9 @@ VARIABLES TO REPLACE:
     *   *Output/Evidence:* 
 
 ## 2. How to build it (teach it to the next trainee)
-> Write a quick guide [GUIDE_SCOPE]. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+> Write a quick guide covering the scope below. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+
+**Guide scope:** [GUIDE_SCOPE]
 
 ## 3. Decisions & Core Concepts
 > This section covers the *why* behind your build and the theory you applied. 
@@ -42,7 +58,9 @@ VARIABLES TO REPLACE:
 *   **[DESIGN_QUESTION_3]:** 
 
 **Concepts Applied**
-> Pick 2–3 ideas from this list: [SCOPE_TOPIC_1], [SCOPE_TOPIC_2], or [SCOPE_TOPIC_3]. Explain each in your own words based on how you actually used it in this stage. 
+> Pick 2–3 of the ideas below. Explain each in your own words based on how you actually used it in this stage. 
+
+**Ideas this stage covers:** [SCOPE_TOPIC_1], [SCOPE_TOPIC_2], or [SCOPE_TOPIC_3].
 
 ## 4. AI Collaboration Log
 > Be specific. If you used no AI, state that in one line.

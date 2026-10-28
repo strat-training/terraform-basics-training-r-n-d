@@ -17,7 +17,9 @@
     *   *Output/Evidence:* 
 
 ## 2. How to build it (teach it to the next trainee)
-> Write a quick guide from a configuration repeated by hand to one driven by structured input. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+> Write a quick guide covering the scope below. Use your own output/logs to show your reasoning, not just a list of commands. Assume the reader is a peer who hasn't started this stage yet.
+
+**Guide scope:** from a configuration repeated by hand to one driven by structured input
 
 ## 3. Decisions & Core Concepts
 > This section covers the *why* behind your build and the theory you applied. 
@@ -28,7 +30,9 @@
 *   **Where did you state a dependency explicitly, and what do lifecycle protections and ignored changes cost the next person who edits it?** 
 
 **Concepts Applied**
-> Pick 2–3 ideas from this list: built-in functions, `for` and splat expressions, dynamic blocks, or preconditions and postconditions. Explain each in your own words based on how you actually used it in this stage. 
+> Pick 2–3 of the ideas below. Explain each in your own words based on how you actually used it in this stage. 
+
+**Ideas this stage covers:** built-in functions, `for` and splat expressions, dynamic blocks, or preconditions and postconditions.
 
 ## 4. AI Collaboration Log
 > Be specific. If you used no AI, state that in one line.
