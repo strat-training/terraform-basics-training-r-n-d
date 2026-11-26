@@ -1,6 +1,6 @@
 # M07 — Designing Reusable Terraform Modules Brief
 
-**Stage:** 7 of 9 · **Builds on:** M02, M04, M05, M06 · **Feeds into:** M08
+**Stage:** 7 of 8 · **Builds on:** M02, M04, M05, M06 · **Feeds into:** M08
 
 ## Objective
 

@@ -20,14 +20,13 @@ Every topic each training stage covers, in the order the stage tackles it, so yo
 | M06 | Advanced Terraform Configuration | 8 | 8 | 7 | 30 | M02, M03, M04 |
 | M07 | Designing Reusable Terraform Modules | 12 | 12 | 7 | 34 | M02, M04, M05, M06 |
 | M08 | Change with Confidence: Safe Terraform Refactoring | 5 | 5 | 7 | 27 | M01, M02, M07 |
-| M09 | Going Multi-Cloud with Terraform | 5 | 5 | 7 | 26 | M01 |
 
-The nine stages generate 259 tasks between them. The capstone has its own checklist and is not listed here.
+The eight stages generate 233 tasks between them.
 
 ## M01 — Getting Started with Terraform
 
 **Theme:** Workstation, sign-in with no static keys, providers and the lock file, then one resource taken through init, plan, apply, update and destroy  
-**Builds on:** — (course entry point) · **Feeds into:** M02, M03, M08, M09
+**Builds on:** — (course entry point) · **Feeds into:** M02, M03, M08
 
 **If every topic is kept:** 27 tasks — Setup 3, Build 7 (5 topics and 2 deliverable components), Verify 7, Write-up 10.
 
@@ -265,7 +264,7 @@ The nine stages generate 259 tasks between them. The capstone has its own checkl
 ## M08 — Change with Confidence: Safe Terraform Refactoring
 
 **Theme:** Rename, adopt, stop managing — no destroys; reading plans as JSON; recovering from a failed apply  
-**Builds on:** M01, M02, M07 · **Feeds into:** the capstone
+**Builds on:** M01, M02, M07 · **Feeds into:** — (end of the course)
 
 **If every topic is kept:** 27 tasks — Setup 3, Build 7 (5 topics and 2 deliverable components), Verify 7, Write-up 10.
 
@@ -289,38 +288,6 @@ The nine stages generate 259 tasks between them. The capstone has its own checkl
     6. Break an apply on purpose with an invalid value, read the error and what state holds, then fix it and re-run to a clean plan without editing state by hand.
   - **You build and capture:** The three refactors are your deliverable. Capture the plan summaries, the check that reads a saved plan's JSON, the identity of the renamed resource, the error and what state holds afterwards, and the recovery.
   - **Clean-up:** No billable resource is left behind; only the M02 bucket remains.
-
-**Topics to add:**
-
-- [ ] <a topic to add>
-
-## M09 — Going Multi-Cloud with Terraform
-
-**Theme:** GCP and Azure sign-in and provider setup  
-**Builds on:** M01 · **Feeds into:** the capstone
-
-**If every topic is kept:** 26 tasks — Setup 3, Build 6 (5 topics and 1 deliverable components), Verify 7, Write-up 10.
-
-**Topics**
-
-- [x] 1. Installing the CLIs and confirming access to the GCP and Azure sandboxes — installing the Google Cloud and Azure command-line tools and checking that you can reach both sandboxes before you write anything
-- [x] 2. GCP — Application Default Credentials sign-in, project selection, provider configuration — signing in with a short-lived login and pointing the configuration at the right project
-- [x] 3. Azure — CLI sign-in, subscription selection, provider configuration — signing in with a short-lived login and pointing the configuration at the right subscription
-- [x] 4. State management across clouds: `gcs` and `azurerm` backends — reference only: you do not configure them
-- [x] 5. Where this course stops — HCP Terraform and Sentinel, named and not taught
-
-**Lab**
-
-- [x] **Goal:** Sign in to GCP and Azure with short-lived logins and prove each provider works without creating anything.
-  - **You do:**
-    1. Install the Google Cloud CLI and the Azure CLI, then sign in with `gcloud auth application-default login` and `az login`.
-    2. Confirm where you are signed in with `gcloud config get-value project` and `az account show`.
-    3. In a `gcp/` folder, write a configuration with the `google` provider and an explicit `project`, a read-only data source and an output for the identity; in an `azure/` folder, do the same with the `azurerm` provider and an explicit `subscription_id`.
-    4. In each folder run `terraform init`, `terraform fmt`, `terraform validate` and `terraform plan`, and read the identity output.
-    5. Switch your active login to another project or subscription if you have one, run `terraform plan` again, and check that each configuration still targets the one you intended.
-    6. Scan the repository and your disk for secrets and keys, and check that each plan shows nothing to add.
-  - **You build and capture:** The two configurations are your deliverable. Capture the identity output for each cloud, evidence that the intended project or subscription is used even when the login points elsewhere, the scan for secrets and keys, and a plan with nothing to add.
-  - **Clean-up:** Nothing is created, so there is nothing to destroy.
 
 **Topics to add:**
 

@@ -1,6 +1,6 @@
 # M08 — Change with Confidence: Safe Terraform Refactoring Brief
 
-**Stage:** 8 of 9 · **Builds on:** M01, M02, M07 · **Feeds into:** the capstone
+**Stage:** 8 of 8 · **Builds on:** M01, M02, M07 · **Feeds into:** — (end of the course)
 
 ## Objective
 

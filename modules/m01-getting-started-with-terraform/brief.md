@@ -1,6 +1,6 @@
 # M01 — Getting Started with Terraform Brief
 
-**Stage:** 1 of 9 · **Builds on:** — (course entry point) · **Feeds into:** M02, M03, M08, M09
+**Stage:** 1 of 8 · **Builds on:** — (course entry point) · **Feeds into:** M02, M03, M08
 
 ## Objective
 
@@ -29,7 +29,7 @@ You build up one small configuration file by file on your own machine, not a wor
 - You use AWS only, with one very simple resource, an `aws_ssm_parameter`, so that you focus on the workflow and not on AWS architecture.
 - State is local in this stage and is never committed, and you read the plan before every apply.
 - Look up what the resource bills before you apply, and destroy it at the end of the stage.
-- Variables and validation (M04), state and remote backends (M02), lifecycle controls that change replacement behaviour (M06), refactoring without replacement (M08), GCP and Azure (M09), and HCP Terraform, Terraform Stacks, Packer and Kubernetes providers are not part of this stage.
+- Variables and validation (M04), state and remote backends (M02), lifecycle controls that change replacement behaviour (M06), refactoring without replacement (M08), GCP and Azure, and HCP Terraform, Terraform Stacks, Packer and Kubernetes providers are not part of this stage.
 
 ## Deliverable
 

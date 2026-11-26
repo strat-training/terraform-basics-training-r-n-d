@@ -1,6 +1,6 @@
 # M04 — Defining Variables, Inputs and Outputs in Terraform Brief
 
-**Stage:** 4 of 9 · **Builds on:** M03 (you may reuse that work) · **Feeds into:** M05, M06, M07
+**Stage:** 4 of 8 · **Builds on:** M03 (you may reuse that work) · **Feeds into:** M05, M06, M07
 
 ## Objective
 

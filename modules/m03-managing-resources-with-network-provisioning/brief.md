@@ -1,6 +1,6 @@
 # M03 — Managing Resources with Network Provisioning Brief
 
-**Stage:** 3 of 9 · **Builds on:** M01 · **Feeds into:** M04, M06
+**Stage:** 3 of 8 · **Builds on:** M01 · **Feeds into:** M04, M06
 
 ## Objective
 
