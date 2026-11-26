@@ -1,6 +1,6 @@
 # ADR-006: S3 remote state with native locking (`use_lockfile`)
 
-- **Status:** Accepted
+- **Status:** Accepted (capstone reuse and reference backends removed by [ADR-017](ADR-017-aws-only-no-capstone.md))
 - **Date:** 2026-10-01
 - **Deciders:** Program owner (@Lee)
 - **PRD references:** s.8 (Module 7, Activities 7-8), s.10, s.11, s.12
@@ -13,7 +13,7 @@ Remote state with locking is a headline best practice. Terraform's S3 backend pr
 
 - Teach and require the **S3 backend with `use_lockfile = true`**. Do **not** teach DynamoDB locking, except to explain why it is deprecated.
 - The state bucket has **versioning, server-side encryption and a public-access block**, and access restricted to the learner's role.
-- The bucket is **bootstrapped once** with a local-state configuration in Activity 7, then **kept** across later activities (and reused by the capstone with a different state key).
+- The bucket is **bootstrapped once** with a local-state configuration in Activity 7, then **kept** across later activities.
 - Existing local state is moved with `terraform init -migrate-state`.
 - Locking is **proven** by starting two simultaneous applies and reading the lock error.
 - Terraform **1.11 or later** is the minimum pinned version everywhere.
@@ -25,7 +25,7 @@ Remote state with locking is a headline best practice. Terraform's S3 backend pr
 | S3 + DynamoDB locking | Deprecated; extra resource and cost; two things to bootstrap |
 | HCP Terraform remote state | Out of scope (HCP administration excluded); needs external accounts |
 | Local state shared by hand | The anti-pattern the program exists to eliminate |
-| `gcs` or `azurerm` backend as primary | AWS is the primary cloud (ADR-003); other backends shown for reference only |
+| `gcs` or `azurerm` backend as primary | AWS is the only cloud the course teaches (ADR-017) |
 
 ## Consequences
 
@@ -36,4 +36,4 @@ Remote state with locking is a headline best practice. Terraform's S3 backend pr
 **Negative / trade-offs**
 - Locks are lock objects in the bucket; learners need `s3:PutObject` and `s3:DeleteObject` on the lock key, which the sandbox role must allow.
 - Content must be re-verified against release notes for the exact pinned version (PRD verification note).
-- The state bucket outlives activities; learners must remember to remove it at the end (capstone clean-up step, solution design A5).
+- The state bucket outlives activities; learners must remember to remove it at the end (a documented clean-up step at the end of the last module, solution design A5).

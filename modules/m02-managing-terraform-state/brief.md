@@ -1,6 +1,6 @@
 # M02 — Managing Terraform State Brief
 
-**Stage:** 2 of 9 · **Builds on:** M01 · **Feeds into:** M05, M06, M07, M08
+**Stage:** 2 of 8 · **Builds on:** M01 · **Feeds into:** M05, M06, M07, M08
 
 ## Objective
 

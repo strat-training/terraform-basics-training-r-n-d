@@ -1,6 +1,6 @@
 # ADR-003: AWS as primary cloud; GCP and Azure setup-only plus one storage resource
 
-- **Status:** Accepted
+- **Status:** Superseded by [ADR-017](ADR-017-aws-only-no-capstone.md) (the GCP and Azure module and the capstone were removed)
 - **Date:** 2026-10-01
 - **Deciders:** Program owner (@Lee)
 - **PRD references:** s.2, s.4, s.9, s.15

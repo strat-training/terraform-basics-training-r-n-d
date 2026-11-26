@@ -1,6 +1,6 @@
-# Terraform Concepts & Best Practices — training stages and capstone
+# Terraform Concepts & Best Practices — training stages
 
-This is your Terraform course: nine training stages in `modules/`, followed by a capstone project. For each stage your trainer gives you a brief. You build the stage and write it up as you go, your trainer reviews both together, you revise, and the finished pair becomes teaching material for the next cohort.
+This is your Terraform course: eight training stages in `modules/`. For each stage your trainer gives you a brief. You build the stage and write it up as you go, your trainer reviews both together, you revise, and the finished pair becomes teaching material for the next cohort.
 
 A note on words: a **module** in this repository is a *training stage*, not a Terraform module. Stage [M07](modules/m07-designing-reusable-terraform-modules/brief.md) is the one that teaches Terraform modules.
 
@@ -8,8 +8,7 @@ A note on words: a **module** in this repository is a *training stage*, not a Te
 
 | Path | What it holds |
 | --- | --- |
-| `modules/` | The nine stage folders (M01–M09), each with a brief, a checklist and a write-up template |
-| `modules/m10-capstone/` | The capstone, with its own brief, checklist and write-up template |
+| `modules/` | The eight stage folders (M01–M08), each with a brief, a checklist and a write-up template |
 
 The other folders are trainer material. You do not need them to do the stages.
 
@@ -32,7 +31,7 @@ Review happens at the end of every stage, not just at the end of the course. A w
 | `write-up.md` | You | Your copy of the template, filled in as you build. |
 | `tasks.md` | Your trainer | An ordered checklist for the stage, one task per scope topic, deliverable component, check and write-up section. You tick the boxes; it holds no answers and no steps. |
 
-Your Terraform code lives outside this repository, in your own GitLab repository. Link it from the header of your write-up. The capstone folder has the same three files.
+Your Terraform code lives outside this repository, in your own GitLab repository. Link it from the header of your write-up.
 
 ## Stages
 
@@ -46,45 +45,17 @@ Your Terraform code lives outside this repository, in your own GitLab repository
 | M06 | [Advanced Terraform Configuration](modules/m06-advanced-terraform-configuration/brief.md) | [tasks](modules/m06-advanced-terraform-configuration/tasks.md) | `for_each` in depth, dynamic blocks, conditions, `for` expressions, data sources, dependency and lifecycle controls | Bucket only |
 | M07 | [Designing Reusable Terraform Modules](modules/m07-designing-reusable-terraform-modules/brief.md) | [tasks](modules/m07-designing-reusable-terraform-modules/tasks.md) | Reusable modules: structure, naming, comments, interfaces, consuming published modules | Bucket only |
 | M08 | [Change with Confidence: Safe Terraform Refactoring](modules/m08-change-with-confidence-safe-terraform-refactoring/brief.md) | [tasks](modules/m08-change-with-confidence-safe-terraform-refactoring/tasks.md) | Rename, adopt, stop managing — no destroys; reading plans as JSON; recovering from a failed apply | Bucket only |
-| M09 | [Going Multi-Cloud with Terraform](modules/m09-going-multi-cloud-with-terraform/brief.md) | [tasks](modules/m09-going-multi-cloud-with-terraform/tasks.md) | GCP and Azure sign-in and provider setup | Nothing |
 
-Work the stages in order. Later stages build on earlier ones, and M02's bucket is reused by M05 and M06 to M08 and kept until the capstone ends. M06 comes before modules so that module interfaces can rely on it, and modules come before refactoring so that extracting code into a module is something M08 can then refactor. Folder names are descriptive; the briefs refer to each other by stage ID (M01–M09).
-
-## The capstone — a zero-downtime online shop
-
-The capstone follows M09. It is a standalone project that assumes everything the stages teach and does not change them. You design and build a three-tier online shop on AWS (`ap-southeast-1`), release three versions of it to live traffic with zero failed checkouts, roll a bad release back with one change, keep an off-site copy of its inventory in GCP and serve its theme and images from Azure — with no stored key anywhere and inside a cost challenge.
-
-**What is fixed:** the three tiers (web, app and a private database), the blue/green release, the GCP backup and the Azure theme and images, the release stages 0 to 6 and what each must show, and two stacks called `foundation` and `release`. **What is yours:** what the shop sells, what each tier runs on (servers, Fargate or something else), how many resources you use, your network and access, how you achieve zero downtime, how a bad release is detected and rolled back, and how you demonstrate the release. The brief lists all of these in one section, "Your design decisions".
-
-| | |
-| --- | --- |
-| Brief | [modules/m10-capstone/brief.md](modules/m10-capstone/brief.md) |
-| Checklist | [modules/m10-capstone/tasks.md](modules/m10-capstone/tasks.md) |
-| Write-up template | [modules/m10-capstone/write-up-template.md](modules/m10-capstone/write-up-template.md) |
-| Constraints | Releases are Terraform only: one change per stage, saved as a plan, no `-target`. No stored keys and no SSH. Two stacks with separate `dev` and `prod` state, and the naming and tags the brief sets |
-| Cost challenge | At most $0.30 an hour while running and under $5 in total, with limits on compute and database size, one NAT gateway and two load balancers. Your own estimate is the evidence |
-| Proofs | Failure proofs, identity and backup proofs, stock checks, a Demo Challenge of five day-2 tasks, and a supplied `check.sh` |
-| AI tools | Any AI tool is fine. You keep a log, never paste credentials, and must be able to explain and change your work without it |
-| Presentation | 15 minutes of presenting and 15 minutes of questions. The panel picks places in your code or evidence at random and asks you to explain them and make a small change live, without AI |
-| You hand in | Your GitLab repository (two stacks, modules, environments and stage inputs), an `evidence/` folder and `write-up.md` |
-| Assessed by | A 100-point rubric. The pass mark is 70, and the definition of done must also be met |
-
-| Rubric criterion | Points | What it covers |
-| --- | --- | --- |
-| Architecture Design (Security, cost, teardown) | 40 | Your design decisions with the alternatives you rejected, a private database and no stored keys, your cost estimate inside the cost challenge, and a clean teardown in all three clouds |
-| Terraform Art | 40 | Both stacks applying cleanly, well-built modules and validation, stages 0 to 6 released with zero failed requests and a one-change rollback, and the Demo Challenge tasks |
-| Presentation | 20 | A 15-minute walkthrough from your evidence, and explaining and changing your own code live, without AI |
-
-Each criterion is scored from 0 to its points: Excellent is 80% or more of them, Satisfactory 50% to 79%, and Needs work under 50%. The presentation is the third criterion. It is also where the panel confirms the evidence behind the other two, and a claim you cannot explain can lose the points it supports. Your trainer gives you a `data/` folder (the application in three versions, a starter catalogue, a starter theme and images, an optional `probe.sh` and `check.sh`); you may replace the catalogue and theme with your own.
+Work the stages in order. Later stages build on earlier ones, and M02's bucket is reused by M05 and M06 to M08 and kept until the course ends. M06 comes before modules so that module interfaces can rely on it, and modules come before refactoring so that extracting code into a module is something M08 can then refactor. Folder names are descriptive; the briefs refer to each other by stage ID (M01–M08).
 
 ## Rules for every stage
 
-These apply to every stage brief, M01 to M09. A brief repeats only what is specific to its stage. The capstone restates its own rules in its brief.
+These apply to every stage brief, M01 to M08. A brief repeats only what is specific to its stage.
 
 - **Terraform CLI, 1.11 or later**, at the exact version in `versions.env`. OpenTofu is an optional topic in M01; you decide whether to include it.
-- **AWS first.** GCP and Azure appear only in M09, as setup and read-only checks.
+- **AWS only.** GCP and Azure are not used in these stages.
 - **Sandbox accounts only, short-lived sign-in only.** Never create, store or commit a static access key, service-account key or client secret.
-- **Destroy at the end of every stage.** The M02 state bucket is the only thing kept, until the capstone ends. Keep resources small and cheap, and use no NAT gateways.
+- **Destroy at the end of every stage.** The M02 state bucket is the only thing kept, until the course ends. Keep resources small and cheap, and use no NAT gateways.
 - **Know what it costs before you apply.** Each brief's stack constraints say what the stage may bill. Look up what each resource in your plan bills and estimate the hourly cost before you apply. Billing APIs are not used, so your estimate is your evidence.
 - **Sandbox-compatible tooling only.** No Organizations or service control policies, billing APIs, tag-filtered budgets, paid SaaS or policy-as-code engines. No HCP Terraform, Stacks, Packer, Kubernetes providers or `terraform test`.
 - **Pin everything and commit the lock file.** Formatting and validation checks must pass before you call a stage done.
@@ -92,7 +63,7 @@ These apply to every stage brief, M01 to M09. A brief repeats only what is speci
 
 ## What review looks for
 
-Your trainer reviews what you built and what you wrote together, against one rubric. The capstone has its own rubric.
+Your trainer reviews what you built and what you wrote together, against one rubric.
 
 | Criterion | Graded on | Points | Excellent | Satisfactory | Needs work |
 | --- | --- | --- | --- | --- | --- |
@@ -112,5 +83,3 @@ Your trainer reviews what you built and what you wrote together, against one rub
 5. Otherwise the stage goes back to you with the criteria to fix, and you revise it before starting the next one.
 
 A stage that scores 90 or more is a candidate for the content library.
-
-The capstone's build and write-up are marked against the capstone's own rubric, which has its own points and a pass mark of 70 out of 100, and confirmed in its presentation.

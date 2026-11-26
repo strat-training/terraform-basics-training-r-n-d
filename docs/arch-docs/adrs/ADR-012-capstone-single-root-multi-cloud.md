@@ -1,6 +1,6 @@
 # ADR-012: Capstone as one root module, one apply, three clouds, one state
 
-- **Status:** Proposed
+- **Status:** Superseded by [ADR-017](ADR-017-aws-only-no-capstone.md) (the GCP and Azure module and the capstone were removed)
 - **Date:** 2026-10-01
 - **Deciders:** Program owner (@Lee) to confirm
 - **PRD references:** s.9 (capstone), s.12 (rubric: Provision 30, Tear down 15), s.10

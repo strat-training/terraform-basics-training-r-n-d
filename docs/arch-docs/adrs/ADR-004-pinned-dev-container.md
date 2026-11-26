@@ -1,6 +1,6 @@
 # ADR-004: Pinned dev container, run locally; GitLab Workspaces optional
 
-- **Status:** Accepted (amended by [ADR-016](ADR-016-gitlab-for-hosting-and-ci.md): the PRD named GitHub Codespaces, but the code is hosted on GitLab)
+- **Status:** Accepted (amended by [ADR-016](ADR-016-gitlab-for-hosting-and-ci.md): the PRD named GitHub Codespaces, but the code is hosted on GitLab; AWS CLI only, see [ADR-017](ADR-017-aws-only-no-capstone.md))
 - **Date:** 2026-10-01
 - **Deciders:** Program owner (@Lee)
 - **PRD references:** s.3, s.11, s.13 (FR-3, CR-1)
@@ -16,7 +16,7 @@ The PRD assumed GitHub Codespaces as the browser-based option. The code will be 
 Ship a **dev container** definition in the starter repository, built as a single image and **run locally** with VS Code Dev Containers or any dev-container tool on Docker or Podman. The image is built by GitLab CI and pushed to the project's **GitLab Container Registry**; CI jobs use the same image. It pins:
 
 - Terraform 1.11 or later (exact version from `versions.env`)
-- AWS CLI, `gcloud`, Azure CLI
+- AWS CLI
 - Terraform language server, plus the shell tools the check scripts need (`jq`, `curl`, and similar)
 
 **GitLab Workspaces are an optional, second path** for learners without a container-capable laptop, offered only if the GitLab owner enables them for the group. The same dev container definition (or an equivalent devfile derived from it) is used so there is one source of tool versions.
@@ -45,4 +45,4 @@ Module 1 also teaches a **local install path** using a version manager (`tfenv` 
 **Negative / trade-offs**
 - **Prerequisite change:** the PRD says learners need a laptop that can install CLI tools "or a browser for the provided dev container". Without Workspaces, every learner needs Docker or Podman on their machine, which some corporate laptops restrict. The pre-assessment (PRD s.3) should check for this, and the PRD wording should be updated (see ADR-016 and solution design A11).
 - If Workspaces are enabled, they need administrator setup and compute capacity that this program does not own, and learners' cloud logins must work in them.
-- Authentication flows needing a browser (`aws sso login`, `gcloud auth ... login`, `az login`) must use device-code or port-forward modes inside remote workspaces and containers; Module 1 and 10 must document this.
+- Authentication flows needing a browser (`aws sso login`) must use device-code or port-forward modes inside remote workspaces and containers; Module 1 must document this.

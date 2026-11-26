@@ -5,6 +5,7 @@
 - **Deciders:** Program owner (@Lee) to record in the PRD
 - **PRD references:** s.11 (starter repository, dev container), s.13 (FR-1, FR-3, FR-7, CR-1, CR-8), s.14 (dependencies: "A GitHub organization ... plus Codespaces and Actions")
 - **Amends:** ADR-001 (hosting), ADR-004 (dev environment), ADR-010 (CI mechanics)
+- **Amended by:** ADR-017 (AWS only; no capstone)
 
 ## Context
 
@@ -14,10 +15,10 @@ The platform change touches three areas: where content lives and how learners co
 
 ## Decision
 
-1. **Hosting.** The starter repository is a project in a **GitLab group**. Learners fork it, or use it as a template, into their own namespace or a cohort subgroup. Their "what broke and what I learned" notes and capstone repositories live there too.
+1. **Hosting.** The starter repository is a project in a **GitLab group**. Learners fork it, or use it as a template, into their own namespace or a cohort subgroup. Their "what broke and what I learned" notes live there too.
 2. **CI/CD.** Content CI is defined in **`.gitlab-ci.yml`**, using `rules:` on `$CI_PIPELINE_SOURCE` to separate three pipeline types: **merge request pipelines** (per-change tests), **scheduled pipelines** (weekly pinned run and non-blocking latest-provider canary), and **tag pipelines** (version bumps and releases). Everything in ADR-010 is unchanged in substance.
-3. **Cloud authentication in CI.** Real-cloud CI jobs authenticate with **GitLab CI/CD ID tokens (OIDC)** federated to AWS (IAM role with web identity), GCP (workload identity federation) and Azure (federated credential). **No cloud keys are stored in CI variables.**
-4. **Review.** Capstone peer review (FR-7) uses **merge requests** in a shared group, with the rubric supplied as a **merge request template** under `.gitlab/merge_request_templates/`.
+3. **Cloud authentication in CI.** Real-cloud CI jobs authenticate with **GitLab CI/CD ID tokens (OIDC)** federated to AWS (IAM role with web identity). **No cloud keys are stored in CI variables.**
+4. **Review.** FR-7 (peer review of the capstone) has no subject now that the capstone is removed (ADR-017). If review is reintroduced, it uses **merge requests** in a shared group, with the rubric supplied as a **merge request template** under `.gitlab/merge_request_templates/`.
 5. **Dev environment.** The dev container image is built in CI and stored in the project's **Container Registry** (ADR-004).
 6. **Terraform state is not hosted in GitLab.** GitLab offers its own managed Terraform state, but the program teaches the **S3 backend with native locking** (ADR-006), so GitLab-managed state is not used and is mentioned only as an option learners may meet.
 7. **Documentation.** The Markdown modules render in GitLab, including tables and Mermaid diagrams. A published docs site (for example with GitLab Pages) remains optional and does not change ADR-001.
@@ -41,8 +42,8 @@ The platform change touches three areas: where content lives and how learners co
 **Negative / trade-offs**
 - **PRD changes are needed**: s.13 FR-3 ("dev container or Codespace"), s.3 prerequisite ("or a browser"), s.14 dependencies ("GitHub organization ... Codespaces and Actions") and "pull request" wording in s.3 and FR-7 must be updated. The PRD still says GitHub.
 - There is **no Codespaces equivalent by default** (see ADR-004). Zero-install browser access depends on GitLab Workspaces being enabled.
-- GitLab runners must be able to **build the dev container image** (for example with rootless builders such as Kaniko or Buildah, or Docker-in-Docker) and run Terraform plus the cloud CLIs. [TBD: runner type and permitted build method, from the GitLab owner.]
-- If the instance is **self-managed**, AWS, GCP and Azure must be able to reach its OIDC issuer URL to trust the ID tokens, which may need network or DNS changes. gitlab.com has no such issue. [TBD: SaaS or self-managed.]
+- GitLab runners must be able to **build the dev container image** (for example with rootless builders such as Kaniko or Buildah, or Docker-in-Docker) and run Terraform plus the AWS CLI. [TBD: runner type and permitted build method, from the GitLab owner.]
+- If the instance is **self-managed**, AWS must be able to reach its OIDC issuer URL to trust the ID tokens, which may need network or DNS changes. gitlab.com has no such issue. [TBD: SaaS or self-managed.]
 - Pipeline minutes or runner capacity for real-cloud CI are a cost the program must budget (ADR-010).
 - Some GitLab features used here (Workspaces, certain review and security features) depend on the **tier**; ADR-015's rule against paid tools means none of them may become a hard requirement for learners.
 

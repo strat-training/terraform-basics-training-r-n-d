@@ -1,13 +1,13 @@
 # ADR-015: Sandbox-compatible tooling only
 
-- **Status:** Accepted
+- **Status:** Accepted (AWS only, see [ADR-017](ADR-017-aws-only-no-capstone.md))
 - **Date:** 2026-10-01
 - **Deciders:** Program owner (@Lee)
 - **PRD references:** s.4 (out of scope, sandbox environment exclusions), s.11, s.13
 
 ## Context
 
-All activities run in restricted sandbox accounts on AWS, GCP and Azure, without organization-level or billing-level privileges and without paid external services. The PRD lists six exclusions.
+All activities run in restricted AWS sandbox accounts, without organization-level or billing-level privileges and without paid external services. The PRD lists six exclusions.
 
 ## Decision
 
@@ -18,7 +18,7 @@ Design every activity, check script and CI job to run **without**:
 3. Tag-filtered budgets and cost allocation tags (budgets, where mentioned, are account-wide).
 4. Paid third-party SaaS tools and API keys (for example, Infracost SaaS).
 5. Policy-as-code engines (OPA/Rego, Sentinel); validation is native HCL only (variable validation, `precondition` and `postcondition`, plan JSON assertions).
-6. Complex multi-cloud global traffic routing (for example, Azure Front Door in front of AWS ALBs); multi-cloud examples use storage and static-asset patterns.
+6. Multi-cloud scenarios of any kind, including global traffic routing (for example, Azure Front Door in front of AWS ALBs); the course is AWS only (ADR-017).
 
 Also in line with the PRD scope, the program does not use HCP Terraform, Terraform Stacks, Packer, Kubernetes providers, authoring of reusable modules, `terraform test`, or CI/CD pipelines as learner content.
 

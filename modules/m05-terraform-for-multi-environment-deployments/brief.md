@@ -1,6 +1,6 @@
 # M05 — Terraform for Multi-Environment Deployments Brief
 
-**Stage:** 5 of 9 · **Builds on:** M02, M04 · **Feeds into:** M07
+**Stage:** 5 of 8 · **Builds on:** M02, M04 · **Feeds into:** M07
 
 ## Objective
 
