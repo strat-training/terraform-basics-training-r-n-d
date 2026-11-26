@@ -1,6 +1,6 @@
 # ADR-010: Content CI with a single pinned-version source and scheduled canary runs
 
-- **Status:** Proposed
+- **Status:** Proposed (capstone tests and non-AWS providers removed by [ADR-017](ADR-017-aws-only-no-capstone.md))
 - **Date:** 2026-10-01
 - **Deciders:** Program owner (@Lee) to confirm
 - **PRD references:** s.13 (CR-1, CR-4, CR-8, content maintenance), s.14 (risk: releases break activities), s.15 verification note
@@ -18,10 +18,9 @@ Providers release frequently and a broken activity in a self-paced course has no
    - activities that need real cloud run in a **dedicated CI sandbox** with a nightly sweeper and budget alarm; S3-only activities may use LocalStack
    - markdown link check and a **coverage matrix check** that every best practice in PRD s.10 maps to at least one activity check and one quiz question (CR-4)
 3. **Scheduled weekly CI** (a GitLab scheduled pipeline) re-runs everything on pinned versions, plus a **canary** run on the latest provider versions (non-blocking) to see breakage early.
-4. **Capstone `data/` tests (CR-8)**: render templates, shellcheck, boot the API against MySQL 8.4 locally, hit all six endpoints, validate `seed.sql`, confirm `bad.tfvars` fails validation with the expected message.
-5. **Triggered review** after each Terraform minor release and AWS, Google or AzureRM provider major release; full **six-monthly** review.
-6. Version bumps are deliberate merge requests that update `versions.env`, the lock files and any affected content together.
-7. Pipelines are defined in `.gitlab-ci.yml`, with `rules:` on `$CI_PIPELINE_SOURCE` separating merge request, scheduled and tag pipelines. Cloud jobs authenticate with GitLab CI/CD ID tokens (see ADR-016).
+4. **Triggered review** after each Terraform minor release and AWS provider major release; full **six-monthly** review.
+5. Version bumps are deliberate merge requests that update `versions.env`, the lock files and any affected content together.
+6. Pipelines are defined in `.gitlab-ci.yml`, with `rules:` on `$CI_PIPELINE_SOURCE` separating merge request, scheduled and tag pipelines. Cloud jobs authenticate with GitLab CI/CD ID tokens (see ADR-016).
 
 ## Alternatives considered
 

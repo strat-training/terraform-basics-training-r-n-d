@@ -1,6 +1,6 @@
 # ADR-001: Deliver the program as Markdown modules in a starter repository
 
-- **Status:** Accepted (hosting platform amended by [ADR-016](ADR-016-gitlab-for-hosting-and-ci.md))
+- **Status:** Accepted (hosting platform amended by [ADR-016](ADR-016-gitlab-for-hosting-and-ci.md); capstone reference removed by [ADR-017](ADR-017-aws-only-no-capstone.md))
 - **Date:** 2026-10-01
 - **Deciders:** Program owner (@Lee)
 - **PRD references:** s.1, s.5, s.13 (FR-1, FR-2), s.14, s.15
@@ -30,7 +30,7 @@ Deliver everything as **11 Markdown module files plus activity folders in a GitL
 - Low operating cost and nothing to procure.
 
 **Negative / trade-offs**
-- No central telemetry; completion and pass rates come from surveys and capstone submissions (see ADR-009).
+- No central telemetry; completion and pass rates come from surveys (see ADR-009).
 - Gating between weeks is by convention, not enforced.
 - Reading experience is plain Markdown unless a docs site is added later.
 

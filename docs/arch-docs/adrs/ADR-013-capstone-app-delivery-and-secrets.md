@@ -1,6 +1,6 @@
 # ADR-013: Capstone app delivered via EC2 user-data templates; RDS-managed secret
 
-- **Status:** Proposed
+- **Status:** Superseded by [ADR-017](ADR-017-aws-only-no-capstone.md) (the GCP and Azure module and the capstone were removed)
 - **Date:** 2026-10-01
 - **Deciders:** Program owner (@Lee) to confirm
 - **PRD references:** s.9 (provided application), s.12 (Security and cost: "password not hard-coded"), s.13 (CR-8)

@@ -1,6 +1,6 @@
 # ADR-009: Local check scripts built on native Terraform commands
 
-- **Status:** Proposed
+- **Status:** Proposed (no externally verified element, see [ADR-017](ADR-017-aws-only-no-capstone.md))
 - **Date:** 2026-10-01
 - **Deciders:** Program owner (@Lee) to confirm
 - **PRD references:** s.2 ("auto-checked activities"), s.5, s.12, s.13 (FR-4), s.14, s.15
@@ -41,6 +41,6 @@ The scripts are validated in CI against both the **solution** (must pass) and th
 - Teaches `plan -json` inspection, a transferable skill.
 
 **Negative / trade-offs**
-- **Results are self-reported**: a learner can edit the script or copy a solution. This is acceptable because certification is not a goal (PRD s.15); the capstone rubric review is the only externally verified element.
+- **Results are self-reported**: a learner can edit the script or copy a solution. This is acceptable because certification is not a goal (PRD s.15); no element of the program is externally verified.
 - No central pass data. If the pilot shows poor survey response, add an **opt-in signed pass receipt** the learner submits (solution design section 9).
 - Shell plus `jq` assertions on plan JSON need maintenance when Terraform changes the plan JSON format; CI catches this.
